@@ -1,6 +1,7 @@
 
 ## Table of contents
 
+* [Github](#Github)
 * [Overview](#overview)
 * [Team](#team)
 
@@ -12,7 +13,12 @@ Not many students know about all of our fine dish eateries on the UH Manoa campu
 Manoa Eats will allow hardworking students to nourish their brains with UH’s nutritious food located all around the campus. Students will be able to upload their schedules along with their course locations, and our website will estimate the best restaurant locations to stop at on their path to their next class.
 
 ## Team
-Manoa Eats is designed, implemented, and maintained by [Tyler Baguio](https://tylerb8.github.io), [Kristi Chinen](https://kristihchinen.github.io), [Jeraldine Milla](https://itsjerie.github.io), [Nenye Ndili](https://nenyehub.github.io), and [Gavin Peng](https://devgav.github.io).
+Manoa Eats is designed, implemented, and maintained by:
+- [Tyler Baguio](https://tylerb8.github.io)
+- [Kristi Chinen](https://kristihchinen.github.io)
+- [Jeraldine Milla](https://itsjerie.github.io)
+- [Nenye Ndili](https://nenyehub.github.io)
+- [Gavin Peng](https://devgav.github.io)
 
 # User Interface Walkthrough
 
