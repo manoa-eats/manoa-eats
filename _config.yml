@@ -1,5 +1,5 @@
-title: meteor-application-template-react
-description: A template for quickly starting Meteor application development
+title: Manoa Eats
+description: Manoa Eats will allow hardworking students to nourish their brains with UH’s nutritious food located all around the campus. Students will be able to upload their schedules along with their course locations, and our website will estimate the best restaurant locations to stop at on their path to their next class.
 google_analytics:
 show_downloads: true
 theme: jekyll-theme-cayman
