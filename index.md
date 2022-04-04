@@ -25,7 +25,3 @@ Manoa Eats is designed, implemented, and maintained by:
 - [Jeraldine Milla](https://itsjerie.github.io)
 - [Nenye Ndili](https://nenyehub.github.io)
 - [Gavin Peng](https://devgav.github.io)
-
-
-
-Manoa Eats is designed, implemented, and maintained by [Tyler Baguio](https://tylerb8.github.io), [Kristi Chinen](https://kristihchinen.github.io), [Jeraldine Milla](https://itsjerie.github.io), [Nenye Ndili](https://nenyehub.github.io), and [Gavin Peng](https://devgav.github.io), .
