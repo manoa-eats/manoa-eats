@@ -1,3 +1,4 @@
+# Manoa Eats
 
 ## Table of contents
 
