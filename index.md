@@ -55,7 +55,7 @@ After that meeting we then wanted to make a better mockup to have a cleaner look
 </p>
 
 ### Admin Page
-If a user is an admin user they are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
+In addition to If a user is an admin user they are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
 
 <p align="center">
 <img src="Admin-Page.png">
