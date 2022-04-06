@@ -1,4 +1,4 @@
-
+# Manoa Eats
 
 ## Table of contents
 
@@ -45,55 +45,55 @@ Manoa Eats will allow hardworking students to nourish their brains with UH’s n
 This landing page is the first mockup that was created during our first group meeting. It is a rough sketch of what we were thinking we wanted our landing page to look like. We wanted to keep it very simple and not too cluttered allowing people to visit our other tabs that we are envisioning our site will have. 
 
 <p align="center">
-<img src="doc/landing-mockup.png">
+<img src="doc/landing-mockup.png" width="850">
 </p>
 
 After that meeting we then wanted to make a better mockup to have a cleaner look and allow for our landing page to match the theme we are envisioning. 
 
 <p align="center">
-<img src="images/Landing-Page.png">
+<img src="images/Landing-Page.png" height="500">
 </p>
 
 ### Admin Page
 In addition to If a user is an admin user they are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
 
 <p align="center">
-<img src="images/Admin-Page.png">
+<img src="images/Admin-Page.png" height="500">
 </p>
 
 ### User Page
 Our user page is where people are able to register and create an account. It is a very simple form that asks for your name, email, password, and if you want to add in a profile picture. 
 
 <p align="center">
-<img src="images/User-page.png">
+<img src="images/User-page.png" height="500">
 </p>
 
 ### All Restaurants Tab
 With the All Restaurants tab the user is able to see all the restaurants description, reviews, price range, and location. 
 
 <p align="center">
-<img src="images/All-Restaurants-regular.png">
+<img src="images/All-Restaurants-regular.png" height="500">
 </p>
 
 ### I'm Feelin' Lucky Tab
 This tab is meant to give the user a random restaurant and the details. They are always able to choose another restaurant at random if they do not like the one that was given.  
 
 <p align="center">
-<img src="images/im-feeling0lucky.png">
+<img src="images/im-feeling0lucky.png" height="500">
 </p>
 
 ### Write a Review
 Users are able to leave reviews on the different restaurants so other users know what to except when going or if that place is a good fit for them. 
 
 <p align="center">
-<img src="images/Write_a_Review.png">
+<img src="images/Write_a_Review.png" height="500">
 </p>
 
 ### Adding a Vendor
 Users are also able to add a restaurant they find to our existing list. They will have to input their name, location, hours of operations, a description, and if they want to upload anything to go along with the restaurant. 
 
 <p align="center">
-<img src="images/Add-Vendor.png">
+<img src="images/Add-Vendor.png" height="500">
 </p>
 
 ## Team
