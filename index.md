@@ -1,10 +1,16 @@
-# Manoa Eats
+
 
 ## Table of contents
 
+* [Github](#github)
 * [Overview](#overview)
 * [Developer Guide](#developer-guide)
+* [Development History](#development-history)
+* [Mockups](#mockups)
 * [Team](#team)
+
+# Github
+[Github](https://github.com/manoa-eats/manoa-eats.github.io)
 
 ## Overview
 ### The Problem
@@ -30,7 +36,11 @@ Manoa Eats will allow hardworking students to nourish their brains with UH’s n
 
 - If all goes well it will appear at [http://localhost:3000/](http://localhost:3000/)
 
+# Development History
+### Final project: Milestone 1
+[Milestone 1](https://github.com/manoa-eats/manoa-eats.github.io/projects/1)
 
+# Mockups
 ### Mockup Landing Page
 <img src="doc/landing-mockup.png">
 
