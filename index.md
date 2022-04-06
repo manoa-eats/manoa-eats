@@ -42,7 +42,53 @@ Manoa Eats will allow hardworking students to nourish their brains with UH’s n
 
 # Mockups
 ### Mockup Landing Page
+This landing page is the first mockup that was created during our first group meeting. It is a rough sketch of what we were thinking we wanted our landing page to look like. We wanted to keep it very simple and not too cluttered allowing people to visit our other tabs that we are envisioning our site will have. 
+
+<p align="center">
 <img src="doc/landing-mockup.png">
+</p>
+
+After that meeting we then wanted to make a better mockup to have a cleaner look and allow for our landing page to match the theme we are envisioning. 
+
+<p align="center">
+<img src="Landing-Page.png">
+</p>
+
+### Admin Page
+
+<p align="center">
+<img src="Admin-Page.png">
+</p>
+
+### User Page
+
+<p align="center">
+<img src="User-page.png">
+</p>
+
+### All Restaurants Tab
+
+<p align="center">
+<img src="All-Restaurants-regular.png">
+</p>
+
+### I'm Feelin' Lucky Tab
+
+<p align="center">
+<img src="im-feeling0lucky.png">
+</p>
+
+### Write a Review
+
+<p align="center">
+<img src="Write_a_Review.png">
+</p>
+
+### Adding a Vendor
+
+<p align="center">
+<img src="Add-Vendor.png">
+</p>
 
 ## Team
 Manoa Eats is designed, implemented, and maintained by:
