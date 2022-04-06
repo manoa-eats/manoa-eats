@@ -55,36 +55,42 @@ After that meeting we then wanted to make a better mockup to have a cleaner look
 </p>
 
 ### Admin Page
+If a user is an admin user they are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
 
 <p align="center">
 <img src="Admin-Page.png">
 </p>
 
 ### User Page
+Our user page is where people are able to register and create an account. It is a very simple form that asks for your name, email, password, and if you want to add in a profile picture. 
 
 <p align="center">
 <img src="User-page.png">
 </p>
 
 ### All Restaurants Tab
+With the All Restaurants tab the user is able to see all the restaurants description, reviews, price range, and location. 
 
 <p align="center">
 <img src="All-Restaurants-regular.png">
 </p>
 
 ### I'm Feelin' Lucky Tab
+This tab is meant to give the user a random restaurant and the details. They are always able to choose another restaurant at random if they do not like the one that was given.  
 
 <p align="center">
 <img src="im-feeling0lucky.png">
 </p>
 
 ### Write a Review
+Users are able to leave reviews on the different restaurants so other users know what to except when going or if that place is a good fit for them. 
 
 <p align="center">
 <img src="Write_a_Review.png">
 </p>
 
 ### Adding a Vendor
+Users are also able to add a restaurant they find to our existing list. They will have to input their name, location, hours of operations, a description, and if they want to upload anything to go along with the restaurant. 
 
 <p align="center">
 <img src="Add-Vendor.png">
