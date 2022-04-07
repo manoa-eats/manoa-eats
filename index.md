@@ -7,6 +7,7 @@
 * [Developer Guide](#developer-guide)
 * [Development History](#development-history)
 * [Mockups](#mockups)
+* [Team Contract](#team-contract)
 * [Team](#team)
 
 # Github
@@ -95,6 +96,9 @@ Users are also able to add a restaurant they find to our existing list. They wil
 <p align="center">
 <img src="images/Add-Vendor.png" height="500">
 </p>
+
+# Team Contract 
+[Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing)
 
 ## Team
 Manoa Eats is designed, implemented, and maintained by:
