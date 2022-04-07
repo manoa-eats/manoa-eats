@@ -61,18 +61,18 @@ In addition to If a user is an admin user they are able to edit the All Restaura
 <img src="images/Admin-Page.png" height="500">
 </p>
 
+### All Restaurants Tab
+With the All Restaurants tab the user is able to see all the restaurants description, reviews, price range, and location.
+
+<p align="center">
+<img src="images/All-Restaurants-regular.png" height="500">
+</p>
+
 ### User Page
 Our user page is where people are able to register and create an account. It is a very simple form that asks for your name, email, password, and if you want to add in a profile picture. 
 
 <p align="center">
 <img src="images/User-page.png" height="500">
-</p>
-
-### All Restaurants Tab
-With the All Restaurants tab the user is able to see all the restaurants description, reviews, price range, and location. 
-
-<p align="center">
-<img src="images/All-Restaurants-regular.png" height="500">
 </p>
 
 ### I'm Feelin' Lucky Tab
