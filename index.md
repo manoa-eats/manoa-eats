@@ -49,7 +49,7 @@ This landing page is the first mockup that was created during our first group me
 <img src="doc/landing-mockup.png" width="850">
 </p>
 
-After that meeting we then wanted to make a better mockup to have a cleaner look and allow for our landing page to match the theme we are envisioning. 
+After that meeting we then wanted to make a better mockup to have a cleaner look and allow for our landing page to match the theme we are envisioning. The X's and O's on the left side of the page will indicate if a restaurant is opened or closed. 
 
 <p align="center">
 <img src="images/Landing-Page.png" height="500">
@@ -70,7 +70,7 @@ With the All Restaurants tab the user is able to see all the restaurants descrip
 </p>
 
 ### User Page
-Our user page is where people are able to register and create an account. It is a very simple form that asks for your name, email, password, and if you want to add in a profile picture. 
+Our user page is where people are able to register and create an account. It is a very simple form that asks for your name, email, password, and if you want to add in a profile picture. The user will also be able to indicate if they will be wanting a user profile or a vendor profile. 
 
 <p align="center">
 <img src="images/User-page.png" height="500">
@@ -84,14 +84,14 @@ This tab is meant to give the user a random restaurant and the details. They are
 </p>
 
 ### Write a Review
-Users are able to leave reviews on the different restaurants so other users know what to except when going or if that place is a good fit for them. 
+Users are able to leave reviews on the different restaurants so other users know what to except when going, if they have any menu recommendations, etc. 
 
 <p align="center">
 <img src="images/Write_a_Review.png" height="500">
 </p>
 
 ### Adding a Vendor
-Users are also able to add a restaurant they find to our existing list. They will have to input their name, location, hours of operations, a description, and if they want to upload anything to go along with the restaurant. 
+After creating a vendor profile they will be able to add their restaurant to our life. They will need to add in their restaurant name, location, hours of operation, a short description about their restaurant, and they are able to upload any files (i.e. menus). 
 
 <p align="center">
 <img src="images/Add-Vendor.png" height="500">
