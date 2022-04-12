@@ -65,21 +65,21 @@ This landing page is the first mockup that was created during our first group me
 <img src="doc/landing-mockup.png" width="850">
 </p>
 
-After that meeting we then wanted to make a better mockup to have a cleaner look and allow for our landing page to match the theme we are envisioning. The X's and O's on the left side of the page will indicate if a restaurant is opened or closed. 
+After that meeting we then wanted to make a better mockup to have a cleaner look and allow for our landing page to match the theme we are envisioning. The X's and O's on the left side of the page will indicate if a restaurant is opened or closed. In the middle of the page there is a search bar where you can look up a specific food and it will appear where it is being served at. 
 
 <p align="center">
 <img src="images/Landing-Page.png" height="500">
 </p>
 
 ### Admin Page
-In addition to If a user is an admin user they are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
+In addition to a standard user there is an admin user. They are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
 
 <p align="center">
 <img src="images/Admin-Page.png" height="500">
 </p>
 
 ### All Restaurants Tab
-With the All Restaurants tab the user is able to see all the restaurants description, reviews, price range, and location.
+With the All Restaurants tab users are able to see the restaurants and their description, reviews, price range, and location. Users are also able to filter their searches by either their name, date the restaurant was added to the website, and any specific tags. 
 
 <p align="center">
 <img src="images/All-Restaurants-regular.png" height="500">
