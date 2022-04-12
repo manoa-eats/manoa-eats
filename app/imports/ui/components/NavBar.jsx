@@ -10,6 +10,12 @@ import { Roles } from 'meteor/alanning:roles';
 class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px', backgroundColor: '#C1E1B0' };
+    const username = () => {
+      if (Meteor.user() == null) {
+        return false;
+      }
+      return Meteor.user({ fields: { 'profile.role': 1 } }).profile.role === 'vendor';
+    };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
@@ -22,6 +28,9 @@ class NavBar extends React.Component {
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-review" key='admin'>Vendor Verification</Menu.Item>
+        ) : ''}
+        {(username()) ? (
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key='admin'>Vendor Profile</Menu.Item>
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
