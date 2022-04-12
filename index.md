@@ -93,14 +93,14 @@ Our user page is where people are able to register and create an account. It is 
 </p>
 
 ### I'm Feelin' Lucky Tab
-This tab is meant to give the user a random restaurant and the details. They are always able to choose another restaurant at random if they do not like the one that was given.  
+When a user access this tab they will be given a random restaurant with its details. If the user is not satisfied with their random choice they are always able to have another restaurant chosen at random.
 
 <p align="center">
 <img src="images/im-feeling0lucky.png" height="500">
 </p>
 
 ### Write a Review
-Users are able to leave reviews on the different restaurants so other users know what to except when going, if they have any menu recommendations, etc. 
+Users are able to leave reviews on the different restaurants they visited so other users know what to except when going, if they have any menu recommendations, etc. 
 
 <p align="center">
 <img src="images/Write_a_Review.png" height="500">
