@@ -14,6 +14,9 @@ class NavBar extends React.Component {
       if (Meteor.user() == null) {
         return false;
       }
+      if (Meteor.user({ fields: { 'profile.role': 1 } }).profile) {
+        return Meteor.user({ fields: { 'profile.role': 1 } }).profile.role === 'vendor';
+      }
       return Meteor.user({ fields: { 'profile.role': 1 } }).role === 'vendor';
     };
     return (
