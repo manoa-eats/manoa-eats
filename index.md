@@ -48,7 +48,6 @@ Manoa Eats will allow hardworking students to nourish their brains with UH’s n
 
 ## Final Project: Milestone 2
 
-- [Milestone 2](https://github.com/manoa-eats/manoa-eats.github.io/projects/3)
 
 # Deployment
 
