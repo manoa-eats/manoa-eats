@@ -2,14 +2,21 @@
 
 ## Table of contents
 
+* [Team Contract](#team-contract)
+* [Team](#team)
 * [Github](#github)
 * [Overview](#overview)
 * [Developer Guide](#developer-guide)
 * [Development History](#development-history)
 * [Deployment](#deployment)
 * [Mockups](#mockups)
-* [Team Contract](#team-contract)
-* [Team](#team)
+
+# Team Contract
+[Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing)
+
+## Team
+Manoa Eats is designed, implemented, and maintained by:
+[Tyler Baguio](https://tylerb8.github.io), [Kristi Chinen](https://kristihchinen.github.io), [Jeraldine Milla](https://itsjerie.github.io), [Nenye Ndili](https://nenyehub.github.io), [Gavin Peng](https://devgav.github.io)
 
 # Github
 [Github](https://github.com/manoa-eats/manoa-eats.github.io)
@@ -39,13 +46,12 @@ Manoa Eats will allow hardworking students to nourish their brains with UH’s n
 - If all goes well it will appear at [http://localhost:3000/](http://localhost:3000/)
 
 # Development History
-### Final project: Milestone 1
+## Final project: Milestone 1
 
 - [Milestone 1](https://github.com/manoa-eats/manoa-eats.github.io/projects/1)
 
 ## Final Project: Milestone 2
 
-- [Milestone 2](https://github.com/manoa-eats/manoa-eats.github.io/projects/3)
 
 # Deployment
 
@@ -107,13 +113,3 @@ After creating a vendor profile they will be able to add their restaurant to our
 <img src="images/Add-Vendor.png" height="500">
 </p>
 
-# Team Contract 
-[Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing)
-
-## Team
-Manoa Eats is designed, implemented, and maintained by:
-- [Tyler Baguio](https://tylerb8.github.io)
-- [Kristi Chinen](https://kristihchinen.github.io)
-- [Jeraldine Milla](https://itsjerie.github.io)
-- [Nenye Ndili](https://nenyehub.github.io)
-- [Gavin Peng](https://devgav.github.io)
