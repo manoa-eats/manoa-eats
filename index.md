@@ -2,14 +2,17 @@
 
 ## Table of contents
 
+* [Team Contract](#team-contract)
 * [Github](#github)
 * [Overview](#overview)
 * [Developer Guide](#developer-guide)
 * [Development History](#development-history)
 * [Deployment](#deployment)
 * [Mockups](#mockups)
-* [Team Contract](#team-contract)
 * [Team](#team)
+
+# Team Contract
+[Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing)
 
 # Github
 [Github](https://github.com/manoa-eats/manoa-eats.github.io)
@@ -112,8 +115,4 @@ After creating a vendor profile they will be able to add their restaurant to our
 
 ## Team
 Manoa Eats is designed, implemented, and maintained by:
-- [Tyler Baguio](https://tylerb8.github.io)
-- [Kristi Chinen](https://kristihchinen.github.io)
-- [Jeraldine Milla](https://itsjerie.github.io)
-- [Nenye Ndili](https://nenyehub.github.io)
-- [Gavin Peng](https://devgav.github.io)
+[Tyler Baguio](https://tylerb8.github.io), [Kristi Chinen](https://kristihchinen.github.io), [Jeraldine Milla](https://itsjerie.github.io), [Nenye Ndili](https://nenyehub.github.io), [Gavin Peng](https://devgav.github.io)
