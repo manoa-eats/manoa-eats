@@ -49,6 +49,8 @@ Manoa Eats will allow hardworking students to nourish their brains with UH’s n
 
 # Deployment
 
+[Digital Ocean](http://143.110.226.189/#/)
+
 # Mockups
 ### Mockup Landing Page
 This landing page is the first mockup that was created during our first group meeting. It is a rough sketch of what we were thinking we wanted our landing page to look like. We wanted to keep it very simple and not too cluttered allowing people to visit our other tabs that we are envisioning our site will have. 
