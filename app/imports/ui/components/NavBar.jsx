@@ -14,7 +14,7 @@ class NavBar extends React.Component {
       if (Meteor.user() == null) {
         return false;
       }
-      return Meteor.user({ fields: { 'profile.role': 1 } }).profile.role === 'vendor';
+      return Meteor.user({ fields: { 'profile.role': 1 } }).role === 'vendor';
     };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
