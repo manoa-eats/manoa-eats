@@ -8,12 +8,12 @@
 * [Developer Guide](#developer-guide)
 * [Development History](#development-history)
 * [Deployment](#deployment)
+* [User Guide](#user-guide)
 * [Mockups](#mockups)
 * [Team](#team)
 
 # Team Contract
-Manoa eats is a team consisting of 5 computer engineering and computer science students that have signed this [Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing) to follow a work criteria we all decided upon. 
-
+Manoa eats is a team consisting of 5 computer engineering and computer science students that have signed this [Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing) to follow a work criteria we all decided upon.
 
 # Github
 [Manoa Eats Github Page](https://github.com/manoa-eats/manoa-eats.github.io)
@@ -45,17 +45,19 @@ $ meteor npm run start
 If all goes well it will appear at [http://localhost:3000/](http://localhost:3000/)
 
 # Development History
-## Final project: Milestone 1 (Mockup Development)
-Our goals of Milestone 1 was to create different Mockups so we all were able to get a general idea of how we wanted different pages to look. We also needed to create a landing page of our website. 
 
-Milestone 1 was managed by using [Manoa Eats Github Project Board M1](https://github.com/manoa-eats/manoa-eats.github.io/projects/1).
-
-
-
+| Milestones | Description |
+| --- | --- |
+| [Milestone 1](https://github.com/manoa-eats/manoa-eats.github.io/projects/1) | **Mockup Development:** Our goals of Milestone 1 was to create different Mockups so we all were able to get a general idea of how we wanted different pages to look. We also needed to create a landing page of our website. The landing page is meant to help users get a general understanding of what our website is about.  |
+| [Milestone 2](https://github.com/manoa-eats/manoa-eats.github.io/projects/4)| **Data Model Development:** Our mail goal of Milestone 2 was to improve the functionality and quality of or website beyond Milestone 1.  |
 
 # Deployment
 
 [Digital Ocean](http://143.110.226.189/#/)
+
+# User Guide
+### Landing Page
+During Milestone one, our first page we worked on getting done was our landing page. When first coming up with the landing page we had our background picture only in the top portion of the page. The more we looked at it we all came to the conclusion that we wanted the background picture to take up the whole page. We also wanted to add a white background around the restaurants and their hours which is on the left side of our landing page. 
 
 # Mockups
 ### Mockup Landing Page
@@ -70,8 +72,6 @@ After that meeting we then wanted to make a better mockup to have a cleaner look
 <p align="center">
 <img src="images/Landing-Page.png" height="500">
 </p>
-
-During our milestone one, our first page we worked on getting done was our landing page. When first coming up with the landing page we had our background picture only in the top portion of the page. The more we looked at it we all came to the conclusion that we wanted the background picture to take up the whole page. 
 
 ### Admin Page
 In addition to a standard user there is an admin user. They are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
