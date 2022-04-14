@@ -5,9 +5,9 @@ import { Grid, Header, List, Search } from 'semantic-ui-react';
 class Landing extends React.Component {
   render() {
     return (
-      <div className={'digits-landing-background'}>
-        <Grid container centered stackable columns={3}>
-          <Grid.Column textAlign='center'>
+      <div>
+        <Grid stackable columns={3} >
+          <Grid.Column textAlign='center' className={'gridbkg'}>
             <Header as="h1" inverted >Hours</Header>
             <List inverted>
               <List.Item><Header as={'h3'}>Restaurant 1</Header></List.Item>
@@ -18,7 +18,7 @@ class Landing extends React.Component {
               <br/>
             </List>
           </Grid.Column>
-          <Grid.Column textAlign='center' width={8}>
+          <Grid.Column textAlign='center' width={8} className={'margin'}>
             <Grid.Row verticalAlign={'middle'}>
               <Search
                 placeholder={'Search for food'}
