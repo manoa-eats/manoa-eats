@@ -53,7 +53,7 @@ If all goes well it will appear at [http://localhost:3000/](http://localhost:300
 
 # Deployment
 
-[Digital Ocean](http://143.110.226.189/#/)
+We deployed our most recent changes to [Digital Ocean](http://143.110.226.189/#/) where everyone is able to see 
 
 # User Guide
 ### Landing Page
