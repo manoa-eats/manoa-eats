@@ -10,7 +10,7 @@ function addContact(data) {
 }
 
 function addRestaurant(data) {
-  console.log(`  Adding: ${data.firstName} (${data.owner})`);
+  console.log(`  Adding: ${data.name} (${data.owner})`);
   Restaurants.collection.insert(data);
 }
 

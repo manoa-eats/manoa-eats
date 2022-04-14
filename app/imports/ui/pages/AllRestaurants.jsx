@@ -7,7 +7,7 @@ import { Notes } from '../../api/note/Notes';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import Restaurant from '../components/Restaurant';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a table containing all of the Stuff documents. */
 class AllRestaurants extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -24,7 +24,7 @@ class AllRestaurants extends React.Component {
           {this.props.restaurants.map((restaurant, index) => <Restaurant
             key={index}
             restaurant={restaurant}
-            notes={this.props.notes.filter(note => (note.restaurantId === restaurant._id))}/>)}
+            notes={this.props.notes.filter(note => (note.contactId === contact._id))}/>)}
         </Card.Group>
       </Container>
     );

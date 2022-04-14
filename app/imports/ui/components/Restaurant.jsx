@@ -24,7 +24,7 @@ class Restaurant extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Link to={`/edit/${this.props.restaurant._id}`}>Edit</Link>
+          <Link to={`/Review/${this.props.restaurant._id}`}>Review</Link>
         </Card.Content>
         <Card.Content extra>
           <Feed>
