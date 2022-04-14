@@ -3,7 +3,7 @@
 ## Table of contents
 
 * [Team Contract](#team-contract)
-* [Github](#github)
+* [Application Repo](#application-repo)
 * [Overview](#overview)
 * [Developer Guide](#developer-guide)
 * [Development History](#development-history)
@@ -15,8 +15,8 @@
 # Team Contract
 Manoa eats is a team consisting of 5 computer engineering and computer science students that have signed this [Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing) to follow a work criteria we all decided upon.
 
-# Github
-To access our [Manoa Eats Github Page](https://github.com/manoa-eats/manoa-eats.github.io) please click the link
+# Application Repo
+Visit [github.com/manoa-eats/manoa-eats.github.io](https://github.com/manoa-eats/manoa-eats.github.io) to access our application repo 
 
 # Overview
 Manoa Eats is a web application that will allow students and staff access to the different eateries information on campus. When they visit our landing page they will notice a search bar in the middle of the page and a collum of the left of the page giving he hours of various eateries. At the top of the page there will be several different tabs which include an All Restaurants tab and I'm Feeling Hungry tab. Once the user signs in or creates an account they will able to have access to a reviews tab. 
