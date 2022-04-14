@@ -1,27 +1,26 @@
-# Manoa Eats
+
 
 ## Table of contents
 
 * [Team Contract](#team-contract)
-* [Team](#team)
 * [Github](#github)
 * [Overview](#overview)
 * [Developer Guide](#developer-guide)
 * [Development History](#development-history)
 * [Deployment](#deployment)
 * [Mockups](#mockups)
+* [Team](#team)
 
 # Team Contract
-[Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing)
+Manoa eats is a team consisting of 5 computer engineering and computer science students that have signed this [Team Contract](https://docs.google.com/document/d/1-v9pqiJ7Q1Jij45WQcrJkHYzmSRQN-saOC0DPg8Gzvk/edit?usp=sharing) to follow a work criteria we all decided upon. 
 
-## Team
-Manoa Eats is designed, implemented, and maintained by:
-[Tyler Baguio](https://tylerb8.github.io), [Kristi Chinen](https://kristihchinen.github.io), [Jeraldine Milla](https://itsjerie.github.io), [Nenye Ndili](https://nenyehub.github.io), [Gavin Peng](https://devgav.github.io)
 
 # Github
-[Github](https://github.com/manoa-eats/manoa-eats.github.io)
+[Manoa Eats Github Page](https://github.com/manoa-eats/manoa-eats.github.io)
 
 # Overview
+Manoa Eats is a web application that will allow students and staff access to the different eateries information on campus. When they visit our landing page they will notice a search bar in the middle of the page and a collum of the left of the page giving he hours of various eateries. At the top of the page there will be several different tabs which include an All Restaurants tab and I'm Feeling Hungry tab. Once the user signs in or creates an account they will able to have access to a reviews tab. 
+
 ### The Problem
 Not many students know about all of our fine dish eateries on the UH Manoa campus. In addition, some students who want to try new restaurants may not get a chance to because they may have time conflicts with their schedule leaving some restaurants having either too many students in line or not enough students. 
 
@@ -31,19 +30,19 @@ Manoa Eats will allow hardworking students to nourish their brains with UH’s n
 # Developer Guide 
 ### Installation
 
-- First, [install Meteor](https://www.meteor.com/developers/install)
+First, [install Meteor](https://www.meteor.com/developers/install)
 
-- Second, download a copy of [Manoa Eats](https://github.com/manoa-eats/manoa-eats.github.io) and clone it to your laptop
+Second, visit the [Manoa Eats application github page](https://github.com/manoa-eats/manoa-eats.github.io), and click "Use this template" button to create our own repository initialized with a copy of this application. Alternatively, you can download the sources as a zip file or make a fork of the repo. However you do it, download a copy of the repo to your local computer.
 
-- Third, cd into the app/directory and install the libraries with 
-
-`$ meteor npm install`
-
-- Fourth, run the system with 
-
-`$ meteor npm run start`
-
-- If all goes well it will appear at [http://localhost:3000/](http://localhost:3000/)
+Third, cd into the Manoa Eats app/directory and install the libraries with: 
+```
+$ meteor npm install
+```
+Fourth, run the system with:  
+```
+$ meteor npm run start
+```
+If all goes well it will appear at [http://localhost:3000/](http://localhost:3000/)
 
 # Development History
 ## Final project: Milestone 1
@@ -113,3 +112,6 @@ After creating a vendor profile they will be able to add their restaurant to our
 <img src="images/Add-Vendor.png" height="500">
 </p>
 
+## Team
+Manoa Eats is designed, implemented, and maintained by
+[Tyler Baguio](https://tylerb8.github.io), [Kristi Chinen](https://kristihchinen.github.io), [Jeraldine Milla](https://itsjerie.github.io), [Nenye Ndili](https://nenyehub.github.io), [Gavin Peng](https://devgav.github.io). 
