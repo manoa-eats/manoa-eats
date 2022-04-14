@@ -1,63 +1,56 @@
 import React from 'react';
-import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-semantic';
-import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
-import { Contacts } from '../../api/contact/Contacts';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import { Notes } from '../../api/note/Notes';
+import { Restaurants } from '../../api/Restaurant/Restaurants';
+import Restaurant from '../components/Restaurant';
 
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  firstName: String,
-  lastName: String,
-  address: String,
-  image: String,
-  description: String,
-});
-
-const bridge = new SimpleSchema2Bridge(formSchema);
-
-/** Renders the Page for adding a document. */
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class AllRestaurants extends React.Component {
 
-  // On submit, insert the data.
-  submit(data, formRef) {
-    const { firstName, lastName, address, image, description } = data;
-    const owner = Meteor.user().username;
-    Contacts.collection.insert({ firstName, lastName, address, image, description, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
+  // If the subscription(s) have been received, render the page, otherwise show a loading icon.
+  render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-  render() {
-    let fRef = null;
+  // Render the page once subscriptions have been received.
+  renderPage() {
     return (
-      <Grid container centered>
-        <Grid.Column>
-          <Header as="h2" textAlign="center" inverted>All Restaurants</Header>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
-              <TextField name='firstName'/>
-              <TextField name='lastName'/>
-              <TextField name='address'/>
-              <TextField name='image'/>
-              <LongTextField name='description'/>
-              <SubmitField value='Submit'/>
-              <ErrorsField/>
-            </Segment>
-          </AutoForm>
-        </Grid.Column>
-      </Grid>
+      <Container>
+        <Header as="h2" textAlign="center" inverted>List Restaurants</Header>
+        <Card.Group centered>
+          {this.props.restaurants.map((restaurant, index) => <Restaurant
+            key={index}
+            restaurant={restaurant}
+            notes={this.props.notes.filter(note => (note.restaurantId === restaurant._id))}/>)}
+        </Card.Group>
+      </Container>
     );
   }
 }
 
-export default AllRestaurants;
+// Require an array of Stuff documents in the props.
+AllRestaurants.propTypes = {
+  restaurants: PropTypes.array.isRequired,
+  notes: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Restaurants.userPublicationName);
+  const subscription2 = Meteor.subscribe(Notes.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready() && subscription2.ready();
+  // Get the Stuff documents
+  const restaurants = Restaurants.collection.find({}).fetch();
+  const notes = Notes.collection.find({}).fetch();
+  return {
+    restaurants,
+    notes,
+    ready,
+  };
+})(AllRestaurants);
