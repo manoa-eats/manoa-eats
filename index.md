@@ -70,6 +70,8 @@ After that meeting we then wanted to make a better mockup to have a cleaner look
 <img src="images/Landing-Page.png" height="500">
 </p>
 
+During our milestone one, our first page we worked on getting done was our landing page. When first coming up with the landing page we had our background picture only in the top portion of the page. The more we looked at it we all came to the conclusion that we wanted the background picture to take up the whole page. 
+
 ### Admin Page
 In addition to a standard user there is an admin user. They are able to edit the All Restaurants tab and archive or edit the different vendors, along with the other features that are available for a regular user. 
 
