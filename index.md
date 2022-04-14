@@ -45,11 +45,12 @@ $ meteor npm run start
 If all goes well it will appear at [http://localhost:3000/](http://localhost:3000/)
 
 # Development History
-## Final project: Milestone 1
+## Final project: Milestone 1 (Mockup Development)
+Our goals of Milestone 1 was to create different Mockups so we all were able to get a general idea of how we wanted different pages to look. We also needed to create a landing page of our website. 
 
-- [Milestone 1](https://github.com/manoa-eats/manoa-eats.github.io/projects/1)
+Milestone 1 was managed by using [Manoa Eats Github Project Board M1](https://github.com/manoa-eats/manoa-eats.github.io/projects/1).
 
-## Final Project: Milestone 2
+
 
 
 # Deployment
