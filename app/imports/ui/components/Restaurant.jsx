@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button, Icon, Modal, Header, Input} from 'semantic-ui-react';
+import { Card, Image, Button, Rating, Modal } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -44,6 +44,8 @@ class Restaurant extends React.Component {
             content='Call Benjamin regarding the reports.'
             actions={['cancel', { key: 'done', content: 'Done', positive: true }]}
           />
+
+          <Rating defaultRating={3} maxRating={5} disabled />
         </Card.Content>
       </Card>
     );

@@ -26,32 +26,32 @@
   ],
 
   "defaultRestaurants": [{
-      "name": "Dunkin’", "hour": "Monday – Friday\n7:00am – 2:00pm","address": "Paradise Palms Café",
+      "name": "Dunkin’", "hour": "Monday – Friday\n7:00am – 2:00pm", "reviews": 5, "address": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/dunkin_big.jpg", "owner": "john@foo.com",
       "description": "Dunkin’ Donuts in Paradise Palms Cafe will keep Hawaii running with high-quality beverage offerings–including freshly-brewed Hot and Iced Coffees–paired perfectly with delicious donuts, bakery good, sandwiches and more."
     },
     {
-      "name": "Lasoon", "hour":  "Monday – Friday\n10:30am – 4:30pm", "address": "Paradise Palms Café",
+      "name": "Lasoon", "hour":  "Monday – Friday\n10:30am – 4:30pm", "reviews": 5, "address": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/07/lasoon_big2.jpg", "owner": " john@foo.com",
       "description": "Lasoon offers natural home-cooked Nepali and Indian food for everyone. From a $5 bowl options when you are in a hurry to larger plates to please your appetite.\nWe are focusing on vegan and gluten free meals and offer 4 – 5 options that are changed daily. Besides the vegan options we offer 3 meat options ranging from mild to spicy!"
     },
     {
-      "name": "Holoholo Grill", "hour":  "Monday – Friday\n8:00am – 3:00pm", "address": "Paradise Palms Café",
+      "name": "Holoholo Grill", "hour":  "Monday – Friday\n8:00am – 3:00pm", "reviews": 5, "address": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/holoholo_big.jpg", "owner": " john@foo.com",
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen. Grab-and-go, breakfast items, or catering for any sized group are also available!"
     },
     {
-      "name": "L&L Hawaiian Barbecue", "hour":  "Monday – Friday\n7:00am – 5:00pm", "address": "Paradise Palms Café",
+      "name": "L&L Hawaiian Barbecue", "hour":  "Monday – Friday\n7:00am – 5:00pm", "reviews": 5, "address": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/landl_big.jpg", "owner": " john@foo.com",
       "description": "Delicious local and Asian-American fusion cuisine served in big portions at reasonable prices! Try delicious L&L favorites like the Hawaiian Barbecue beef, chicken, or short ribs! Enjoy L&L’s famous fried chicken katsu, the best in town! Grab-and-go, breakfast items and party packs for groups also available."
     },
     {
-      "name": "Le Crêpe Café", "hour":  "Monday – Friday\n8:00am – 3:00pm\n", "address": "Paradise Palms Café",
+      "name": "Le Crêpe Café", "hour":  "Monday – Friday\n8:00am – 3:00pm\n", "reviews": 5, "address": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/crepe_big.jpg", "owner": " john@foo.com",
       "description": "Le Crêpe Café makes traditional French crêpes, cooked to order in front of customers. They specialize in a flavorsome menu of sweet and savory crêpes and use fresh ingredients, organic when possible. Their utensils are even bio-compostable. Enjoy a crêpe any time of day, as a breakfast, snack, main course, or dessert — close your eyes and you’re in Paris!\nWhether you’re needing a break from the law books or a pick-me-up as you’re headed to or off campus, you’ll also appreciate Le Crêpe Café’s French Roast and espresso drinks."
     },
     {
-      "name": "Panda Express", "hour":  "Monday – Friday\n10:30am – 4:30pm", "address": "Paradise Palms Café",
+      "name": "Panda Express", "hour":  "Monday – Friday\n10:30am – 4:30pm", "reviews": 5, "address": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/panda_big2.jpg", "owner": " john@foo.com",
       "description": "Panda Express serves gourmet Chinese food made with only the freshest ingredients. Famous for its Orange Chicken, they also offer a number of Wok Smart entrées that contain less than 250 calories per serving, such as Shanghai Angus Steak, Kung Pao Chicken, and Broccoli Beef. Other favorites include Beijing Beef, Sweetfire Chicken Breast, and Honey Walnut Shrimp.\nPanda Express’ offerings can be enjoyed in Panda Bowls, or two and three item plates. Perfect for lunch, dinner or as a pick-me-up snack between classes."
     }

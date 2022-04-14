@@ -15,6 +15,7 @@ class RestaurantsCollection {
     this.schema = new SimpleSchema({
       name: String,
       hour: String,
+      reviews: String,
       address: String,
       image: String,
       description: String,
