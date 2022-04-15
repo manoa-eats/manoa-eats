@@ -5,6 +5,7 @@ import { withTracker } from "meteor/react-meteor-data";
 import { withRouter, NavLink } from "react-router-dom";
 import { Menu, Dropdown, Header, Image } from "semantic-ui-react";
 import { Roles } from "meteor/alanning:roles";
+import { UserProfile } from "../../api/userprofile/UserProfile";
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
@@ -35,7 +36,9 @@ class NavBar extends React.Component {
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/review" key="review">Write a
                             Review</Menu.Item>,
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/user-profile"
-                                   key="profile">Profile</Menu.Item>
+                                   key="profile">Create Profile</Menu.Item>,
+                        <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.userprofile}`}
+                                   key="edit">Edit Profile</Menu.Item>,
                     ]
                 ) : ""}
                 {Roles.userIsInRole(Meteor.userId(), "admin") ? (
@@ -73,12 +76,14 @@ class NavBar extends React.Component {
 
 // Declare the types of all properties.
 NavBar.propTypes = {
-    currentUser: PropTypes.string
+    currentUser: PropTypes.string,
+    userprofile: PropTypes.string
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 const NavBarContainer = withTracker(() => ({
-    currentUser: Meteor.user() ? Meteor.user().username : ""
+    currentUser: Meteor.user() ? Meteor.user().username : "",
+    userprofile: Meteor.user() != null ? Meteor.user().username : '',
 }))(NavBar);
 
 // Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter

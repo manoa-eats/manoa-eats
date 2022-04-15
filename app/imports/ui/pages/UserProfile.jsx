@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Segment, Header, Message } from "semantic-ui-react";
+import { Grid, Segment, Header, Message, Image } from "semantic-ui-react";
 // Must use destructuring import to avoid https://github.com/vazco/uniforms/issues/433
 import { AutoForm, TextField, SubmitField } from "uniforms-semantic";
 import swal from "sweetalert";
@@ -8,6 +8,7 @@ import MultiSelectField from "../forms/controllers/MultiSelectField";
 import { UserProfile, UserProfileValues } from "../../api/userprofile/UserProfile";
 import SimpleSchema from "simpl-schema";
 import { UserDiet } from "../../api/userdiet/UserDiet";
+import UserProfileImage from "../components/UserProfileImage";
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -25,7 +26,7 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 class CreateUserProfile extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { owner: false };
+        this.state = { owner: false, image: 'https://react.semantic-ui.com/images/wireframe/image.png' };
     }
 
     /** On submit, try to insert the data. If successful, reset the form. */
@@ -62,6 +63,7 @@ class CreateUserProfile extends React.Component {
                     <Header as="h2" textAlign="center">User Profile</Header>
                     <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
                         <Segment>
+                            <Image centered rounded src={this.state.image} size='medium' />
                             <TextField name="name" showInlineError={true} placeholder={"Your name"}/>
                             <TextField name="image" showInlineError={true} placeholder={"image link"}/>
                             <MultiSelectField name="userPreferredFoods" showInlineError={true}
@@ -71,7 +73,8 @@ class CreateUserProfile extends React.Component {
                             <SubmitField value="Submit"/>
                         </Segment>
                     </AutoForm>
-                    {this.state.owner ? <Message>Edit <a href={`/#/student/${this.state.owner}`}>this data</a></Message> : ''}
+                    {/*{this.state.owner ? <Redirect to={`/edit-profile/${this.state.owner}`}/> : ''}*/}
+                    {this.state.owner ? <Message>Edit <a href={`/#/edit-profile/${this.state.owner}`}>this data</a></Message> : ''}
                 </Grid.Column>
             </Grid>
         );
