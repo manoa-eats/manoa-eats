@@ -57,7 +57,19 @@ We added our current changes into our [Digital Ocean](http://143.110.226.189/#/)
 
 # User Guide
 ### Landing Page
-During Milestone one, our first page we worked on getting done was our landing page. When first coming up with the landing page we had our background picture only in the top portion of the page. The more we looked at it we all came to the conclusion that we wanted the background picture to take up the whole page. We also wanted to add a white background around the restaurants and their hours which is on the left side of our landing page. 
+During Milestone one, our first page we worked on getting done was our landing page. When first coming up with the landing page we had our background picture only in the top portion of the page. The more we looked at it we all came to the conclusion that we wanted the background picture to take up the whole page. We also wanted to add a white background around the restaurants and their hours which is on the left side of our landing page. So will be creating those changes in our next Milestone. 
+
+![](images/Landing-Page-Deployment.png)
+
+### Sign in Page 
+We also created the sign in page where users that have already created an account are able to log in and see reviews others have left on the different eateries. 
+
+![](images/Sign-In-Page.png)
+
+You will also notice that once a user signs into their account there will be an addition tab in their nav bar. It will be the write a reviews tab. 
+
+![](images/Signed-In-Page.png)
+
 
 # Mockups
 ### Mockup Landing Page
