@@ -1,20 +1,18 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
-import { UserProfileValues } from "../userprofile/UserProfile";
 
 /** Define a Mongo collection to hold the data. */
-const UserDiet = new Mongo.Collection('UserDietCollection');
+const EnrollmentData = new Mongo.Collection('EnrollmentData');
 
 /** Define a schema to specify the structure of each document in the collection. */
-const UserDietSchema = new SimpleSchema({
-    owner: String,
-    diets: { type: Array, optional: true },
-    'diets.$': { type: String, allowedValues: UserProfileValues.diet },
+const EnrollmentDataSchema = new SimpleSchema({
+    email: String,
+    enrolled: Date,
 }, { tracker: Tracker });
 
 /** Attach the schema to the collection. */
-UserDiet.attachSchema(UserDietSchema);
+EnrollmentData.attachSchema(EnrollmentDataSchema);
 
 /** Make these objects available to others. */
-export { UserDiet, UserDietSchema };
+export { EnrollmentData, EnrollmentDataSchema };
