@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Notes } from '../../api/note/Notes';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import Restaurant from '../components/Restaurant';
+import contact from '../components/Contact';
 
 /** Renders a table containing all of the Stuff documents. */
 class AllRestaurants extends React.Component {

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card, Image, Button, Rating, Modal } from 'semantic-ui-react';
+import { Card, Image, Button, Rating, Modal, Form } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
+// eslint-disable-next-line no-unused-vars
 class ModalContainer extends React.Component {
   componentDidMount() {
     // eslint-disable-next-line react/prop-types
@@ -37,15 +38,26 @@ class Restaurant extends React.Component {
             {this.props.restaurant.description}
           </Card.Description>
         </Card.Content>
-        <Card.Content extra>
+        <Card.Content style={{ textAlign: 'center', paddingTop: '15px' }} extra>
           <Modal
-            trigger={<Button primary>Add Review!</Button>}
-            header='Add Review!'
-            content='Call Benjamin regarding the reports.'
-            actions={['cancel', { key: 'done', content: 'Done', positive: true }]}
+            header='Add A Review'
+            trigger={<Button primary>Add A Review!</Button>}
+            actions={['cancel', { key: 'Submit', content: 'Submit', positive: true }]}
+            size='large'
+            content=
+              {
+                <Form style={{ padding: '15px' }}>
+                  <Form.Field>
+                    <Rating defaultRating={this.props.restaurant.reviews} maxRating={5} icon='star' size='huge'/>
+                  </Form.Field>
+                  <Form.Field>
+                    <Form.TextArea label='Write Review Below' placeholder='Tell us more about your experience:' />
+                  </Form.Field>
+                </Form>
+              }
           />
 
-          <Rating defaultRating={3} maxRating={5} disabled />
+          <Rating defaultRating={this.props.restaurant.reviews} maxRating={5} disabled icon='star' size='huge'/>
         </Card.Content>
       </Card>
     );
