@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Contacts } from '../../api/contact/Contacts';
 import { Notes } from '../../api/note/Notes';
+import UserProfile from "../../ui/pages/UserProfile";
+import { UserDiet } from "../../api/userdiet/UserDiet";
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -19,6 +21,14 @@ Meteor.publish(Notes.userPublicationName, function () {
     return Notes.collection.find({ owner: username });
   }
   return this.ready();
+});
+
+Meteor.publish('UserProfile', function publishStudentData() {
+  return UserProfile.find();
+});
+
+Meteor.publish('UserDiet', function publishEnrollmentData() {
+  return UserDiet.find();
 });
 
 // Admin-level publication.

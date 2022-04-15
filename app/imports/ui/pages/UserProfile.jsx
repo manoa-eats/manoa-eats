@@ -1,12 +1,13 @@
 import React from "react";
-import { Grid, Segment, Header } from "semantic-ui-react";
+import { Grid, Segment, Header, Message } from "semantic-ui-react";
 // Must use destructuring import to avoid https://github.com/vazco/uniforms/issues/433
 import { AutoForm, TextField, SubmitField } from "uniforms-semantic";
 import swal from "sweetalert";
 import SimpleSchema2Bridge from "uniforms-bridge-simple-schema-2";
 import MultiSelectField from "../forms/controllers/MultiSelectField";
-import SimpleSchema from "simpl-schema";
 import { UserProfile, UserProfileValues } from "../../api/userprofile/UserProfile";
+import SimpleSchema from "simpl-schema";
+import { UserDiet } from "../../api/userdiet/UserDiet";
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -24,7 +25,7 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 class CreateUserProfile extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { diets: false };
+        this.state = { owner: false };
     }
 
     /** On submit, try to insert the data. If successful, reset the form. */
@@ -35,11 +36,20 @@ class CreateUserProfile extends React.Component {
         UserProfile.insert({ name, image, owner, userPreferredFoods, diets },
             (error) => {
                 insertError = error;
-                console.log(error);
                 if (error) {
                     swal("Error", insertError.message, "error");
                 } else {
+                    UserDiet.insert({ owner, diets },
+                        (error) => {
+                            insertError = error;
+                            if (insertError) {
+                                swal("Error", insertError.message, "error");
+                            } else {
+                                swal("Success", "The student record was created.", "success");
+                            }
+                        });
                     swal("Success", "Your profile was created.", "success");
+                    this.setState({ owner });
                 }
             });
     }
@@ -52,13 +62,16 @@ class CreateUserProfile extends React.Component {
                     <Header as="h2" textAlign="center">User Profile</Header>
                     <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
                         <Segment>
-                            <TextField name='name' showInlineError={true} placeholder={'Your name'}/>
-                            <TextField name='image' showInlineError={true} placeholder={'image link'}/>
-                            <MultiSelectField name='userPreferredFoods' showInlineError={true} placeholder={'Select Food Preferences (optional)'}/>
-                            <MultiSelectField name='diets' showInlineError={true} placeholder={'Select Diet Preferences (optional)'}/>
-                            <SubmitField value='Submit'/>
+                            <TextField name="name" showInlineError={true} placeholder={"Your name"}/>
+                            <TextField name="image" showInlineError={true} placeholder={"image link"}/>
+                            <MultiSelectField name="userPreferredFoods" showInlineError={true}
+                                              placeholder={"Select Food Preferences (optional)"}/>
+                            <MultiSelectField name="diets" showInlineError={true}
+                                              placeholder={"Select Diet Preferences (optional)"}/>
+                            <SubmitField value="Submit"/>
                         </Segment>
                     </AutoForm>
+                    {this.state.owner ? <Message>Edit <a href={`/#/student/${this.state.owner}`}>this data</a></Message> : ''}
                 </Grid.Column>
             </Grid>
         );
