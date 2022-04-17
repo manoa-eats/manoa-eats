@@ -9,19 +9,9 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from "uniforms-bridge-simple-schema-2";
 import MultiSelectField from "../forms/controllers/MultiSelectField";
-import { UserProfile, UserProfileValues } from "../../api/userprofile/UserProfile";
-import SimpleSchema from "simpl-schema";
+import { UserProfile } from "../../api/userprofile/UserProfile";
+import { UserProfileInfoSchema as formSchema } from "../forms/UserProfileInfo";
 import { UserDiet } from "../../api/userdiet/UserDiet";
-
-
-const formSchema = new SimpleSchema({
-    name: { label: "Name", type: String },
-    image: { label: "Profile Picture", type: String },
-    userPreferredFoods: { label: "Foods", type: Array, optional: true },
-    "userPreferredFoods.$": { type: String, allowedValues: UserProfileValues.food },
-    diets: { label: "Diets", type: Array, optional: true },
-    "diets.$": { type: String, allowedValues: UserProfileValues.diet }
-});
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 

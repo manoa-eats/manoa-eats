@@ -5,20 +5,10 @@ import { AutoForm, TextField, SubmitField } from "uniforms-semantic";
 import swal from "sweetalert";
 import SimpleSchema2Bridge from "uniforms-bridge-simple-schema-2";
 import MultiSelectField from "../forms/controllers/MultiSelectField";
-import { UserProfile, UserProfileValues } from "../../api/userprofile/UserProfile";
-import SimpleSchema from "simpl-schema";
+import { UserProfile } from "../../api/userprofile/UserProfile";
+import { UserProfileInfoSchema as formSchema } from "../forms/UserProfileInfo";
 import { UserDiet } from "../../api/userdiet/UserDiet";
 import { Redirect } from "react-router-dom";
-
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-    name: { label: "Name", type: String },
-    image: { label: "Profile Picture", type: String },
-    userPreferredFoods: { label: "Foods", type: Array, optional: true },
-    "userPreferredFoods.$": { type: String, allowedValues: UserProfileValues.food },
-    diets: { label: "Diets", type: Array, optional: true },
-    "diets.$": { type: String, allowedValues: UserProfileValues.diet }
-});
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
