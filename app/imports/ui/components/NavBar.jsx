@@ -9,6 +9,8 @@ import { UserProfile } from "../../api/userprofile/UserProfile";
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
+
+    
     render() {
         const menuStyle = { marginBottom: "10px", backgroundColor: "#C1E1B0" };
         const username = () => {
@@ -20,6 +22,10 @@ class NavBar extends React.Component {
             }
             return Meteor.user({ fields: { "profile.role": 1 } }).role === "vendor";
         };
+        //Used to check that an owner has a database.
+        const checkDatabase = (Database) => {
+            return (Database.find({owner: `${this.props.currentUser}`}).fetch()[0])
+        }
         return (
             <Menu style={menuStyle} attached="top" borderless inverted>
                 <Menu.Item as={NavLink} activeClassName="" exact to="/">
@@ -31,12 +37,16 @@ class NavBar extends React.Component {
                     Restaurants</Menu.Item>
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
                     Hungry</Menu.Item>
-                {this.props.currentUser ? (
+                {this.props.currentUser && !checkDatabase(UserProfile) ? (
                     [
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/review" key="review">Write a
                             Review</Menu.Item>,
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/user-profile"
                                    key="profile">Create Profile</Menu.Item>,
+                    ]
+                ) : ""}
+                {this.props.currentUser && checkDatabase(UserProfile) ? (
+                    [
                         <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.currentUser}`}
                                    key="edit">Edit Profile</Menu.Item>,
                     ]
@@ -77,12 +87,17 @@ class NavBar extends React.Component {
 // Declare the types of all properties.
 NavBar.propTypes = {
     currentUser: PropTypes.string,
+    ready: PropTypes.bool.isRequired,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-const NavBarContainer = withTracker(() => ({
-    currentUser: Meteor.user() ? Meteor.user().username : "",
-}))(NavBar);
+const NavBarContainer = withTracker(() => {
+    const UserProfileSubscription = Meteor.subscribe('UserProfile');
+    return {
+        currentUser: Meteor.user() ? Meteor.user().username : "",
+        ready: UserProfileSubscription.ready(),
+    }
+})(NavBar);
 
 // Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter
 export default withRouter(NavBarContainer);

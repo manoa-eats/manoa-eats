@@ -93,9 +93,9 @@ EditUser.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
-    // Get the email from the URL field. See imports/ui/layouts/App.jsx for the route containing :email.
+    // Get the owner from the URL field. See imports/ui/layouts/App.jsx for the route containing :owner.
     const owner = match.params.owner;
-    // Request UserProfile and Enrollment docs. Won't be locally available until ready() returns true.
+    // Request UserProfile and UserDiet docs. Won't be locally available until ready() returns true.
     const UserProfileSubscription = Meteor.subscribe('UserProfile');
     const UserDietSubscription = Meteor.subscribe('UserDiet');
     return {
