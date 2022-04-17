@@ -61,14 +61,13 @@ class EditUser extends React.Component {
     renderPage() {
         // Build the model object that Uniforms will use to fill in the form.
         const model = _.extend({}, this.props.userProfileDoc, this.props.userDietDoc);
-        const image = 'https://skillz4kidzmartialarts.com/wp-content/uploads/2017/04/default-image-620x600.jpg';
         return (
             <Grid container centered>
                 <Grid.Column>
                     <Header as="h2" textAlign="center">Edit User Profile</Header>
                     <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={model}>
                         <Segment>
-                            <Image centered rounded src={image} size='medium' />
+                            <Image centered rounded src={model.image} size='medium' />
                             <TextField name="name" showInlineError={true} placeholder={"Your name"}/>
                             <TextField name="image" showInlineError={true} placeholder={"image link"}/>
                             <MultiSelectField name="userPreferredFoods" showInlineError={true}

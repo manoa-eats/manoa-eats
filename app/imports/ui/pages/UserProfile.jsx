@@ -8,7 +8,7 @@ import MultiSelectField from "../forms/controllers/MultiSelectField";
 import { UserProfile, UserProfileValues } from "../../api/userprofile/UserProfile";
 import SimpleSchema from "simpl-schema";
 import { UserDiet } from "../../api/userdiet/UserDiet";
-import UserProfileImage from "../components/UserProfileImage";
+import { Redirect } from "react-router-dom";
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -46,7 +46,7 @@ class CreateUserProfile extends React.Component {
                             if (insertError) {
                                 swal("Error", insertError.message, "error");
                             } else {
-                                swal("Success", "The student record was created.", "success");
+                                swal("Success", "CONGRATULATIONS! You profile was created.", "success");
                             }
                         });
                     swal("Success", "Your profile was created.", "success");
@@ -73,8 +73,7 @@ class CreateUserProfile extends React.Component {
                             <SubmitField value="Submit"/>
                         </Segment>
                     </AutoForm>
-                    {/*{this.state.owner ? <Redirect to={`/edit-profile/${this.state.owner}`}/> : ''}*/}
-                    {this.state.owner ? <Message>Edit <a href={`/#/edit-profile/${this.state.owner}`}>this data</a></Message> : ''}
+                    {this.state.owner ? <Redirect to={`/edit-profile/${this.state.owner}`}/> : ''}
                 </Grid.Column>
             </Grid>
         );

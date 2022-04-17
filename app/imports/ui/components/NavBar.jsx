@@ -37,7 +37,7 @@ class NavBar extends React.Component {
                             Review</Menu.Item>,
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/user-profile"
                                    key="profile">Create Profile</Menu.Item>,
-                        <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.userprofile}`}
+                        <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.currentUser}`}
                                    key="edit">Edit Profile</Menu.Item>,
                     ]
                 ) : ""}
@@ -77,13 +77,11 @@ class NavBar extends React.Component {
 // Declare the types of all properties.
 NavBar.propTypes = {
     currentUser: PropTypes.string,
-    userprofile: PropTypes.string
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 const NavBarContainer = withTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : "",
-    userprofile: Meteor.user() != null ? Meteor.user().username : '',
 }))(NavBar);
 
 // Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter
