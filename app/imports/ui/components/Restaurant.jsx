@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button, Rating, Modal, Form } from 'semantic-ui-react';
+import { Card, Image, Button, Rating, Modal, Form, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -48,7 +48,8 @@ class Restaurant extends React.Component {
               {
                 <Form style={{ padding: '15px' }}>
                   <Form.Field>
-                    <Rating defaultRating={this.props.restaurant.reviews} maxRating={5} icon='star' size='huge'/>
+                    <Header as='h5'>Please drag to leave Rating</Header>
+                    <Rating defaultRating={0} maxRating={5} icon='star' size='huge'/>
                   </Form.Field>
                   <Form.Field>
                     <Form.TextArea label='Write Review Below' placeholder='Tell us more about your experience:' />
