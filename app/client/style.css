@@ -2,3 +2,17 @@
   background: url('images/food.png') no-repeat center center fixed;
   background-size: cover;
 }
+
+#body {
+  background: url('images/food.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.gridbkg {
+  background-color: rgba(0, 0, 0, .64);
+  margin-top: 10%;
+}
+
+.margin {
+  margin-top: 10%;
+}
