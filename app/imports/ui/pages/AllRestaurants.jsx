@@ -3,10 +3,10 @@ import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Notes } from '../../api/note/Notes';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import Restaurant from '../components/Restaurant';
 import contact from '../components/Contact';
+import { Reviews } from '../../api/review/Reviews';
 
 /** Renders a table containing all of the Stuff documents. */
 class AllRestaurants extends React.Component {
@@ -25,7 +25,7 @@ class AllRestaurants extends React.Component {
           {this.props.restaurants.map((restaurant, index) => <Restaurant
             key={index}
             restaurant={restaurant}
-            notes={this.props.notes.filter(note => (note.contactId === contact._id))}/>)}
+            reviews={this.props.reviews.filter(review => (review.contactId === contact._id))}/>)}
         </Card.Group>
       </Container>
     );
@@ -35,7 +35,7 @@ class AllRestaurants extends React.Component {
 // Require an array of Stuff documents in the props.
 AllRestaurants.propTypes = {
   restaurants: PropTypes.array.isRequired,
-  notes: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -43,15 +43,15 @@ AllRestaurants.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Restaurants.userPublicationName);
-  const subscription2 = Meteor.subscribe(Notes.userPublicationName);
+  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() && subscription2.ready();
   // Get the Stuff documents
   const restaurants = Restaurants.collection.find({}).fetch();
-  const notes = Notes.collection.find({}).fetch();
+  const reviews = Reviews.collection.find({}).fetch();
   return {
     restaurants,
-    notes,
+    reviews,
     ready,
   };
 })(AllRestaurants);

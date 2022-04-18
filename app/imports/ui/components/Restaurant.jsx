@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, Image, Button, Rating, Modal, Form, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import AddReview from './AddReview';
+import Review from './Review';
 
 // eslint-disable-next-line no-unused-vars
 class ModalContainer extends React.Component {
@@ -21,7 +23,6 @@ class ModalContainer extends React.Component {
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Restaurant extends React.Component {
-
   render() {
     return (
       <Card>
@@ -46,15 +47,7 @@ class Restaurant extends React.Component {
             size='large'
             content=
               {
-                <Form style={{ padding: '15px' }}>
-                  <Form.Field>
-                    <Header as='h5'>Please drag to leave Rating</Header>
-                    <Rating defaultRating={0} maxRating={5} icon='star' size='huge'/>
-                  </Form.Field>
-                  <Form.Field>
-                    <Form.TextArea label='Write Review Below' placeholder='Tell us more about your experience:' />
-                  </Form.Field>
-                </Form>
+                <AddReview owner={this.props.restaurant.owner} contactId={this.props.restaurant._id}/>
               }
           />
 
@@ -68,7 +61,6 @@ class Restaurant extends React.Component {
 // Require a document to be passed to this component.
 Restaurant.propTypes = {
   restaurant: PropTypes.object.isRequired,
-  notes: PropTypes.array.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
