@@ -21,6 +21,7 @@ class Landing extends React.Component {
           <Grid.Column textAlign='center' width={8} className={'margin'}>
             <Grid.Row verticalAlign={'middle'}>
               <Search
+                size={'massive'}
                 placeholder={'Search for food'}
               />
             </Grid.Row>
