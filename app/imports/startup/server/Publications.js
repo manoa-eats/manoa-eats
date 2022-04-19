@@ -4,6 +4,9 @@ import { Contacts } from '../../api/contact/Contacts';
 import { Notes } from '../../api/note/Notes';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import { Reviews } from '../../api/review/Reviews';
+import { UserProfile } from "../../api/userprofile/UserProfile";
+import { UserDiet } from "../../api/userdiet/UserDiet";
+
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
 Meteor.publish(Contacts.userPublicationName, function () {
@@ -36,6 +39,14 @@ Meteor.publish(Restaurants.userPublicationName, function () {
     return Restaurants.collection.find({ owner: username });
   }
   return this.ready();
+});
+               
+Meteor.publish('UserProfile', function publishStudentData() {
+  return UserProfile.find();
+});
+
+Meteor.publish('UserDiet', function publishEnrollmentData() {
+  return UserDiet.find();
 });
 
 // Admin-level publication.

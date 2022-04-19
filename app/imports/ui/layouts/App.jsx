@@ -18,6 +18,8 @@ import ImFeelingHungry from '../pages/ImFeelingHungry';
 import VendorVerification from '../pages/VendorVerification';
 import Review from '../pages/Review';
 import VendorProfile from '../pages/VendorProfile';
+import UserProfile from "../pages/UserProfile";
+import EditProfile from "../pages/EditUserProfile";
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,6 +37,8 @@ class App extends React.Component {
             <ProtectedRoute path="/all-restaurants" component={AllRestaurants}/>
             <ProtectedRoute path="/im-feeling-hungry" component={ImFeelingHungry}/>
             <ProtectedRoute path="/vendor-verification" component={VendorVerification}/>
+            <ProtectedRoute path="/user-profile" component={UserProfile}/>
+            <ProtectedRoute path="/edit-profile/:owner" component={EditProfile}/>
             <ProtectedRoute path="/vendor-profile" component={VendorProfile}/>
             <ProtectedRoute path="/review" component={Review}/>
             <ProtectedRoute path="/edit/:_id" component={EditContact}/>
