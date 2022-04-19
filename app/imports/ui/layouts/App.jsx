@@ -18,8 +18,8 @@ import ImFeelingHungry from '../pages/ImFeelingHungry';
 import VendorVerification from '../pages/VendorVerification';
 import Review from '../pages/Review';
 import VendorProfile from '../pages/VendorProfile';
-import UserProfile from "../pages/UserProfile";
-import EditProfile from "../pages/EditUserProfile";
+import UserProfile from '../pages/UserProfile';
+import EditProfile from '../pages/EditUserProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
