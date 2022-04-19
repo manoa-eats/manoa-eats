@@ -4,18 +4,18 @@ import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'unif
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import PropTypes from 'prop-types';
-import { Notes } from '../../api/note/Notes';
+import { Reviews } from '../../api/review/Reviews';
 
 // Create a schema to specify the structure of the data to appear in the form.
-const bridge = new SimpleSchema2Bridge(Notes.schema);
+const bridge = new SimpleSchema2Bridge(Reviews.schema);
 
 /** Renders the Page for adding a document. */
-class AddNote extends React.Component {
+class AddReview extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
     const { note, owner, contactId, createdAt } = data;
-    Notes.collection.insert({ note, owner, contactId, createdAt },
+    Reviews.collection.insert({ note, owner, contactId, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -32,8 +32,12 @@ class AddNote extends React.Component {
     return (
       <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Segment>
-          <TextField label="Add a Restaurant note" name='note'/>
-          <SubmitField value='Submit'/>
+          <TextField
+            placeholder="Write review here..."
+            label="Add a Restaurant review"
+            name='note'
+            autoComplete="off" />
+          <SubmitField style={{ background: '#4CAF50' }} value='Submit'/>
           <ErrorsField/>
           <HiddenField name='owner' value={this.props.owner}/>
           <HiddenField name='contactId' value={this.props.contactId}/>
@@ -44,9 +48,9 @@ class AddNote extends React.Component {
   }
 }
 
-AddNote.propTypes = {
+AddReview.propTypes = {
   owner: PropTypes.string.isRequired,
   contactId: PropTypes.string.isRequired,
 };
 
-export default AddNote;
+export default AddReview;
