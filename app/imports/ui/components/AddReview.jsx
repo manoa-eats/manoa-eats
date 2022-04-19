@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment, Header } from 'semantic-ui-react';
+import { Segment } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';

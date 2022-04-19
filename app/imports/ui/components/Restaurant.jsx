@@ -1,5 +1,5 @@
 // eslint-disable-next-line max-classes-per-file
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Image, Button, Rating, Modal } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
