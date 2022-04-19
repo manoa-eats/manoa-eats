@@ -1,9 +1,9 @@
-import React from 'react';
-import { Card, Image, Button, Rating, Modal, Form, Header } from 'semantic-ui-react';
+// eslint-disable-next-line max-classes-per-file
+import React, { useState } from 'react';
+import { Card, Image, Button, Rating, Modal } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import AddReview from './AddReview';
-import Review from './Review';
 
 // eslint-disable-next-line no-unused-vars
 class ModalContainer extends React.Component {
@@ -23,6 +23,7 @@ class ModalContainer extends React.Component {
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Restaurant extends React.Component {
+
   render() {
     return (
       <Card>
@@ -41,17 +42,14 @@ class Restaurant extends React.Component {
         </Card.Content>
         <Card.Content style={{ textAlign: 'center', paddingTop: '15px' }} extra>
           <Modal
-            header='Add A Review'
+            header='Add A Review '
             trigger={<Button primary>Add A Review!</Button>}
-            actions={['cancel', { key: 'Submit', content: 'Submit', positive: true }]}
+            actions={['cancel']}
             size='large'
-            content=
-              {
-                <AddReview owner={this.props.restaurant.owner} contactId={this.props.restaurant._id}/>
-              }
+            content={ <AddReview owner={this.props.restaurant.owner} contactId={this.props.restaurant._id}/> }
           />
 
-          <Rating defaultRating={this.props.restaurant.reviews} maxRating={5} disabled icon='star' size='huge'/>
+          <Rating style={{ paddingTop: '10px' }} defaultRating={this.props.restaurant.reviews} maxRating={5} disabled icon='star' size='huge'/>
         </Card.Content>
       </Card>
     );

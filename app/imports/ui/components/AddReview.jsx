@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import { Segment, Header } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -32,8 +32,12 @@ class AddReview extends React.Component {
     return (
       <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Segment>
-          <TextField label="Add a Restaurant review" name='note'/>
-          <SubmitField value='Submit'/>
+          <TextField
+            placeholder="Write review here..."
+            label="Add a Restaurant review"
+            name='note'
+            autoComplete="off" />
+          <SubmitField style={{ background: '#4CAF50' }} value='Submit'/>
           <ErrorsField/>
           <HiddenField name='owner' value={this.props.owner}/>
           <HiddenField name='contactId' value={this.props.contactId}/>
