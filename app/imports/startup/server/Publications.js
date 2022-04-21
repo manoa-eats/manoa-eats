@@ -6,9 +6,6 @@ import { UserProfile } from '../../api/userprofile/UserProfile';
 import { UserDiet } from '../../api/userdiet/UserDiet';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import { Reviews } from '../../api/review/Reviews';
-import { UserProfile } from "../../api/userprofile/UserProfile";
-import { UserDiet } from "../../api/userdiet/UserDiet";
-
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.

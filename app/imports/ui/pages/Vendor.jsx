@@ -1,12 +1,11 @@
 import React from 'react';
 import { Grid, Image, Loader, Header, Container, Segment, Divider } from 'semantic-ui-react';
-// import { TextField } from 'uniforms-semantic';
-// import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Contacts } from '../../api/contact/Contacts';
-import { Notes } from '../../api/note/Notes';
+import { Restaurants } from '../../api/Restaurant/Restaurants';
+import { Reviews } from '../../api/review/Reviews';
+import Review from '../components/Review';
 
 /** Renders the Page for adding a document. */
 class Vendor extends React.Component {
@@ -20,32 +19,32 @@ class Vendor extends React.Component {
     return (
       <Container>
         <Segment>
-          <Grid centered middle>
-            <Grid.Row divided="horizontally" columns={2}>
+          <Grid>
+            <Grid.Row columns={2}>
               <Grid.Column>
-                <Image src='https://www.majorgeeks.com/news/file/13592_going%20to%20work%20majorgeeks.jpg' rounded verticallyAlign='middle' centered bordered/>
+                <Image src={this.props.restaurants.image} rounded bordered/>
               </Grid.Column>
-              <Grid.Column centered>
-                <div verticallyAlign='middle'>
-                  <Header as="h1" align="center">Restaurant Name</Header>
+              {/* <Divider /> */}
+              <Grid.Column>
+                <div>
+                  <Header as="h1" textAlign="center">{this.props.restaurants.name}</Header>
                   <Header as="h3" align="center">Location</Header>
+                  <p>{this.props.restaurants.address}</p>
                   <Header as="h3" align="center">Hours</Header>
-                  <p align="center">SOMETHING</p>
+                  <p align="center">{this.props.restaurants.hour}</p>
                 </div>
               </Grid.Column>
             </Grid.Row>
             <Divider/>
-            <Grid.Row>
-              <Header centered>Menu</Header>
+            <Grid.Row centered>
+              <Header as="h2" align="center">Menu</Header>
               {/* <List> */}
               {/*  {this.props.map((item) => <List.Item>{item}</List.Item>)} */}
               {/* </List> */}
             </Grid.Row>
-            <Grid.Row>
-              <Header centered>Reviews</Header>
-              <Segment>
-                <p>{this.props.notes.note}</p>
-              </Segment>
+            <Grid.Row centered>
+              <Header as="h2" align="center">Reviews</Header>
+              {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
             </Grid.Row>
           </Grid>
         </Segment>
@@ -59,24 +58,25 @@ class Vendor extends React.Component {
 
 // Require an array of Stuff documents in the props.
 Vendor.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  notes: PropTypes.array.isRequired,
+  restaurants: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
+  // const docId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Contacts.userPublicationName);
-  const subscription2 = Meteor.subscribe(Notes.userPublicationName);
+  const subscription = Meteor.subscribe(Restaurants.userPublicationName);
+  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() && subscription2.ready();
   // Get the Stuff documents
-  const contacts = Contacts.collection.find({}).fetch();
-  const notes = Notes.collection.find({}).fetch();
+  const restaurants = Restaurants.collection.find({}).fetch();
+  const reviews = Reviews.collection.find({}).fetch();
   return {
-    contacts,
-    notes,
+    restaurants,
+    reviews,
     ready,
   };
 })(Vendor);
