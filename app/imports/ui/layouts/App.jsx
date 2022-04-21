@@ -40,7 +40,7 @@ class App extends React.Component {
             <ProtectedRoute path="/vendor-review" component={VendorVerification}/>
             <ProtectedRoute path="/user-profile" component={UserProfile}/>
             <ProtectedRoute path="/edit-profile/:owner" component={EditProfile}/>
-            <ProtectedRoute path="/vendor-profile" component={VendorProfile}/>
+            <ProtectedRoute path="/vendor-profile/:_id" component={VendorProfile}/>
             <ProtectedRoute path="/review" component={Review}/>
             <ProtectedRoute path="/edit/:_id" component={EditContact}/>
             <ProtectedRoute path="/editRestaurant/:_id" component={EditRestaurant}/>
