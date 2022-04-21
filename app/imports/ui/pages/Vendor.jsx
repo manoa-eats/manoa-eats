@@ -35,7 +35,8 @@ class Vendor extends React.Component {
               </Grid.Column>
             </Grid.Row>
             <Divider/>
-            <Grid.Row><Header centered>Menu</Header>
+            <Grid.Row>
+              <Header centered>Menu</Header>
               {/* <List> */}
               {/*  {this.props.map((item) => <List.Item>{item}</List.Item>)} */}
               {/* </List> */}
