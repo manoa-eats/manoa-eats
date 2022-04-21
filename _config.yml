@@ -1,8 +1,0 @@
-title: Manoa Eats
-description: The website that you will want to use anytime you want something yummy to eat at Manoa.
-google_analytics:
-show_downloads: true
-theme: jekyll-theme-cayman
-
-gems:
-  - jekyll-mentions
