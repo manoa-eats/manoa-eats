@@ -4,8 +4,8 @@ import { Contacts } from '../../api/contact/Contacts';
 import { Notes } from '../../api/note/Notes';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import { Reviews } from '../../api/review/Reviews';
-import { UserProfile } from "../../api/userprofile/UserProfile";
-import { UserDiet } from "../../api/userdiet/UserDiet";
+import { UserProfile } from '../../api/userprofile/UserProfile';
+import { UserDiet } from '../../api/userdiet/UserDiet';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -40,7 +40,7 @@ Meteor.publish(Restaurants.userPublicationName, function () {
   }
   return this.ready();
 });
-               
+
 Meteor.publish('UserProfile', function publishStudentData() {
   return UserProfile.find();
 });
@@ -62,6 +62,13 @@ Meteor.publish(Contacts.adminPublicationName, function () {
 Meteor.publish(Restaurants.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Restaurants.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Reviews.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Reviews.collection.find();
   }
   return this.ready();
 });

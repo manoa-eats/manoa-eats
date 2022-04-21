@@ -25,10 +25,10 @@ class EditUser extends React.Component {
         const userDietId = this.props.userDietDoc._id;
         const { name, image, userPreferredFoods, diets } = data;
         UserProfile.update(userProfileId, { $set: { name, image, userPreferredFoods, diets } },
-            (error) => { 
+            (error) => {
                 updateError = error;
-                if (updateError) {
-                    swal('Error', updateError.message, 'error');
+        if (updateError) {
+          swal('Error', updateError.message, 'error');
                 } else {
                     UserDiet.update(userDietId, { $set: { diets } },
                         (error) => { updateError = error; });
