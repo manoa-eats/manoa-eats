@@ -1,15 +1,48 @@
 import React from 'react';
-import { Header } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import RestaurantAdmin from '../components/RestaurantAdmin';
+import { Restaurants } from '../../api/Restaurant/Restaurants';
 
-/** Render a Not Found page if the user enters a URL that doesn't match any route. */
+/** Renders a table containing all of the Stuff documents. */
 class VendorVerification extends React.Component {
+
+  // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  // Render the page once subscriptions have been received.
+  renderPage() {
     return (
-      <Header as="h2" textAlign="center">
-        <p>Page not found</p>
-      </Header>
+      <Container>
+        <Header as="h1" textAlign="center" inverted>List Restaurant (Admin)</Header>
+        <Card.Group centered>
+          {this.props.restaurants.map((restaurant, index) => <RestaurantAdmin key={index} restaurant={restaurant} />)}
+        </Card.Group>
+      </Container>
     );
   }
 }
 
-export default VendorVerification;
+// Require an array of Stuff documents in the props.
+VendorVerification.propTypes = {
+  restaurants: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Restaurants.adminPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the Stuff documents
+  const restaurants = Restaurants.collection.find({}).fetch();
+  return {
+    restaurants,
+    ready,
+  };
+})(VendorVerification);
