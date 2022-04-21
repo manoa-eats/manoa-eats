@@ -1,8 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Button } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import swal from 'sweetalert';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import Restaurant from '../components/Restaurant';
 import contact from '../components/Contact';
@@ -13,7 +14,7 @@ class ImFeelingHungry extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+    return (this.props.ready) ? this.renderPage() : <Loader active>I am Feeling Hungry</Loader>;
   }
 
   // Render the page once subscriptions have been received.
@@ -26,9 +27,24 @@ class ImFeelingHungry extends React.Component {
             key={index}
             restaurant={restaurant}
             reviews={this.props.reviews.filter(review => (review.contactId === contact._id))}/>)}
+          <Button title="Pick Another Restaurant" onPress={this.GenerateRandomNumber} />
         </Card.Group>
       </Container>
     );
+  }
+
+  // On submit, insert the data.
+  submit(data, formRef) {
+    const { note, owner, contactId, createdAt } = data;
+    Reviews.collection.insert({ note, owner, contactId, createdAt },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Item added successfully', 'success');
+          formRef.reset();
+        }
+      });
   }
 }
 
