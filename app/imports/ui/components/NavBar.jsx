@@ -34,7 +34,7 @@ class NavBar extends React.Component {
                     Restaurants</Menu.Item>
         <Menu.Item as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
                     Hungry</Menu.Item>
-        {this.props.currentUser && !checkDatabase(UserProfile) ? (
+        {this.props.currentUser && !checkDatabase(UserProfile) && !username() ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to="/review" key="review">Write a
                             Review</Menu.Item>,
@@ -42,7 +42,7 @@ class NavBar extends React.Component {
               key="profile">Create Profile</Menu.Item>,
           ]
         ) : ''}
-        {this.props.currentUser && checkDatabase(UserProfile) ? (
+        {this.props.currentUser && checkDatabase(UserProfile) && !username() ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.currentUser}`}
               key="edit">Edit Profile</Menu.Item>,
@@ -53,7 +53,7 @@ class NavBar extends React.Component {
                         Verification</Menu.Item>
         ) : ''}
         {(username()) ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="admin">Vendor
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
                         Profile</Menu.Item>
         ) : ''}
         <Menu.Item position="right">
