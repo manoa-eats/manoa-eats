@@ -41,7 +41,6 @@ class EditUser extends React.Component {
           }
         }
       });
-
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
