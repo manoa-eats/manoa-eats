@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, Image, Button, Rating, Modal } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AddReview from './AddReview';
 
 // eslint-disable-next-line no-unused-vars
@@ -33,7 +33,8 @@ class Restaurant extends React.Component {
             size='medium'
             src={this.props.restaurant.image}
           />
-          <Card.Header>{this.props.restaurant.name}</Card.Header>
+          <Card.Header>
+            <Link to={`/vendor-profile/${this.props.restaurant._id}`}>{this.props.restaurant.name}</Link></Card.Header>
           <Card.Meta>{this.props.restaurant.address}</Card.Meta>
           <Card.Meta>{this.props.restaurant.hour}</Card.Meta>
           <Card.Description>

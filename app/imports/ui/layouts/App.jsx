@@ -21,6 +21,7 @@ import VendorProfile from '../pages/VendorProfile';
 import Vendor from '../pages/Vendor';
 import UserProfile from '../pages/UserProfile';
 import EditProfile from '../pages/EditUserProfile';
+import EditRestaurant from '../pages/EditRestaurant';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -38,12 +39,13 @@ class App extends React.Component {
             <ProtectedRoute path="/all-restaurants" component={AllRestaurants}/>
             <ProtectedRoute path="/vendor-page" component={Vendor}/>
             <ProtectedRoute path="/im-feeling-hungry" component={ImFeelingHungry}/>
-            <ProtectedRoute path="/vendor-verification" component={VendorVerification}/>
+            <ProtectedRoute path="/vendor-review" component={VendorVerification}/>
             <ProtectedRoute path="/user-profile" component={UserProfile}/>
             <ProtectedRoute path="/edit-profile/:owner" component={EditProfile}/>
-            <ProtectedRoute path="/vendor-profile" component={VendorProfile}/>
+            <ProtectedRoute path="/vendor-profile/:_id" component={VendorProfile}/>
             <ProtectedRoute path="/review" component={Review}/>
             <ProtectedRoute path="/edit/:_id" component={EditContact}/>
+            <ProtectedRoute path="/editRestaurant/:_id" component={EditRestaurant}/>
             <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>

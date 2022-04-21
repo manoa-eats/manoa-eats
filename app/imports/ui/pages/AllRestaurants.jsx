@@ -43,9 +43,12 @@ AllRestaurants.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Restaurants.userPublicationName);
+  const subscriptionAdmin = Meteor.subscribe(Restaurants.adminPublicationName);
   const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
+  const subscription2Admin = Meteor.subscribe(Reviews.adminPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready() && subscription2.ready();
+  const ready = subscription.ready() && subscriptionAdmin.ready();
+  const ready2 = subscription2.ready() && subscription2Admin.ready();
   // Get the Stuff documents
   const restaurants = Restaurants.collection.find({}).fetch();
   const reviews = Reviews.collection.find({}).fetch();
@@ -53,5 +56,6 @@ export default withTracker(() => {
     restaurants,
     reviews,
     ready,
+    ready2,
   };
 })(AllRestaurants);

@@ -1,13 +1,17 @@
 import React from 'react';
-import { Grid, Loader, Header, Image, Container, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
+import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 
+const bridge = new SimpleSchema2Bridge(Restaurants.schema);
+
 /** Renders the Page for editing a single document. */
-class VendorProfile extends React.Component {
+class EditRestaurant extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
@@ -25,25 +29,30 @@ class VendorProfile extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
     return (
-      <Container>
-        <Segment>
-          <Grid container centered>
-            <Grid.Column>
-              <Header as="h2" textAlign="center">{this.props.doc.name}</Header>
-              <Image src={this.props.doc.image} centered size='large' />
-              <p>{this.props.doc.hour}</p>
-              <p>{this.props.doc.address}</p>
-              <p>{this.props.doc.description}</p>
-            </Grid.Column>
-          </Grid>
-        </Segment>
-      </Container>
+      <Grid container centered>
+        <Grid.Column>
+          <Header as="h2" textAlign="center" inverted >Edit Restaurant </Header>
+          <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
+            <Segment>
+              <TextField name='name'/>
+              <TextField name='hour'/>
+              <TextField name='reviews'/>
+              <TextField name='address'/>
+              <TextField name='image'/>
+              <LongTextField name='description'/>
+              <SubmitField value='Submit'/>
+              <ErrorsField/>
+              <HiddenField name='owner' />
+            </Segment>
+          </AutoForm>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
 
 // Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use.
-VendorProfile.propTypes = {
+EditRestaurant.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -63,4 +72,4 @@ export default withTracker(({ match }) => {
     doc,
     ready,
   };
-})(VendorProfile);
+})(EditRestaurant);
