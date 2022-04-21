@@ -43,7 +43,7 @@ class App extends React.Component {
             <ProtectedRoute path="/vendor-profile" component={VendorProfile}/>
             <ProtectedRoute path="/review" component={Review}/>
             <ProtectedRoute path="/edit/:_id" component={EditContact}/>
-            <AdminProtectedRoute path="/editRestaurant" component={EditRestaurant}/>
+            <ProtectedRoute path="/editRestaurant/:_id" component={EditRestaurant}/>
             <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>
