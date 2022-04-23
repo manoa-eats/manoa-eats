@@ -24,7 +24,7 @@ class AllRestaurants extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    const restaurants = this.props.restaurants;
+    let restaurants = this.props.restaurants;
 
     const compName = function (a, b) {
       const nameA = a.name.toUpperCase(); // ignore upper and lowercase
@@ -41,16 +41,14 @@ class AllRestaurants extends React.Component {
     };
 
     const compRating = function (a, b) {
-      const nameA = a.reviews.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.reviews.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
+      const A = parseInt(a.reviews, 10);
+      const B = parseInt(b.reviews, 10);
+      if (A < B) {
         return -1;
       }
-      if (nameA > nameB) {
+      if (A > B) {
         return 1;
       }
-
-      // names must be equal
       return 0;
     };
 
@@ -60,7 +58,9 @@ class AllRestaurants extends React.Component {
     } else if (this.state.sortRating) {
       // sort by value
       restaurants.sort(compRating);
-    } else {
+    }
+
+    if (!this.state.sortName && !this.state.sortRating) {
       restaurants.reverse();
     }
 
