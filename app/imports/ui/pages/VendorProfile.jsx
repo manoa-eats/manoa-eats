@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Segment, Header, Image } from 'semantic-ui-react';
 // Must use destructuring import to avoid https://github.com/vazco/uniforms/issues/433
-import { AutoForm, TextField, SubmitField, LongTextField } from 'uniforms-semantic';
+import { AutoForm, TextField, SubmitField, LongTextField, DateField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Redirect } from 'react-router-dom';
@@ -16,15 +16,19 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 class CreateVendorProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { owner: false, image: 'https://react.semantic-ui.com/images/wireframe/image.png' };
+    this.state = {
+      owner: false,
+      image: 'https://react.semantic-ui.com/images/wireframe/image.png',
+    };
   }
 
   /** On submit, try to insert the data. If successful, reset the form. */
   submit(data) {
     let insertError;
-    const { name, image, location, description, open, openHour, close, closeHour, diets } = data;
+    const { name, image, location, description, weekdayOpen, openHour, closeHour, diets } = data;
     const owner = Meteor.user().username;
-    VendorProfile.insert({ name, image, owner, location, description, open, openHour, close, closeHour, diets },
+    // eslint-disable-next-line no-console
+    VendorProfile.insert({ name, image, owner, location, description, weekdayOpen, openHour, closeHour, diets },
       (error) => {
         insertError = error;
         if (error) {
@@ -41,20 +45,28 @@ class CreateVendorProfile extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">User Profile</Header>
+          <Header as="h2" style={{ color: 'white' }} textAlign="center">Vendor Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
             <Segment>
               <Image centered rounded src={this.state.image} size='medium' />
               <TextField name="name" showInlineError={true} placeholder={'Your organization name'}/>
               <TextField name="image" showInlineError={true} placeholder={'image link'}/>
-              <MultiSelectField name="diets" showInlineError={true}
-                placeholder={'Select Diet Preferences (optional)'}/>
               <TextField name="location" showInlineError={true} placeholder={'Address'}/>
               <LongTextField name="description" showInlineError={true} placeholder={'Tell the world a little bit about your venue'}/>
+              <MultiSelectField name="weekdayOpen" showInlineError={true}
+                placeholder={'Weekdays open'}/>
+              <DateField
+                name='openHour'
+              />
+              <DateField
+                name='closeHour'
+              />
+              <MultiSelectField name="diets" showInlineError={true}
+                placeholder={'Accommodating Diets'}/>
               <SubmitField value="Submit"/>
             </Segment>
           </AutoForm>
-          {this.state.owner ? <Redirect to={`/edit-profile/${this.state.owner}`}/> : ''}
+          {this.state.owner ? <Redirect to={`/edit-vendor-profile/${this.state.owner}`}/> : ''}
         </Grid.Column>
       </Grid>
     );

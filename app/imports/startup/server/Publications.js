@@ -6,6 +6,7 @@ import { Restaurants } from '../../api/Restaurant/Restaurants';
 import { Reviews } from '../../api/review/Reviews';
 import { UserProfile } from '../../api/userprofile/UserProfile';
 import { UserDiet } from '../../api/userdiet/UserDiet';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -47,6 +48,10 @@ Meteor.publish('UserProfile', function publishStudentData() {
 
 Meteor.publish('UserDiet', function publishEnrollmentData() {
   return UserDiet.find();
+});
+
+Meteor.publish('VendorProfile', function publishEnrollmentData() {
+  return VendorProfile.find();
 });
 
 // Admin-level publication.

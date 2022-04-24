@@ -6,6 +6,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header, Image } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 import { UserProfile } from '../../api/userprofile/UserProfile';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
@@ -56,6 +57,19 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
                         Profile</Menu.Item>
         ) : ''}
+        {(!username() && checkDatabase(VendorProfile)) ? (
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
+            Profile</Menu.Item>
+        ) : ''}
+        {this.props.currentUser && checkDatabase(VendorProfile) && !username() ? (
+          [
+            <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-vendor-profile/${this.props.currentUser}`}
+              key="edit">Edit Vendor Profile</Menu.Item>,
+          ]
+        ) : ''}
+        {(username()) ? (
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/create-menu" key="menu">Create Menu</Menu.Item>
+        ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
             <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
@@ -90,9 +104,10 @@ NavBar.propTypes = {
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 const NavBarContainer = withTracker(() => {
   const UserProfileSubscription = Meteor.subscribe('UserProfile');
+  const VendorProfileSubscription = Meteor.subscribe('VendorProfile');
   return {
     currentUser: Meteor.user() ? Meteor.user().username : '',
-    ready: UserProfileSubscription.ready(),
+    ready: UserProfileSubscription.ready() && VendorProfileSubscription.ready(),
   };
 })(NavBar);
 
