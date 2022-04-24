@@ -4,7 +4,7 @@ import { VendorProfileValues as DataValues } from '../../api/vendorprofile/Vendo
 const VendorProfileInfoSchema = new SimpleSchema({
   name: { label: 'Organization Name', type: String },
   image: { label: 'Profile Image', type: String },
-  owner: { label: 'Owner', type: String },
+  owner: { label: 'Owner', type: String, optional: true },
   location: { label: 'Location', type: String },
   description: { label: 'Description', type: String, optional: true },
   weekdayOpen: { label: 'Weekdays open', type: Array },

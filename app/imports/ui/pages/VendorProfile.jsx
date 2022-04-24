@@ -27,7 +27,6 @@ class CreateVendorProfile extends React.Component {
     let insertError;
     const { name, image, location, description, weekdayOpen, openHour, closeHour, diets } = data;
     const owner = Meteor.user().username;
-    // eslint-disable-next-line no-console
     VendorProfile.insert({ name, image, owner, location, description, weekdayOpen, openHour, closeHour, diets },
       (error) => {
         insertError = error;
