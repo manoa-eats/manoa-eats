@@ -53,18 +53,14 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-review" key="admin">Vendor
                         Verification</Menu.Item>
         ) : ''}
-        {(username()) ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
-                        Profile</Menu.Item>
-        ) : ''}
-        {(!username() && checkDatabase(VendorProfile)) ? (
+        {(username() && !checkDatabase(VendorProfile)) ? (
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
             Profile</Menu.Item>
         ) : ''}
-        {this.props.currentUser && checkDatabase(VendorProfile) && !username() ? (
+        {username() && checkDatabase(VendorProfile) ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-vendor-profile/${this.props.currentUser}`}
-              key="edit">Edit Vendor Profile</Menu.Item>,
+              key="edit-vendor">Edit Vendor Profile</Menu.Item>,
           ]
         ) : ''}
         {(username()) ? (

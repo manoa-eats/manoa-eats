@@ -18,8 +18,8 @@ const VendorProfileSchema = new SimpleSchema({
   description: String,
   weekdayOpen: { type: Array },
   'weekdayOpen.$': { type: String, allowedValues: VendorProfileValues.weekday },
-  openHour: { type: Date, optional: true },
-  closeHour: { type: Date, optional: true },
+  openHour: { type: Date },
+  closeHour: { type: Date },
   diets: { type: Array, optional: true },
   'diets.$': { type: String, allowedValues: VendorProfileValues.diet },
 }, { tracker: Tracker });

@@ -21,7 +21,6 @@ import VendorProfile from '../pages/VendorProfile';
 import UserProfile from '../pages/UserProfile';
 import EditProfile from '../pages/EditUserProfile';
 import EditRestaurant from '../pages/EditRestaurant';
-import CreateMenu from '../pages/CreateMenu';
 import EditVendorProfile from '../pages/EditVendorProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
