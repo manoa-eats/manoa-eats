@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import { connectField, filterDOMProps } from 'uniforms';
-import { Dropdown } from 'semantic-ui-react';
 import { _ } from 'meteor/underscore';
 
 /**
@@ -33,11 +32,11 @@ const renderDropdown = ({ allowedValues, disabled, placeholder, onChange, transf
   const options = _.map(allowedValues, (val, index) => ({
     key: index,
     text: transform ? transform(val) : val,
-    value: val ? 'AM' : 'PM',
+    value: val.toLocaleTimeString(),
   }));
   return (
     <input placeholder={placeholder} disabled={disabled}
-      options={options} onChange={(event) => onChange(event.target.value)} value={value} type='time'/>
+      options={options} onChange={(event) => onChange(event.target.value)} value={value ?? ''} type='time'/>
   );
 };
 

@@ -6,7 +6,7 @@ const VendorProfileInfoSchema = new SimpleSchema({
   image: { label: 'Profile Image', type: String },
   owner: { label: 'Owner', type: String, optional: true },
   location: { label: 'Location', type: String },
-  description: { label: 'Description', type: String, optional: true },
+  description: { label: 'Description', type: String },
   weekdayOpen: { label: 'Weekdays open', type: Array },
   'weekdayOpen.$': { type: String, allowedValues: DataValues.weekday },
   openHour: { label: 'Hours open', type: Date },

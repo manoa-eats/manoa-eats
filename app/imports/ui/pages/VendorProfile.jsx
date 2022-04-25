@@ -60,7 +60,6 @@ class CreateVendorProfile extends React.Component {
               />
               <DateField
                 name='closeHour'
-                type='time'
               />
               <MultiSelectField name="diets" showInlineError={true}
                 placeholder={'Accommodating Diets'}/>
