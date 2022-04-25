@@ -1,8 +1,8 @@
 // eslint-disable-next-line max-classes-per-file
 import React from 'react';
-import { Card, Image, Button, Rating, Modal, Link } from 'semantic-ui-react';
+import { Card, Image, Button, Rating, Modal } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import AddReview from './AddReview';
 
 // eslint-disable-next-line no-unused-vars
@@ -33,7 +33,9 @@ class Restaurant extends React.Component {
             size='medium'
             src={this.props.restaurant.image}
           />
+
           <Card.Header><Link to={`/vendor/${this.props.restaurant._id}`}>{this.props.restaurant.name}</Link></Card.Header>
+
           <Card.Meta>{this.props.restaurant.address}</Card.Meta>
           <Card.Meta>{this.props.restaurant.hour}</Card.Meta>
           <Card.Description>
