@@ -4,11 +4,18 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
-import { Reviews } from '../../api/review/Reviews';
-import Review from '../components/Review';
+// import { Reviews } from '../../api/review/Reviews';
+// import Review from '../components/Review';
 
 /** Renders the Page for adding a document. */
 class Vendor extends React.Component {
+
+  // submit(data) {
+  //   const { name, hour, reviews, address, image, description, _id } = data;
+  //   Restaurants.collection.update(_id, { $set: { name, hour, reviews, image, address, description } }, (error) => (error ?
+  //       swal('Error', error.message, 'error') :
+  //       swal('Success', 'Item updated successfully', 'success')));
+  // }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
@@ -22,16 +29,16 @@ class Vendor extends React.Component {
           <Grid>
             <Grid.Row columns={2}>
               <Grid.Column>
-                <Image src={this.props.restaurants.image} rounded bordered/>
+                <Image src={this.props.doc.image} centered size='large' rounded bordered/>
               </Grid.Column>
               {/* <Divider /> */}
               <Grid.Column>
                 <div>
-                  <Header as="h1" textAlign="center">{this.props.restaurants.name}</Header>
+                  <Header as="h1" textAlign="center">{this.props.doc.name}</Header>
                   <Header as="h3" align="center">Location</Header>
-                  <p>{this.props.restaurants.address}</p>
+                  <p>{this.props.doc.address}</p>
                   <Header as="h3" align="center">Hours</Header>
-                  <p align="center">{this.props.restaurants.hour}</p>
+                  <p align="center">{this.props.doc.hour}</p>
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -43,8 +50,8 @@ class Vendor extends React.Component {
               {/* </List> */}
             </Grid.Row>
             <Grid.Row centered>
-              <Header as="h2" align="center">Reviews</Header>
-              {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
+              {/* <Header as="h2" align="center">Reviews</Header> */}
+              {/* {this.props.reviews.note.map((review, index) => <Review key={index} review={review}/>)} */}
             </Grid.Row>
           </Grid>
         </Segment>
@@ -58,25 +65,27 @@ class Vendor extends React.Component {
 
 // Require an array of Stuff documents in the props.
 Vendor.propTypes = {
-  restaurants: PropTypes.array.isRequired,
-  reviews: PropTypes.array.isRequired,
+  // restaurants: PropTypes.array.isRequired,
+  // reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
+  doc: PropTypes.object,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-export default withTracker(() => {
-  // const docId = match.params._id;
+export default withTracker(({ match }) => {
+  const docId = match.params._id;
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Restaurants.userPublicationName);
-  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
+  // const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready() && subscription2.ready();
+  const ready = subscription.ready(); // && subscription2.ready();
   // Get the Stuff documents
-  const restaurants = Restaurants.collection.find({}).fetch();
-  const reviews = Reviews.collection.find({}).fetch();
+  // const restaurants = Restaurants.collection.find({}).fetch();
+  // const reviews = Reviews.collection.find({}).fetch();
   return {
-    restaurants,
-    reviews,
+    // restaurants,
+    // reviews: Reviews.collection.find({ restaurantName: (Restaurants.collection.findOne(docId) !== undefined) ? (Restaurants.collection.findOne(docId).name) : ('') }).fetch(),
     ready,
+    doc: Restaurants.collection.findOne(docId),
   };
 })(Vendor);
