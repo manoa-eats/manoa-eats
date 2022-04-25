@@ -19,7 +19,7 @@ class AllRestaurants extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
+      <Container id='all-Restaurants-page'>
         <Header as="h2" textAlign="center" inverted>List Restaurants</Header>
         <Card.Group centered>
           {this.props.restaurants.map((restaurant, index) => <Restaurant

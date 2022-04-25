@@ -5,7 +5,7 @@ import { Grid, Header, List, Search } from 'semantic-ui-react';
 class Landing extends React.Component {
   render() {
     return (
-      <div>
+      <div id='landing-page'>
         <Grid stackable columns={3} >
           <Grid.Column textAlign='center' className={'gridbkg'}>
             <Header as="h1" inverted >Hours</Header>
