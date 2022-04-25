@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, Segment, Header, Image } from 'semantic-ui-react';
 // Must use destructuring import to avoid https://github.com/vazco/uniforms/issues/433
-import { AutoForm, TextField, SubmitField, LongTextField } from 'uniforms-semantic';
+import { AutoForm, TextField, SubmitField, LongTextField, DateField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
-import DateField from '../forms/controllers/DateField';
+// import DateField from '../forms/controllers/DateField';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { VendorProfileInfoSchema as formSchema } from '../forms/VendorProfileInfo';
 
@@ -57,9 +57,13 @@ class CreateVendorProfile extends React.Component {
                 placeholder={'Weekdays open'}/>
               <DateField
                 name='openHour'
+                max={new Date()}
+                min={new Date()}
               />
               <DateField
                 name='closeHour'
+                max={new Date()}
+                min={new Date()}
               />
               <MultiSelectField name="diets" showInlineError={true}
                 placeholder={'Accommodating Diets'}/>

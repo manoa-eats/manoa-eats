@@ -27,16 +27,15 @@ import { _ } from 'meteor/underscore';
  */
 
 /* eslint react/prop-types: 0 */
-const renderDropdown = ({ allowedValues, disabled, placeholder, onChange, transform, value }) => {
-  // console.log('renderDateSelect value=%o allowedValues=%o', value, allowedValues);
+const renderDropdown = ({ allowedValues, disabled, placeholder, onChange, transform, value, name }) => {
   const options = _.map(allowedValues, (val, index) => ({
     key: index,
     text: transform ? transform(val) : val,
-    value: val.toLocaleTimeString(),
+    value: val,
   }));
   return (
     <input placeholder={placeholder} disabled={disabled}
-      options={options} onChange={(event) => onChange(event.target.value)} value={value ?? ''} type='time'/>
+      options={options} onChange={event => { onChange(event.target.valueAsDate.toLocaleTimeString()); }} value={value} type='time' name={name}/>
   );
 };
 
@@ -65,6 +64,7 @@ const DateSelect = ({
     {renderDropdown({
       allowedValues,
       disabled,
+      name,
       placeholder,
       onChange,
       transform,
