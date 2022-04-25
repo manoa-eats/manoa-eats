@@ -1,66 +1,63 @@
 import React from 'react';
-import { Grid, Loader, Header, Image, Container, Segment } from 'semantic-ui-react';
+import { Grid, Segment, Header } from 'semantic-ui-react';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
-import { Restaurants } from '../../api/Restaurant/Restaurants';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import SimpleSchema from 'simpl-schema';
+import { Contacts } from '../../api/contact/Contacts';
 
-/** Renders the Page for editing a single document. */
+// Create a schema to specify the structure of the data to appear in the form.
+const formSchema = new SimpleSchema({
+  firstName: String,
+  lastName: String,
+  address: String,
+  image: String,
+  description: String,
+});
+
+const bridge = new SimpleSchema2Bridge(formSchema);
+
+/** Renders the Page for adding a document. */
 class VendorProfile extends React.Component {
 
-  // On successful submit, insert the data.
-  submit(data) {
-    const { name, hour, reviews, address, image, description, _id } = data;
-    Restaurants.collection.update(_id, { $set: { name, hour, reviews, image, address, description } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
-  }
-
-  // If the subscription(s) have been received, render the page, otherwise show a loading icon.
-  render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  // On submit, insert the data.
+  submit(data, formRef) {
+    const { firstName, lastName, address, image, description } = data;
+    const owner = Meteor.user().username;
+    Contacts.collection.insert({ firstName, lastName, address, image, description, owner },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Item added successfully', 'success');
+          formRef.reset();
+        }
+      });
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-  renderPage() {
+  render() {
+    let fRef = null;
     return (
-      <Container>
-        <Segment>
-          <Grid container centered>
-            <Grid.Column>
-              <Header as="h2" textAlign="center">{this.props.doc.name}</Header>
-              <Image src={this.props.doc.image} centered size='large' />
-              <p>{this.props.doc.hour}</p>
-              <p>{this.props.doc.address}</p>
-              <p>{this.props.doc.description}</p>
-            </Grid.Column>
-          </Grid>
-        </Segment>
-      </Container>
+      <Grid container centered>
+        <Grid.Column>
+          <Header as="h2" textAlign="center" inverted>Add Contact</Header>
+          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+            <Segment>
+              <TextField name='firstName'/>
+              <TextField name='lastName'/>
+              <TextField name='address'/>
+              <TextField name='image'/>
+              <LongTextField name='description'/>
+              <SubmitField value='Submit'/>
+              <ErrorsField/>
+            </Segment>
+          </AutoForm>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
 
-// Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use.
-VendorProfile.propTypes = {
-  doc: PropTypes.object,
-  model: PropTypes.object,
-  ready: PropTypes.bool.isRequired,
-};
-
-// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-export default withTracker(({ match }) => {
-  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
-  const documentId = match.params._id;
-  // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Restaurants.adminPublicationName);
-  // Determine if the subscription is ready
-  const ready = subscription.ready();
-  // Get the document
-  const doc = Restaurants.collection.findOne(documentId);
-  return {
-    doc,
-    ready,
-  };
-})(VendorProfile);
+export default VendorProfile;

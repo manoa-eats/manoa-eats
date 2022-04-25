@@ -9,10 +9,13 @@ class Review extends React.Component {
     return (
       <Feed.Event >
         <Feed.Content>
-          <Feed.Date content={this.props.review.createdAt.toLocaleDateString('en-US')} />
           <Feed.Summary>
-            {this.props.review.note}
+            <a>{this.props.review.owner}</a>
+            <Feed.Date content={this.props.review.createdAt.toLocaleDateString('en-US')} />
           </Feed.Summary>
+          <Feed.Extra text>
+            {this.props.review.note}
+          </Feed.Extra>
         </Feed.Content>
       </Feed.Event>
     );
