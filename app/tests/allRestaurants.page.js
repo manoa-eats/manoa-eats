@@ -8,8 +8,20 @@ class AllRestaurantsPage {
 
   /** Asserts that this page is currently displayed. */
   async isDisplayed(testController) {
-    // This is first test to be run. Wait 10 seconds to avoid timeouts with GitHub Actions.
     await testController.expect(this.pageSelector.exists).ok();
+  }
+
+  /** Asserts that review modal is working. */
+  async reviewModal(testController, review) {
+    const reviewButton = Selector('button');
+    await testController.hover(reviewButton);
+    await testController.click(reviewButton);
+
+    const addReview = Selector('#addAReview');
+    await testController.hover(addReview);
+    await testController.click(addReview);
+    await testController.typeText(addReview, review);
+    await testController.click('#submitReview');
   }
 }
 
