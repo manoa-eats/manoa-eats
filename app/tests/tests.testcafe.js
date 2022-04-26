@@ -4,10 +4,12 @@ import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
 import { allRestaurantsPage } from './allRestaurants.page';
 import { vendorVerificationPage } from './VendorVerification.page';
+import { signupPage } from './signup.page';
 
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
+const tempCredentials = { username: 'apple@foo.com', userPassword: 'changeme', adminName: 'pear@foo.com', adminPassword: 'changeme' };
 const userCredentials = { username: 'john@foo.com', password: 'changeme' };
 const adminCredentials = { username: 'admin@foo.com', password: 'changeme' };
 const testingData = {
@@ -19,7 +21,7 @@ const testingData = {
   changeImage: 'https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560',
   changeDescription: 'Families own many different dogs, from mixed-breeds to purebreds, but which are the most popular? ' +
     'Purebred dog registry American Kennel Club has listed about 280 breeds on its website, and nearly 200 have made it into ' +
-    'the organization’s popularity ranking.'
+    'the organization’s popularity ranking.',
 };
 
 fixture('meteor-application-template-react localhost test with default db')
@@ -33,6 +35,19 @@ test('Test that signin and signout work', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, userCredentials.username, userCredentials.password);
   await navBar.isLoggedIn(testController, userCredentials.username);
+  await navBar.logout(testController);
+  await signoutPage.isDisplayed(testController);
+});
+
+test('Test that signup work', async (testController) => {
+  await navBar.gotoSignupPage(testController);
+  await signupPage.signupUser(testController, tempCredentials.username, tempCredentials.userPassword);
+  await navBar.isLoggedIn(testController, tempCredentials.username);
+  await navBar.logout(testController);
+
+  await navBar.gotoSignupPage(testController);
+  await signupPage.signupAdmin(testController, tempCredentials.adminName, tempCredentials.adminPassword);
+  await navBar.isLoggedIn(testController, tempCredentials.adminName);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });

@@ -70,15 +70,17 @@ class Signup extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Group inline>
+                <Form.Group id = 'userProfileButton' inline>
                   <label>Account Type</label>
                   <Form.Radio
+                    id='userRadio'
                     label='user'
                     usertype='user'
                     checked={usertype === 'user'}
                     onChange={this.handleChange}
                   />
                   <Form.Radio
+                    id='adminRadio'
                     label='vendor'
                     usertype='vendor'
                     checked={usertype === 'vendor'}
