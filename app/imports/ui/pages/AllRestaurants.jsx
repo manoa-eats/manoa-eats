@@ -24,8 +24,9 @@ class AllRestaurants extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    let restaurants = this.props.restaurants;
+    const restaurants = this.props.restaurants;
 
+    // Compare function to sort alphabetically
     const compName = function (a, b) {
       const nameA = a.name.toUpperCase(); // ignore upper and lowercase
       const nameB = b.name.toUpperCase(); // ignore upper and lowercase
@@ -40,24 +41,26 @@ class AllRestaurants extends React.Component {
       return 0;
     };
 
-    const compRating = function (a, b) {
-      const A = parseInt(a.reviews, 10);
-      const B = parseInt(b.reviews, 10);
-      if (A < B) {
-        return -1;
-      }
-      if (A > B) {
-        return 1;
-      }
-      return 0;
-    };
+    // Compare function to sort by review
+    // const compRating = function (a, b) {
+    //   const A = parseInt(a.reviews, 10);
+    //   const B = parseInt(b.reviews, 10);
+    //   if (A < B) {
+    //     return -1;
+    //   }
+    //   if (A > B) {
+    //     return 1;
+    //   }
+    //   return 0;
+    // };
 
     // Sort by name
     if (this.state.sortName) {
       restaurants.sort(compName);
     } else if (this.state.sortRating) {
       // sort by value
-      restaurants.sort(compRating);
+      // TODO: This doesn't work
+      // restaurants.sort(compRating);
     }
 
     if (!this.state.sortName && !this.state.sortRating) {
@@ -75,14 +78,6 @@ class AllRestaurants extends React.Component {
               sortRating: false,
             })}>
             Sort Alphabetically
-          </Button>
-          <Button
-            color={'red'}
-            onClick={() => this.setState({
-              sortName: false,
-              sortRating: !this.state.sortRating,
-            })}>
-            Sort by Review
           </Button>
         </Segment>
         <Card.Group centered>
