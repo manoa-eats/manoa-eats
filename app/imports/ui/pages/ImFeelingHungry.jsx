@@ -23,15 +23,13 @@ class ImFeelingHungry extends React.Component {
     return (
       <Container>
         <Header as="h2" textAlign="center" inverted>I am Feeling Hungry</Header>
-        <Card.Group centered>
+        <Card centered>
           {this.props.restaurants.map((restaurant, index) => <Restaurant
             key={index}
             restaurant={restaurant}
             reviews={this.props.reviews.filter(review => (review.contactId === contact._id))}/>)}
-        </Card.Group>
-        <div className="ui center aligned segment">
-          <button className="fluid ui button">Pick Another Restaurant</button>
-        </div>
+        </Card>
+        <button className="fluid ui button">Pick Another Restaurant</button>
       </Container>
     );
   }
