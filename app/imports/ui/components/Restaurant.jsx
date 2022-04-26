@@ -43,7 +43,7 @@ class Restaurant extends React.Component {
         <Card.Content style={{ textAlign: 'center', paddingTop: '15px' }} extra>
           <Modal
             header='Add A Review'
-            trigger={<Button primary>Add A Review!</Button>}
+            trigger={<Button id='reviewButton' primary>Add A Review!</Button>}
             actions={['cancel']}
             size='large'
             content={ <AddReview owner={this.props.restaurant.owner} contactId={this.props.restaurant._id}/> }

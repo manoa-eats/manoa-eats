@@ -57,7 +57,7 @@ test('Test that signup work', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Testing the all restaurants page', async (testController) => {
+test.only('Testing the all restaurants page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.userSignIn(testController, userCredentials.username, userCredentials.password);
   await navBar.gotoAllRestaurantsPage(testController);

@@ -13,7 +13,7 @@ class AllRestaurantsPage {
 
   /** Asserts that review modal is working. */
   async reviewModal(testController, review) {
-    const reviewButton = Selector('button');
+    const reviewButton = Selector('#reviewButton');
     await testController.hover(reviewButton);
     await testController.click(reviewButton);
 
