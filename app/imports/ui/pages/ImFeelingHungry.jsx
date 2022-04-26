@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Button } from 'semantic-ui-react';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
@@ -18,6 +18,7 @@ class ImFeelingHungry extends React.Component {
   }
 
   // Render the page once subscriptions have been received.
+  // On click button will pick a random restaurant
   renderPage() {
     return (
       <Container>
@@ -27,11 +28,15 @@ class ImFeelingHungry extends React.Component {
             key={index}
             restaurant={restaurant}
             reviews={this.props.reviews.filter(review => (review.contactId === contact._id))}/>)}
-          <Button title="Pick Another Restaurant" onPress={this.GenerateRandomNumber} />
         </Card.Group>
+        <div className="ui center aligned segment">
+          <button className="ui button">Pick Another Restaurant</button>
+        </div>
       </Container>
     );
   }
+
+  // <Button title="Pick Another Restaurant" onPress={this.GenerateRandomNumber} />
 
   // On submit, insert the data.
   submit(data, formRef) {
