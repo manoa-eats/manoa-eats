@@ -48,7 +48,7 @@ class CreateUserProfile extends React.Component {
     /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
     render() {
         return (
-            <Grid container centered>
+            <Grid id='userProfile-page' container centered>
                 <Grid.Column>
                     <Header as="h2" textAlign="center">User Profile</Header>
                     <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
@@ -56,11 +56,11 @@ class CreateUserProfile extends React.Component {
                             <Image centered rounded src={this.state.image} size='medium' />
                             <TextField name="name" showInlineError={true} placeholder={"Your name"}/>
                             <TextField name="image" showInlineError={true} placeholder={"image link"}/>
-                            <MultiSelectField name="userPreferredFoods" showInlineError={true}
+                            <MultiSelectField id = 'PreferredFoodSelections' name="userPreferredFoods" showInlineError={true}
                                               placeholder={"Select Food Preferences (optional)"}/>
-                            <MultiSelectField name="diets" showInlineError={true}
+                            <MultiSelectField id = 'PreferredDietSelections' name="diets" showInlineError={true}
                                               placeholder={"Select Diet Preferences (optional)"}/>
-                            <SubmitField value="Submit"/>
+                            <SubmitField id='profile-submit' value="Submit"/>
                         </Segment>
                     </AutoForm>
                     {this.state.owner ? <Redirect to={`/edit-profile/${this.state.owner}`}/> : ''}

@@ -5,6 +5,7 @@ import { navBar } from './navbar.component';
 import { allRestaurantsPage } from './allRestaurants.page';
 import { vendorVerificationPage } from './VendorVerification.page';
 import { signupPage } from './signup.page';
+import { userProfilePage } from './UserProfile.page';
 
 /* global fixture:false, test:false */
 
@@ -22,6 +23,10 @@ const testingData = {
   changeDescription: 'Families own many different dogs, from mixed-breeds to purebreds, but which are the most popular? ' +
     'Purebred dog registry American Kennel Club has listed about 280 breeds on its website, and nearly 200 have made it into ' +
     'the organization’s popularity ranking.',
+};
+const testingProfileData = {
+  name: 'TestName',
+  changeProfileImage: 'https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560',
 };
 
 fixture('meteor-application-template-react localhost test with default db')
@@ -66,4 +71,13 @@ test('Testing the vendor verification page', async (testController) => {
   await navBar.gotoVendorVerificationPage(testController);
   await vendorVerificationPage.isDisplayed(testController);
   await vendorVerificationPage.editRestaurant(testController, testingData.name, testingData.changeHour, testingData.changeReview, testingData.changeAddress, testingData.changeImage, testingData.changeDescription);
+});
+
+test.only('Testing the User Profile page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.userSignIn(testController, adminCredentials.username, adminCredentials.password);
+  await navBar.gotoCreateProfilePage(testController);
+  await userProfilePage.isDisplayed(testController);
+  await userProfilePage.userProfile(testController, testingProfileData.name, testingProfileData.changeProfileImage);
+
 });

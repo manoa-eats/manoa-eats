@@ -38,7 +38,7 @@ class NavBar extends React.Component {
           [
             <Menu.Item as={NavLink} activeClassName='active' exact to='/review' key='review'>Write a
               Review</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName='active' exact to='/user-profile'
+            <Menu.Item id='navbar-create-profile' as={NavLink} activeClassName='active' exact to='/user-profile'
               key='profile'>Create Profile</Menu.Item>,
           ]
         ) : ''}
