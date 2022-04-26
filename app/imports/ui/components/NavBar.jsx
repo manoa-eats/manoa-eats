@@ -6,6 +6,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Image } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 import { UserProfile } from '../../api/userprofile/UserProfile';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
@@ -35,8 +36,6 @@ class NavBar extends React.Component {
 
         {this.props.currentUser && !checkDatabase(UserProfile) && !username() ? (
           [
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/review" key="review">Write a
-                            Review</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/user-profile"
               key="profile">Create Profile</Menu.Item>,
           ]
