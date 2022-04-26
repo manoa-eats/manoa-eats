@@ -30,7 +30,7 @@ class ImFeelingHungry extends React.Component {
             reviews={this.props.reviews.filter(review => (review.contactId === contact._id))}/>)}
         </Card.Group>
         <div className="ui center aligned segment">
-          <button className="ui button">Pick Another Restaurant</button>
+          <button className="fluid ui button">Pick Another Restaurant</button>
         </div>
       </Container>
     );
