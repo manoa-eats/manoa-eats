@@ -41,6 +41,11 @@ class NavBar {
   async gotoAllRestaurantsPage(testController) {
     await testController.click('#navbar-all-restaurants');
   }
+
+  /** Pull down login menu, go to Vendor Verification page. */
+  async gotoVendorVerificationPage(testController) {
+    await testController.click('#navbar-vendor-verification');
+  }
 }
 
 export const navBar = new NavBar();

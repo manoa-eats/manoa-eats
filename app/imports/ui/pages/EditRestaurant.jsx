@@ -40,7 +40,7 @@ class EditRestaurant extends React.Component {
               <TextField name='address'/>
               <TextField name='image'/>
               <LongTextField name='description'/>
-              <SubmitField value='Submit'/>
+              <SubmitField id='submitNewRestaurantInformation' value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' />
             </Segment>
