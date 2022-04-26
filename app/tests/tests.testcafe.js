@@ -33,7 +33,7 @@ test('Test that landing page shows up', async (testController) => {
 
 test('Test that signin and signout work', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.signin(testController, userCredentials.username, userCredentials.password);
+  await signinPage.userSignIn(testController, userCredentials.username, userCredentials.password);
   await navBar.isLoggedIn(testController, userCredentials.username);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
@@ -54,7 +54,7 @@ test('Test that signup work', async (testController) => {
 
 test('Testing the all restaurants page', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.signin(testController, userCredentials.username, userCredentials.password);
+  await signinPage.userSignIn(testController, userCredentials.username, userCredentials.password);
   await navBar.gotoAllRestaurantsPage(testController);
   await allRestaurantsPage.isDisplayed(testController);
   await allRestaurantsPage.reviewModal(testController, testingData.review);
@@ -62,7 +62,7 @@ test('Testing the all restaurants page', async (testController) => {
 
 test('Testing the vendor verification page', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.signin(testController, adminCredentials.username, adminCredentials.password);
+  await signinPage.userSignIn(testController, adminCredentials.username, adminCredentials.password);
   await navBar.gotoVendorVerificationPage(testController);
   await vendorVerificationPage.isDisplayed(testController);
   await vendorVerificationPage.editRestaurant(testController, testingData.name, testingData.changeHour, testingData.changeReview, testingData.changeAddress, testingData.changeImage, testingData.changeDescription);
