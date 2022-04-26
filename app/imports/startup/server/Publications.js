@@ -45,7 +45,7 @@ Meteor.publish('UserDiet', function publishEnrollmentData() {
   return UserDiet.find();
 });
 
-Meteor.publish('VendorProfile', function publishEnrollmentData() {
+Meteor.publish('VendorProfile', function publishVendorData() {
   return VendorProfile.find();
 });
 
