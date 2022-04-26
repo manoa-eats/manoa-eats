@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header, Image } from 'semantic-ui-react';
+import { Menu, Dropdown, Image } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 import { UserProfile } from '../../api/userprofile/UserProfile';
-import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
@@ -27,14 +26,13 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as="h1">Manoa Eats <Image
-            src="https://banner2.cleanpng.com/20180617/fh/kisspng-hibiscus-red-clip-art-menu-psd-5b26fecf77e7a0.4064945415292822554911.jpg"
-            size="large"/></Header>
+          <Image src='/doc/manoa-eats-logo.png' size="large"/>
         </Menu.Item>
         <Menu.Item as={NavLink} activeClassName="active" exact to="/all-restaurants" key="all-restaurants">All
                     Restaurants</Menu.Item>
         <Menu.Item as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
                     Hungry</Menu.Item>
+
         {this.props.currentUser && !checkDatabase(UserProfile) && !username() ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to="/review" key="review">Write a
@@ -53,6 +51,7 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-review" key="admin">Vendor
                         Verification</Menu.Item>
         ) : ''}
+
         {(username() && !checkDatabase(VendorProfile)) ? (
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
             Profile</Menu.Item>

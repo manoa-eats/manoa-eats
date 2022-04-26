@@ -18,6 +18,7 @@ import ImFeelingHungry from '../pages/ImFeelingHungry';
 import VendorVerification from '../pages/VendorVerification';
 import Review from '../pages/Review';
 import VendorProfile from '../pages/VendorProfile';
+import Vendor from '../pages/Vendor';
 import UserProfile from '../pages/UserProfile';
 import EditProfile from '../pages/EditUserProfile';
 import EditRestaurant from '../pages/EditRestaurant';
@@ -37,6 +38,7 @@ class App extends React.Component {
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/list" component={ListContacts}/>
             <Route path="/all-restaurants" component={AllRestaurants}/>
+            <ProtectedRoute path="/vendor-page/:_id" component={Vendor}/>
             <Route path="/im-feeling-hungry" component={ImFeelingHungry}/>
             <ProtectedRoute path="/vendor-review" component={VendorVerification}/>
             <ProtectedRoute path="/user-profile" component={UserProfile}/>
