@@ -1,10 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 import { connectField, filterDOMProps } from 'uniforms';
+import { _ } from 'meteor/underscore';
 
 /**
- * Augment the Uniforms RadioField with an 'inline' property so that radio buttons all appear on a single line.
- * Adapted from https://github.com/vazco/uniforms/blob/master/packages/uniforms-semantic/src/RadioField.tsx
+ * Provide Semantic UI multi-select functionality.
+ * Adapted from https://github.com/vazco/uniforms/blob/master/packages/uniforms-semantic/src/SelectField.tsx
  *
  * The MIT License (MIT)
  * Copyright (c) 2016-2019 Vazco
@@ -26,57 +27,51 @@ import { connectField, filterDOMProps } from 'uniforms';
  */
 
 /* eslint react/prop-types: 0 */
-const RadioField = ({
+const renderDropdown = ({ allowedValues, disabled, placeholder, onChange, transform, value, name }) => {
+  const options = _.map(allowedValues, (val, index) => ({
+    key: index,
+    text: transform ? transform(val) : val,
+    value: val,
+  }));
+  return (
+    <input placeholder={placeholder} disabled={disabled}
+      options={options} onChange={event => { onChange(event.target.valueAsDate.toLocaleTimeString()); }} value={value} type='time' name={name}/>
+  );
+};
+
+const DateSelect = ({
   allowedValues,
-  checkboxes, // eslint-disable-line no-unused-vars
+  checkboxes,
   className,
   disabled,
   error,
   errorMessage,
+  fieldType,
   id,
-  inline,
+  inputRef,
   label,
   name,
   onChange,
+  placeholder,
   required,
   showInlineError,
   transform,
   value,
   ...props
 }) => (
-  <div
-    className={classnames(className, { disabled, error, inline }, (inline ? '' : 'grouped'), 'fields')}
-    {...filterDOMProps(props)}
-  >
-    {label && (
-      <div className={classnames({ required }, 'field')}>
-        <label>{label}</label>
-      </div>
-    )}
-
-    {allowedValues.map(item => (
-      <div className="field" key={item}>
-        <div className="ui radio checkbox">
-          <input
-            checked={item === value}
-            disabled={disabled}
-            id={`${id}-${item}`}
-            name={name}
-            onChange={() => onChange(item)}
-            type="radio"
-          />
-
-          <label htmlFor={`${id}-${item}`}>
-            {transform ? transform(item) : item}
-          </label>
-        </div>
-      </div>
-    ))}
-
-    {!!(error && showInlineError) && (
-      <div className="ui red basic pointing label">{errorMessage}</div>
-    )}
+  <div className={classnames({ disabled, error, required }, className, 'field')} {...filterDOMProps(props)}>
+    {label && <label htmlFor={id}>{label}</label>}
+    {renderDropdown({
+      allowedValues,
+      disabled,
+      name,
+      placeholder,
+      onChange,
+      transform,
+      value,
+    })}
+    {!!(error && showInlineError) && <div className="ui red basic pointing label">{errorMessage}</div>}
   </div>
 );
 
-export default connectField(RadioField, { kind: 'leaf' });
+export default connectField(DateSelect, { kind: 'leaf' });

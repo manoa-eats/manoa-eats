@@ -2,10 +2,10 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Contacts } from '../../api/contact/Contacts';
 import { Notes } from '../../api/note/Notes';
-import { Restaurants } from '../../api/Restaurant/Restaurants';
-import { Reviews } from '../../api/review/Reviews';
 import { UserProfile } from '../../api/userprofile/UserProfile';
 import { UserDiet } from '../../api/userdiet/UserDiet';
+import { Restaurants } from '../../api/Restaurant/Restaurants';
+import { Reviews } from '../../api/review/Reviews';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -34,11 +34,7 @@ Meteor.publish(Reviews.userPublicationName, function () {
 });
 
 Meteor.publish(Restaurants.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Restaurants.collection.find({ owner: username });
-  }
-  return this.ready();
+  return Restaurants.collection.find();
 });
 
 Meteor.publish('UserProfile', function publishStudentData() {
@@ -47,6 +43,10 @@ Meteor.publish('UserProfile', function publishStudentData() {
 
 Meteor.publish('UserDiet', function publishEnrollmentData() {
   return UserDiet.find();
+});
+
+Meteor.publish('VendorProfile', function publishEnrollmentData() {
+  return VendorProfile.find();
 });
 
 // Admin-level publication.
