@@ -32,7 +32,8 @@ class NavBar extends React.Component {
                     Restaurants</Menu.Item>
         <Menu.Item as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
                     Hungry</Menu.Item>
-        {this.props.currentUser && !checkDatabase(UserProfile) ? (
+
+        {this.props.currentUser && !checkDatabase(UserProfile) && !username() ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to="/review" key="review">Write a
                             Review</Menu.Item>,
@@ -40,7 +41,7 @@ class NavBar extends React.Component {
               key="profile">Create Profile</Menu.Item>,
           ]
         ) : ''}
-        {this.props.currentUser && checkDatabase(UserProfile) ? (
+        {this.props.currentUser && checkDatabase(UserProfile) && !username() ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.currentUser}`}
               key="edit">Edit Profile</Menu.Item>,
@@ -50,9 +51,19 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-review" key="admin">Vendor
                         Verification</Menu.Item>
         ) : ''}
+
+        {(username() && !checkDatabase(VendorProfile)) ? (
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
+            Profile</Menu.Item>
+        ) : ''}
+        {username() && checkDatabase(VendorProfile) ? (
+          [
+            <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-vendor-profile/${this.props.currentUser}`}
+              key="edit-vendor">Edit Vendor Profile</Menu.Item>,
+          ]
+        ) : ''}
         {(username()) ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="admin">Vendor
-                        Profile</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/create-menu" key="menu">Create Menu</Menu.Item>
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
@@ -88,9 +99,10 @@ NavBar.propTypes = {
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 const NavBarContainer = withTracker(() => {
   const UserProfileSubscription = Meteor.subscribe('UserProfile');
+  const VendorProfileSubscription = Meteor.subscribe('VendorProfile');
   return {
     currentUser: Meteor.user() ? Meteor.user().username : '',
-    ready: UserProfileSubscription.ready(),
+    ready: UserProfileSubscription.ready() && VendorProfileSubscription.ready(),
   };
 })(NavBar);
 

@@ -31,6 +31,7 @@ class EditUser extends React.Component {
           swal('Error', updateError.message, 'error');
         } else {
           UserDiet.update(userDietId, { $set: { diets } },
+            // this is a different error than the one for user profile
             // eslint-disable-next-line no-shadow
             (error) => { updateError = error; });
           if (updateError) {
@@ -40,7 +41,6 @@ class EditUser extends React.Component {
           }
         }
       });
-
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */

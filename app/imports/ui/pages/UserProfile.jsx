@@ -32,6 +32,7 @@ class CreateUserProfile extends React.Component {
           swal('Error', insertError.message, 'error');
         } else {
           UserDiet.insert({ owner, diets },
+            // This is a different error for inserting a User's diet
             // eslint-disable-next-line no-shadow
             (error) => {
               insertError = error;

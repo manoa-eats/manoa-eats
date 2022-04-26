@@ -34,11 +34,7 @@ Meteor.publish(Reviews.userPublicationName, function () {
 });
 
 Meteor.publish(Restaurants.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Restaurants.collection.find({ owner: username });
-  }
-  return this.ready();
+  return Restaurants.collection.find();
 });
 
 Meteor.publish('UserProfile', function publishStudentData() {
@@ -47,6 +43,10 @@ Meteor.publish('UserProfile', function publishStudentData() {
 
 Meteor.publish('UserDiet', function publishEnrollmentData() {
   return UserDiet.find();
+});
+
+Meteor.publish('VendorProfile', function publishEnrollmentData() {
+  return VendorProfile.find();
 });
 
 // Admin-level publication.

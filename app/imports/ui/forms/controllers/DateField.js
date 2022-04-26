@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import { connectField, filterDOMProps } from 'uniforms';
-import { Dropdown } from 'semantic-ui-react';
 import { _ } from 'meteor/underscore';
 
 /**
@@ -28,20 +27,19 @@ import { _ } from 'meteor/underscore';
  */
 
 /* eslint react/prop-types: 0 */
-const renderDropdown = ({ allowedValues, disabled, placeholder, onChange, transform, value }) => {
-  // console.log('renderMultiSelect value=%o allowedValues=%o', value, allowedValues);
+const renderDropdown = ({ allowedValues, disabled, placeholder, onChange, transform, value, name }) => {
   const options = _.map(allowedValues, (val, index) => ({
     key: index,
     text: transform ? transform(val) : val,
     value: val,
   }));
   return (
-    <Dropdown fluid={true} multiple={true} placeholder={placeholder} selection={true} disabled={disabled}
-      options={options} onChange={(event, data) => onChange(data.value)} value={value} clearable search/>
+    <input placeholder={placeholder} disabled={disabled}
+      options={options} onChange={event => { onChange(event.target.valueAsDate.toLocaleTimeString()); }} value={value} type='time' name={name}/>
   );
 };
 
-const MultiSelect = ({
+const DateSelect = ({
   allowedValues,
   checkboxes,
   className,
@@ -66,6 +64,7 @@ const MultiSelect = ({
     {renderDropdown({
       allowedValues,
       disabled,
+      name,
       placeholder,
       onChange,
       transform,
@@ -75,4 +74,4 @@ const MultiSelect = ({
   </div>
 );
 
-export default connectField(MultiSelect, { kind: 'leaf' });
+export default connectField(DateSelect, { kind: 'leaf' });
