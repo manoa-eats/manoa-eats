@@ -14,6 +14,8 @@ class RestaurantsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
+      start: Number,
+      end: Number,
       hour: String,
       reviews: String,
       address: String,
