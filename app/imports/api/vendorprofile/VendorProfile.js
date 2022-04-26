@@ -4,7 +4,7 @@ import { Mongo } from 'meteor/mongo';
 
 const VendorProfileValues = {
   diet: ['Paleo', 'Vegetarian', 'Vegan', 'Carnivore', 'Gluten-Free'],
-  weekday: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  weekday: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
 };
 
 const VendorProfile = new Mongo.Collection('VendorProfileCollection');
