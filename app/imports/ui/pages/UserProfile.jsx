@@ -56,9 +56,9 @@ class CreateUserProfile extends React.Component {
                             <Image centered rounded src={this.state.image} size='medium' />
                             <TextField name="name" showInlineError={true} placeholder={"Your name"}/>
                             <TextField name="image" showInlineError={true} placeholder={"image link"}/>
-                            <MultiSelectField id = 'PreferredFoodSelections' name="userPreferredFoods" showInlineError={true}
+                            <MultiSelectField name="userPreferredFoods" showInlineError={true}
                                               placeholder={"Select Food Preferences (optional)"}/>
-                            <MultiSelectField id = 'PreferredDietSelections' name="diets" showInlineError={true}
+                            <MultiSelectField  name="diets" showInlineError={true}
                                               placeholder={"Select Diet Preferences (optional)"}/>
                             <SubmitField id='profile-submit' value="Submit"/>
                         </Segment>

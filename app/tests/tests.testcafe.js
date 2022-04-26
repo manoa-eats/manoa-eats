@@ -73,11 +73,10 @@ test('Testing the vendor verification page', async (testController) => {
   await vendorVerificationPage.editRestaurant(testController, testingData.name, testingData.changeHour, testingData.changeReview, testingData.changeAddress, testingData.changeImage, testingData.changeDescription);
 });
 
-test.only('Testing the User Profile page', async (testController) => {
+test('Testing the User Profile page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.userSignIn(testController, adminCredentials.username, adminCredentials.password);
   await navBar.gotoCreateProfilePage(testController);
   await userProfilePage.isDisplayed(testController);
   await userProfilePage.userProfile(testController, testingProfileData.name, testingProfileData.changeProfileImage);
-
 });

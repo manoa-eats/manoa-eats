@@ -22,13 +22,6 @@ class UserProfilePage {
     await testController.hover(createUserProfileImage);
     await testController.click(createUserProfileImage);
     await testController.typeText(createUserProfileImage, image);
-
-    const foodSelect = Selector('#PreferredFoodSelections');
-    const foodOptions = foodSelect.find('option');
-    await testController.click(foodSelect);
-    await testController.click(foodOptions.withText('burger'));
-    await testController.expect(foodSelect.value).eql('burger');
-
     await testController.click('#profile-submit');
   }
 }
