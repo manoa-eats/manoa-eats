@@ -36,8 +36,6 @@ class NavBar extends React.Component {
           Hungry</Menu.Item>
         {this.props.currentUser && !checkDatabase(UserProfile) ? (
           [
-            <Menu.Item as={NavLink} activeClassName='active' exact to='/review' key='review'>Write a
-              Review</Menu.Item>,
             <Menu.Item id='navbar-create-profile' as={NavLink} activeClassName='active' exact to='/user-profile'
               key='profile'>Create Profile</Menu.Item>,
           ]
