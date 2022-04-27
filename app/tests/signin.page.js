@@ -13,7 +13,7 @@ class SigninPage {
   }
 
   /** Fills out and submits the form to signin, then checks to see that login was successful. */
-  async signin(testController, username, password) {
+  async userSignIn(testController, username, password) {
     await this.isDisplayed(testController);
     await testController.typeText('#signin-form-email', username);
     await testController.typeText('#signin-form-password', password);
