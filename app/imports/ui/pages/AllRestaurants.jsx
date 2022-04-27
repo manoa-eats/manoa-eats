@@ -68,7 +68,7 @@ class AllRestaurants extends React.Component {
     }
 
     return (
-      <Container>
+      <Container id='all-Restaurants-page'>
         <Header as="h2" textAlign="center" inverted>List Restaurants</Header>
         <Segment>
           <Button

@@ -34,7 +34,7 @@ class Restaurant extends React.Component {
             src={this.props.restaurant.image}
           />
 
-          <Card.Header><Link to={`/vendor-page/${this.props.restaurant._id}`}>{this.props.restaurant.name}</Link></Card.Header>
+          <Card.Header><Link id='restName' to={`/vendor-page/${this.props.restaurant._id}`}>{this.props.restaurant.name}</Link></Card.Header>
 
           <Card.Meta>{this.props.restaurant.address}</Card.Meta>
           <Card.Meta>{this.props.restaurant.hour}</Card.Meta>
@@ -45,7 +45,7 @@ class Restaurant extends React.Component {
         <Card.Content style={{ textAlign: 'center', paddingTop: '15px' }} extra>
           <Modal
             header='Add A Review '
-            trigger={<Button primary>Add A Review!</Button>}
+            trigger={<Button id='reviewButton' primary>Add A Review!</Button>}
             actions={['cancel']}
             size='large'
             content={ <AddReview owner={this.props.restaurant.owner} contactId={this.props.restaurant._id}/> }

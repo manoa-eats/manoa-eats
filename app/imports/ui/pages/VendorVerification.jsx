@@ -17,7 +17,7 @@ class VendorVerification extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
+      <Container id='vendor-Verification-page'>
         <Header as="h1" textAlign="center" inverted>List Restaurant (Admin)</Header>
         <Card.Group centered>
           {this.props.restaurants.map((restaurant, index) => <RestaurantAdmin key={index} restaurant={restaurant} />)}

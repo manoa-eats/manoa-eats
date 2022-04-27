@@ -31,7 +31,7 @@ class Vendor extends React.Component {
 
   renderPage() {
     return (
-      <Container>
+      <Container id='vendor-View-page'>
         <Segment>
           <div style={{ position: 'relative' }}>
             <Image src={this.props.doc.image} fluid />
