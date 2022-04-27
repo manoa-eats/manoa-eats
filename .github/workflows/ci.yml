@@ -1,4 +1,4 @@
-name: ci-manoaeats
+name: manoaeats
 
 on:
   push:
