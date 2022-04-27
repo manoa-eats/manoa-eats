@@ -26,10 +26,11 @@ class MenuTable extends React.Component {
               <Table.HeaderCell>Price</Table.HeaderCell>
               <Table.HeaderCell>Availability</Table.HeaderCell>
               <Table.HeaderCell>Edit</Table.HeaderCell>
+              <Table.HeaderCell>Remove</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {this.props.menus.map((menu) => <MenuItem key={menu._id} menu={menu} />)}
+            {this.props.menus.map((menu) => <MenuItem key={menu._id} menu={menu} Menus={Menus}/>)}
           </Table.Body>
         </Table>
       </Container>

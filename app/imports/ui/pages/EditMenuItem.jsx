@@ -16,14 +16,13 @@ class EditMenuItem extends React.Component {
 
   // On submit, insert the data.
   submit(data) {
-    const { foodName, available, price } = data;
-    const owner = Meteor.user().username;
-    Menus.collection.update({ owner, foodName, available, price },
+    const { foodName, available, price, _id } = data;
+    Menus.collection.update(_id, { $set: { foodName, available, price } },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Item updated successfully', 'success');
         }
       });
   }
@@ -34,7 +33,7 @@ class EditMenuItem extends React.Component {
       <Grid container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit Menu Item</Header>
-          <AutoForm schema={bridge} model={this.props.doc} onSubmit={data => this.submit(data, fRef)} >
+          <AutoForm schema={bridge} model={this.props.doc} onSubmit={data => this.submit(data)} >
             <Segment>
               <TextField name='foodName'/>
               <NumField name='price' decimal/>
