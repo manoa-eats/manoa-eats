@@ -25,7 +25,7 @@ class RestaurantAdmin extends React.Component {
           Owner: {this.props.restaurant.owner}
         </Card.Content>
         <Card.Content >
-          <Link to={`/editRestaurant/${this.props.restaurant._id}`}>Edit</Link>
+          <Link id='editRestaurantButton' to={`/editRestaurant/${this.props.restaurant._id}`}>Edit</Link>
         </Card.Content>
       </Card>
     );

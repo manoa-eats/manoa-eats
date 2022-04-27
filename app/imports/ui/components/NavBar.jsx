@@ -29,14 +29,14 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Image src='/images/manoa-eats-logo.png' size="tiny"/>
         </Menu.Item>
-        <Menu.Item as={NavLink} activeClassName="active" exact to="/all-restaurants" key="all-restaurants">All
+        <Menu.Item id='navbar-all-restaurants' as={NavLink} activeClassName="active" exact to="/all-restaurants" key="all-restaurants">All
                     Restaurants</Menu.Item>
         <Menu.Item as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
                     Hungry</Menu.Item>
 
         {this.props.currentUser && !checkDatabase(UserProfile) && !username() ? (
           [
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/user-profile"
+            <Menu.Item id = 'navbar-create-profile' as={NavLink} activeClassName="active" exact to="/user-profile"
               key="profile">Create Profile</Menu.Item>,
           ]
         ) : ''}
@@ -47,7 +47,7 @@ class NavBar extends React.Component {
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-review" key="admin">Vendor
+          <Menu.Item id='navbar-vendor-verification' as={NavLink} activeClassName="active" exact to="/vendor-review" key="admin">Vendor
                         Verification</Menu.Item>
         ) : ''}
 
