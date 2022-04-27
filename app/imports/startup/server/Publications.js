@@ -7,6 +7,7 @@ import { UserDiet } from '../../api/userdiet/UserDiet';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import { Reviews } from '../../api/review/Reviews';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
+import { Menus } from '../../api/menu/Menu';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
 Meteor.publish(Contacts.userPublicationName, function () {
@@ -33,6 +34,13 @@ Meteor.publish(Reviews.userPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Menus.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Menus.collection.find({ owner: username });
+  }
+  return this.ready();
+});
 Meteor.publish(Restaurants.userPublicationName, function () {
   return Restaurants.collection.find();
 });

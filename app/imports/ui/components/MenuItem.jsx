@@ -1,30 +1,33 @@
 import React from 'react';
-import { Button, Grid } from 'semantic-ui-react';
-import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
-import { TextField } from 'uniforms-semantic';
-import { DateField } from 'uniforms-unstyled';
+import { Table } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withRouter, Link } from 'react-router-dom';
 
-function handleDelete() {
-  console.log('item deleted');
+/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+class MenuItem extends React.Component {
+  render() {
+    return (
+      <Table.Row>
+        <Table.Cell>{this.props.menu.foodName}</Table.Cell>
+        <Table.Cell>${this.props.menu.price}</Table.Cell>
+        <Table.Cell>{this.props.menu.available.toLocaleString()}</Table.Cell>
+        <Table.Cell>
+          <Link to={`/editMenuItem/${this.props.menu._id}`}>Edit</Link>
+        </Table.Cell>
+      </Table.Row>
+    );
+  }
 }
-export default function MenuItemField() {
-  return (
-    <Grid.Row>
-      <Grid.Column>
-        <TextField name="foodName"/>
-      </Grid.Column>
-      <Grid.Column>
-        <DateField name="dateAvailable"/>
-      </Grid.Column>
-      <Grid.Column>
-        <DateField name="timeAvailable"/>
-      </Grid.Column>
-      <Grid.Column>
-        <TextField name="price"/>
-      </Grid.Column>
-      <Grid.Column>
-        <Button icon='cancel' onClick={handleDelete} />
-      </Grid.Column>
-    </Grid.Row>
-  );
-}
+
+// Require a document to be passed to this component.
+MenuItem.propTypes = {
+  menu: PropTypes.shape({
+    foodName: PropTypes.string,
+    price: PropTypes.number,
+    available: PropTypes.instanceOf(Date),
+    _id: PropTypes.string,
+  }).isRequired,
+};
+
+// Wrap this component in withRouter since we use the <Link> React Router element.
+export default withRouter(MenuItem);
