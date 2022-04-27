@@ -3,7 +3,7 @@ name: manoa-eats
 on:
   push:
     branches:
-      - master
+      - main
 
 defaults:
   run:
@@ -38,5 +38,4 @@ jobs:
         run: |
           meteor npm install
           meteor npm run lint
-          meteor npm run test-unit
-          meteor npm run testcafe-ci
+          meteor npm run testcafe
