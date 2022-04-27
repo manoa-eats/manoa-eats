@@ -1,9 +1,9 @@
-name: ci-manoa-eats
+name: manoa-eats
 
 on:
   push:
     branches:
-      - main
+      - master
 
 defaults:
   run:
