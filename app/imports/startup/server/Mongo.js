@@ -1,12 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
-import { Restaurants } from '../../api/Restaurant/Restaurants';
-<<<<<<< HEAD
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
-
-=======
 import { Menus } from '../../api/menu/Menu';
->>>>>>> fed6202afc5f9fa84574e0dfe34e6c5db0c83996
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
