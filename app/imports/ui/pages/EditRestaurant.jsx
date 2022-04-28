@@ -73,7 +73,7 @@ class EditRestaurant extends React.Component {
               />
               <MultiSelectField name="diets" showInlineError={true}
                 placeholder={'Accommodating Diets'}/>
-              <SubmitField value="Submit"/>
+              <SubmitField id='submitNewRestaurantInformation' value="Submit"/>
             </Segment>
           </AutoForm>
         </Grid.Column>
