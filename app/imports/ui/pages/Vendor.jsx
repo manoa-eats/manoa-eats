@@ -19,7 +19,7 @@ import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Reviews } from '../../api/review/Reviews';
 import Review from '../components/Review';
 import { Menus } from '../../api/menu/Menu';
-import Menu from './Menu';
+import VendorMenu from './VendorMenu';
 
 /** Renders the Page for adding a document. */
 class Vendor extends React.Component {
@@ -93,7 +93,7 @@ class Vendor extends React.Component {
             </Grid.Row>
             <Divider/>
             <Grid.Row centered>
-              {this.props.menus.map((menu, item) => <Menu key={item} menus={menu}/>)}
+              <VendorMenu menus={this.props.menus}/>
             </Grid.Row>
             <Grid.Row centered>
               <Comment.Group>
