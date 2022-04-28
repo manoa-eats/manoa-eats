@@ -23,6 +23,9 @@ import UserProfile from '../pages/UserProfile';
 import EditProfile from '../pages/EditUserProfile';
 import EditRestaurant from '../pages/EditRestaurant';
 import EditVendorProfile from '../pages/EditVendorProfile';
+import CreateMenuItem from '../pages/CreateMenuItem';
+import ViewMenu from '../pages/Menu';
+import EditMenuItem from '../pages/EditMenuItem';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -48,6 +51,9 @@ class App extends React.Component {
             <ProtectedRoute path="/review" component={Review}/>
             <ProtectedRoute path="/edit/:_id" component={EditContact}/>
             <ProtectedRoute path="/editRestaurant/:_id" component={EditRestaurant}/>
+            <ProtectedRoute path="/create-menu-item" component={CreateMenuItem}/>
+            <ProtectedRoute path="/editMenuItem/:_id" component={EditMenuItem}/>
+            <ProtectedRoute path="/view-menu" component={ViewMenu}/>
             <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>
