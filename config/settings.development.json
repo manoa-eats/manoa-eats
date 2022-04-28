@@ -59,7 +59,7 @@
   ],
 
   "defaultMenus": [{
-    "name": "Dunkin’", 
+    "foodName": "Dunkin’", 
     "price": "10.15", 
     "owner": "john@foo.com",
     "available": "2022-04-26T12:03:00Z"
