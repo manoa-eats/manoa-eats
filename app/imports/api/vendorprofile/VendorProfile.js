@@ -22,6 +22,7 @@ const VendorProfileSchema = new SimpleSchema({
   closeHour: { type: Date },
   diets: { type: Array, optional: true },
   'diets.$': { type: String, allowedValues: VendorProfileValues.diet },
+  reviews: { type: String, optional: true },
 }, { tracker: Tracker });
 
 /** Attach the schema to the collection. */
