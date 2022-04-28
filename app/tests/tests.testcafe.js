@@ -44,12 +44,15 @@ test('Test that signin and signout work', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test.skip('Test that signup work', async (testController) => {
+test('Test that user signup work', async (testController) => {
   await navBar.gotoSignupPage(testController);
   await signupPage.signupUser(testController, tempCredentials.username, tempCredentials.userPassword);
   await navBar.isLoggedIn(testController, tempCredentials.username);
   await navBar.logout(testController);
+  await signoutPage.isDisplayed(testController);
+});
 
+test('Test that vendor signup work', async (testController) => {
   await navBar.gotoSignupPage(testController);
   await signupPage.signupAdmin(testController, tempCredentials.adminName, tempCredentials.adminPassword);
   await navBar.isLoggedIn(testController, tempCredentials.adminName);
