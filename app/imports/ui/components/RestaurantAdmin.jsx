@@ -21,8 +21,10 @@ class RestaurantAdmin extends React.Component {
             src={this.props.restaurant.image}
           />
           <Card.Header>{this.props.restaurant.name}</Card.Header>
-          <Card.Meta>{this.props.restaurant.address}</Card.Meta>
-          <Card.Meta>{this.props.restaurant.hour}</Card.Meta>
+          <Card.Meta>{this.props.restaurant.location}</Card.Meta>
+          <Card.Meta>Open: {this.props.restaurant.openHour.toLocaleTimeString()}</Card.Meta>
+          <Card.Meta>Closed: {this.props.restaurant.closeHour.toLocaleTimeString()}</Card.Meta>
+          <Card.Meta>Weekdays open: {this.props.restaurant.weekdayOpen.map((day, key) => <Label key={key}>{day}</Label>)}</Card.Meta>
           <Card.Description>
             {this.props.restaurant.description}
           </Card.Description>

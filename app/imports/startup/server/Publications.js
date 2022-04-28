@@ -27,11 +27,7 @@ Meteor.publish(Notes.userPublicationName, function () {
 });
 
 Meteor.publish(Reviews.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Reviews.collection.find({ owner: username });
-  }
-  return this.ready();
+  return Reviews.collection.find();
 });
 
 Meteor.publish(Menus.userPublicationName, function () {
@@ -75,10 +71,7 @@ Meteor.publish(Restaurants.adminPublicationName, function () {
 });
 
 Meteor.publish(Reviews.adminPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Reviews.collection.find();
-  }
-  return this.ready();
+  return Reviews.collection.find();
 });
 
 // alanning:roles publication
