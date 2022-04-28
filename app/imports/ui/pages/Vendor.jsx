@@ -1,5 +1,16 @@
 import React from 'react';
-import { Grid, Image, Loader, Header, Container, Segment, Divider, Rating, Comment } from 'semantic-ui-react';
+import {
+  Grid,
+  Image,
+  Loader,
+  Header,
+  Container,
+  Segment,
+  Divider,
+  Rating,
+  Comment,
+  Label,
+} from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -38,15 +49,9 @@ class Vendor extends React.Component {
             <div style={{ paddingLeft: 50, paddingRight: 50, position: 'absolute', bottom: -45 }}>
               <Grid verticalAlign='middle' textAlign='center' columns='2' centered>
                 <Grid.Row divided>
-                  <Grid.Column width={5}>
-                    {/* Change with logo */}
-                    <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' circular size={'medium'} bordered/>
-                  </Grid.Column>
-                  <Grid.Column width={11}>
-                    <Segment raised inverted tertiary>
-                      <Header as="h1" textAlign="center">{this.props.doc.name}</Header>
-                    </Segment>
-                  </Grid.Column>
+                  <Segment raised inverted>
+                    <Header as="h1" textAlign="center">{this.props.doc.name}</Header>
+                  </Segment>
                 </Grid.Row>
               </Grid>
             </div>
@@ -68,7 +73,14 @@ class Vendor extends React.Component {
                   <Header as="h3" align="center">Closed Hours</Header>
                   <p align="center">{this.props.doc.closeHour.toLocaleTimeString()}</p>
                 </div>
-                
+                <br/>
+                <div>
+                  <Header as="h3" align="center">Weekdays Open</Header>
+                  <div align='center'>
+                    {this.props.doc.weekdayOpen.map((day, key) => <Label key={key}>{day}</Label>)}
+                  </div>
+                </div>
+
               </Grid.Column>
               <Grid.Column>
                 <div>
@@ -88,7 +100,7 @@ class Vendor extends React.Component {
               <Comment.Group>
                 <Header as="h2" align="center">Reviews</Header>
                 <Comment>
-                  {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
+                  {this.props.reviews.map((review, index) => <Review key={index} reviews={review}/>)}
                 </Comment>
               </Comment.Group>
             </Grid.Row>
@@ -112,7 +124,7 @@ Vendor.propTypes = {
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(({ match }) => {
-  const docId = match.params.owner;
+  const docId = match.params._id;
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('VendorProfile');
   const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
@@ -120,11 +132,12 @@ export default withTracker(({ match }) => {
   const ready = subscription.ready() && subscription2.ready();
   // Get the Stuff documents
   // const restaurants = Restaurants.collection.find({}).fetch();
-  // const reviews = Reviews.collection.find({}).fetch();
+  const reviewer = Reviews.collection.find({ contactId: docId }).fetch();
+  console.log(reviewer);
   return {
     // restaurants,
-    reviews: Reviews.collection.find({ owner: (VendorProfile.findOne(docId) !== undefined) ? (VendorProfile.findOne({ docId })) : ('') }).fetch(),
+    reviews: reviewer,
     ready,
-    doc: VendorProfile.findOne({ docId }),
+    doc: VendorProfile.findOne(docId),
   };
 })(Vendor);
