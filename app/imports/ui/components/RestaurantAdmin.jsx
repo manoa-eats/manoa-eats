@@ -1,10 +1,16 @@
 import React from 'react';
-import { Card, Image, Label } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class RestaurantAdmin extends React.Component {
+  removeItem(docID) {
+    // eslint-disable-next-line no-console
+    console.log(`item to delete is: ${docID}`);
+    this.props.restaurant.remove(docID);
+  }
+
   render() {
     return (
       <Card>
@@ -28,6 +34,9 @@ class RestaurantAdmin extends React.Component {
         </Card.Content>
         <Card.Content >
           <Link id='editRestaurantButton' to={`/editRestaurant/${this.props.restaurant._id}`}>Edit</Link>
+        </Card.Content>
+        <Card.Content >
+          <Button onClick={() => this.removeItem(this.props.restaurant._id)} color='red'>Remove</Button>
         </Card.Content>
       </Card>
     );
