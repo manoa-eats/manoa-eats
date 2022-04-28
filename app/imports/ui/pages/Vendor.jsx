@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
-import { Restaurants } from '../../api/Restaurant/Restaurants';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Reviews } from '../../api/review/Reviews';
 import Review from '../components/Review';
 
@@ -12,9 +12,9 @@ import Review from '../components/Review';
 class Vendor extends React.Component {
 
   submit(data) {
-    const { name, hour, reviews, address, image, description, _id } = data;
+    const { name, image, location, description, weekdayOpen, openHour, closeHour, diets } = data;
     // eslint-disable-next-line no-undef
-    Restaurants.collection.update(_id, { $set: { name, hour, reviews, image, address, description } }, (error) => (error ? swal('Error', error.message, 'error') : swal('Success', 'Item updated successfully', 'success')));
+    VendorProfile.update(_id, { $set: { name, image, location, description, weekdayOpen, openHour, closeHour, diets } }, (error) => (error ? swal('Error', error.message, 'error') : swal('Success', 'Item updated successfully', 'success')));
 
     const { note, owner, contactId, createdAt } = data;
     Reviews.collection.insert({ note, owner, contactId, createdAt }, (error) => {
@@ -59,16 +59,21 @@ class Vendor extends React.Component {
             </div>
             <Grid.Row columns={2} divided style={{ paddingTop: 25 }}>
               <Grid.Column>
-                {/* <Image src={this.props.doc.image} centered size='large' rounded bordered/> */}
                 <div>
-                  <Header as="h3" align="center">Hours</Header>
-                  <p align="center">{this.props.doc.hour}</p>
+                  <Header as="h3" align="center">Open Hours</Header>
+                  <p align="center">{this.props.doc.openHour.toLocaleTimeString()}</p>
                 </div>
+                <br/>
+                <div>
+                  <Header as="h3" align="center">Closed Hours</Header>
+                  <p align="center">{this.props.doc.closeHour.toLocaleTimeString()}</p>
+                </div>
+                
               </Grid.Column>
               <Grid.Column>
                 <div>
                   <Header as="h3" align="center">Location</Header>
-                  <p align="center">{this.props.doc.address}</p>
+                  <p align="center">{this.props.doc.location}</p>
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -82,9 +87,7 @@ class Vendor extends React.Component {
             <Grid.Row centered>
               <Comment.Group>
                 <Header as="h2" align="center">Reviews</Header>
-                {/* /!* eslint-disable-next-line react/jsx-key *!/ */}
                 <Comment>
-                  {/* eslint-disable-next-line react/jsx-key */}
                   {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
                 </Comment>
               </Comment.Group>
@@ -109,9 +112,9 @@ Vendor.propTypes = {
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(({ match }) => {
-  const docId = match.params._id;
+  const docId = match.params.owner;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Restaurants.userPublicationName);
+  const subscription = Meteor.subscribe('VendorProfile');
   const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() && subscription2.ready();
@@ -120,8 +123,8 @@ export default withTracker(({ match }) => {
   // const reviews = Reviews.collection.find({}).fetch();
   return {
     // restaurants,
-    reviews: Reviews.collection.find({ restaurantName: (Restaurants.collection.findOne(docId) !== undefined) ? (Restaurants.collection.findOne(docId).name) : ('') }).fetch(),
+    reviews: Reviews.collection.find({ owner: (VendorProfile.findOne(docId) !== undefined) ? (VendorProfile.findOne({ docId })) : ('') }).fetch(),
     ready,
-    doc: Restaurants.collection.findOne(docId),
+    doc: VendorProfile.findOne({ docId }),
   };
 })(Vendor);
