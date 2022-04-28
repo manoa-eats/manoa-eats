@@ -1,14 +1,15 @@
 import React from 'react';
-import { Card, Image, Button } from 'semantic-ui-react';
+import { Card, Image, Button, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile'
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class RestaurantAdmin extends React.Component {
   removeItem(docID) {
     // eslint-disable-next-line no-console
     console.log(`item to delete is: ${docID}`);
-    this.props.restaurant.remove(docID);
+    VendorProfile.remove(docID);
   }
 
   render() {
