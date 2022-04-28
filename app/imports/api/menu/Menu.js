@@ -1,21 +1,33 @@
+import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
-import { Mongo } from 'meteor/mongo';
 
-const Menu = new Mongo.Collection('MenuCollection');
+/**
+ * The ContactsCollection. It encapsulates state and variable values for Contacts.
+ */
+class MenusCollection {
+  constructor() {
+    // The name of this collection.
+    this.name = 'MenusCollection';
+    // Define the Mongo collection.
+    this.collection = new Mongo.Collection(this.name);
+    // Define the structure of each document in the collection.
+    this.schema = new SimpleSchema({
+      foodName: String,
+      owner: String,
+      available: Date,
+      price: Number,
+    }, { tracker: Tracker });
+    // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
+    this.collection.attachSchema(this.schema);
+    // Define names for publications and subscriptions
+    this.userPublicationName = `${this.name}.publication.user`;
+    this.adminPublicationName = `${this.name}.publication.admin`;
+  }
+}
 
-/** Define a schema to specify the structure of each document in the collection. */
-const MenuSchema = new SimpleSchema({
-  name: String,
-  owner: String,
-  foodName: String,
-  dateAvailable: Date,
-  timeAvailable: Number,
-  price: Number,
-}, { tracker: Tracker });
-
-/** Attach the schema to the collection. */
-Menu.attachSchema(MenuSchema);
-
-/** Make these objects available to others. */
-export { Menu, MenuSchema };
+/**
+ * The singleton instance of the MenusCollection.
+ * @type {MenusCollection}
+ */
+export const Menus = new MenusCollection();

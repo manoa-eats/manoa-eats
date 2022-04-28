@@ -1,8 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
+<<<<<<< HEAD
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 
+=======
+import { Menus } from '../../api/menu/Menu';
+>>>>>>> fed6202afc5f9fa84574e0dfe34e6c5db0c83996
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -14,6 +18,11 @@ function addContact(data) {
 function addRestaurant(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   VendorProfile.insert(data);
+}
+
+function addMenu(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Menus.collection.insert(data);
 }
 
 // Initialize the StuffsCollection if empty.
@@ -28,5 +37,12 @@ if (VendorProfile.find().count() === 0) {
   if (Meteor.settings.defaultRestaurants) {
     console.log('Creating default Restaurants.');
     Meteor.settings.defaultRestaurants.map(data => addRestaurant(data));
+  }
+}
+
+if (Menus.collection.find().count() === 0) {
+  if (Meteor.settings.defaultMenus) {
+    console.log('Creating default Menus.');
+    Meteor.settings.defaultMenus.map(data => addMenu(data));
   }
 }
