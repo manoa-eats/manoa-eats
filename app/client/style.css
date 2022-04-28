@@ -14,5 +14,13 @@
 }
 
 .margin {
-  margin-top: 10%;
+  margin-top: 20%;
+}
+
+.footer {
+  background-Color: #2F4C39;
+  color: #f5f0e6;
+  padding: 11px 0px;
+  font-size: 14px;
+  margin-top: 50px;
 }
