@@ -8,7 +8,6 @@ import { VendorProfile } from '../../api/vendorprofile/VendorProfile'
 class RestaurantAdmin extends React.Component {
   removeItem(docID) {
     // eslint-disable-next-line no-console
-    console.log(`item to delete is: ${docID}`);
     VendorProfile.remove(docID);
   }
 
