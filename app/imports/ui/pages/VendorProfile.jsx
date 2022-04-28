@@ -7,7 +7,6 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
-// import DateField from '../forms/controllers/DateField';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { VendorProfileInfoSchema as formSchema } from '../forms/VendorProfileInfo';
 
@@ -28,7 +27,8 @@ class CreateVendorProfile extends React.Component {
     let insertError;
     const { name, image, location, description, weekdayOpen, openHour, closeHour, diets } = data;
     const owner = Meteor.user().username;
-    VendorProfile.insert({ name, image, owner, location, description, weekdayOpen, openHour, closeHour, diets },
+    const reviews = '';
+    VendorProfile.insert({ name, image, owner, location, description, weekdayOpen, openHour, closeHour, diets, reviews },
       (error) => {
         insertError = error;
         if (error) {

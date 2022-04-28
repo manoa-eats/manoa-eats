@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
-import { Restaurants } from '../../api/Restaurant/Restaurants';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Menus } from '../../api/menu/Menu';
 /* eslint-disable no-console */
 
@@ -12,7 +12,7 @@ function addContact(data) {
 
 function addRestaurant(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Restaurants.collection.insert(data);
+  VendorProfile.insert(data);
 }
 
 function addMenu(data) {
@@ -28,7 +28,7 @@ if (Contacts.collection.find().count() === 0) {
   }
 }
 
-if (Restaurants.collection.find().count() === 0) {
+if (VendorProfile.find().count() === 0) {
   if (Meteor.settings.defaultRestaurants) {
     console.log('Creating default Restaurants.');
     Meteor.settings.defaultRestaurants.map(data => addRestaurant(data));
