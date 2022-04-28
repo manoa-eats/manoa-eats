@@ -1,10 +1,21 @@
 import React from 'react';
-import { Grid, Image, Loader, Header, Container, Segment, Divider, Rating, Comment } from 'semantic-ui-react';
+import {
+  Grid,
+  Image,
+  Loader,
+  Header,
+  Container,
+  Segment,
+  Divider,
+  Rating,
+  Comment,
+  Label,
+} from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import swal from 'sweetalert';
-import { Restaurants } from '../../api/Restaurant/Restaurants';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Reviews } from '../../api/review/Reviews';
 import Review from '../components/Review';
 
@@ -12,9 +23,9 @@ import Review from '../components/Review';
 class Vendor extends React.Component {
 
   submit(data) {
-    const { name, hour, reviews, address, image, description, _id } = data;
+    const { name, image, location, description, weekdayOpen, openHour, closeHour, diets } = data;
     // eslint-disable-next-line no-undef
-    Restaurants.collection.update(_id, { $set: { name, hour, reviews, image, address, description } }, (error) => (error ? swal('Error', error.message, 'error') : swal('Success', 'Item updated successfully', 'success')));
+    VendorProfile.update(_id, { $set: { name, image, location, description, weekdayOpen, openHour, closeHour, diets } }, (error) => (error ? swal('Error', error.message, 'error') : swal('Success', 'Item updated successfully', 'success')));
 
     const { note, owner, contactId, createdAt } = data;
     Reviews.collection.insert({ note, owner, contactId, createdAt }, (error) => {
@@ -38,15 +49,9 @@ class Vendor extends React.Component {
             <div style={{ paddingLeft: 50, paddingRight: 50, position: 'absolute', bottom: -45 }}>
               <Grid verticalAlign='middle' textAlign='center' columns='2' centered>
                 <Grid.Row divided>
-                  <Grid.Column width={5}>
-                    {/* Change with logo */}
-                    <Image src='https://react.semantic-ui.com/images/wireframe/square-image.png' circular size={'medium'} bordered/>
-                  </Grid.Column>
-                  <Grid.Column width={11}>
-                    <Segment raised inverted tertiary>
-                      <Header as="h1" textAlign="center">{this.props.doc.name}</Header>
-                    </Segment>
-                  </Grid.Column>
+                  <Segment raised inverted>
+                    <Header as="h1" textAlign="center">{this.props.doc.name}</Header>
+                  </Segment>
                 </Grid.Row>
               </Grid>
             </div>
@@ -59,16 +64,28 @@ class Vendor extends React.Component {
             </div>
             <Grid.Row columns={2} divided style={{ paddingTop: 25 }}>
               <Grid.Column>
-                {/* <Image src={this.props.doc.image} centered size='large' rounded bordered/> */}
                 <div>
-                  <Header as="h3" align="center">Hours</Header>
-                  <p align="center">{this.props.doc.hour}</p>
+                  <Header as="h3" align="center">Open Hours</Header>
+                  <p align="center">{this.props.doc.openHour.toLocaleTimeString()}</p>
                 </div>
+                <br/>
+                <div>
+                  <Header as="h3" align="center">Closed Hours</Header>
+                  <p align="center">{this.props.doc.closeHour.toLocaleTimeString()}</p>
+                </div>
+                <br/>
+                <div>
+                  <Header as="h3" align="center">Weekdays Open</Header>
+                  <div align='center'>
+                    {this.props.doc.weekdayOpen.map((day, key) => <Label key={key}>{day}</Label>)}
+                  </div>
+                </div>
+
               </Grid.Column>
               <Grid.Column>
                 <div>
                   <Header as="h3" align="center">Location</Header>
-                  <p align="center">{this.props.doc.address}</p>
+                  <p align="center">{this.props.doc.location}</p>
                 </div>
               </Grid.Column>
             </Grid.Row>
@@ -82,10 +99,8 @@ class Vendor extends React.Component {
             <Grid.Row centered>
               <Comment.Group>
                 <Header as="h2" align="center">Reviews</Header>
-                {/* /!* eslint-disable-next-line react/jsx-key *!/ */}
                 <Comment>
-                  {/* eslint-disable-next-line react/jsx-key */}
-                  {this.props.reviews.map((review, index) => <Review key={index} review={review}/>)}
+                  {this.props.reviews.map((review, index) => <Review key={index} reviews={review}/>)}
                 </Comment>
               </Comment.Group>
             </Grid.Row>
@@ -111,17 +126,18 @@ Vendor.propTypes = {
 export default withTracker(({ match }) => {
   const docId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Restaurants.userPublicationName);
+  const subscription = Meteor.subscribe('VendorProfile');
   const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() && subscription2.ready();
   // Get the Stuff documents
   // const restaurants = Restaurants.collection.find({}).fetch();
-  // const reviews = Reviews.collection.find({}).fetch();
+  const reviewer = Reviews.collection.find({ contactId: docId }).fetch();
+  console.log(reviewer);
   return {
     // restaurants,
-    reviews: Reviews.collection.find({ restaurantName: (Restaurants.collection.findOne(docId) !== undefined) ? (Restaurants.collection.findOne(docId).name) : ('') }).fetch(),
+    reviews: reviewer,
     ready,
-    doc: Restaurants.collection.findOne(docId),
+    doc: VendorProfile.findOne(docId),
   };
 })(Vendor);

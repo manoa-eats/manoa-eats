@@ -34,7 +34,7 @@ class Restaurant extends React.Component {
             src={this.props.restaurant.image}
           />
 
-          <Card.Header><Link id='restName' to={`/vendor-page/${this.props.restaurant._id}`}>{this.props.restaurant.name}</Link></Card.Header>
+          <Card.Header><Link id='restName' to={`/vendor-page/${this.props.restaurant._id}`}>{this.props.restaurant.name} (click for more info)</Link></Card.Header>
 
           <Card.Meta>{this.props.restaurant.location}</Card.Meta>
           <Card.Meta>Open: {this.props.restaurant.openHour.toLocaleTimeString()}</Card.Meta>
