@@ -20,7 +20,7 @@ class Landing extends React.Component {
       <Header as={'h3'}>{restaurant.name}</Header>
     </List.Item>);
     return (
-      <div>
+      <div id='landing-page'>
         <Grid stackable columns={3} >
           <Grid.Column textAlign='center' className={'gridbkg'}>
             <Header as="h1" inverted >Open Now</Header>

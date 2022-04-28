@@ -33,11 +33,12 @@ class AddReview extends React.Component {
       <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Segment>
           <TextField
+            id='addAReview'
             placeholder="Write review here..."
             label="Add a Restaurant review"
             name='note'
             autoComplete="off" />
-          <SubmitField style={{ background: '#4CAF50' }} value='Submit'/>
+          <SubmitField id='submitReview' style={{ background: '#4CAF50' }} value='Submit'/>
           <ErrorsField/>
           <HiddenField name='owner' value={this.props.owner}/>
           <HiddenField name='contactId' value={this.props.contactId}/>

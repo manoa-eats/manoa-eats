@@ -1,9 +1,9 @@
-name: ci-meteor-application-template-react
+name: manoa-eats
 
 on:
   push:
     branches:
-      - master
+      - main
 
 defaults:
   run:
@@ -38,3 +38,4 @@ jobs:
         run: |
           meteor npm install
           meteor npm run lint
+          meteor npm run testcafe

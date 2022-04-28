@@ -7,6 +7,7 @@ import { UserDiet } from '../../api/userdiet/UserDiet';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import { Reviews } from '../../api/review/Reviews';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
+import { Menus } from '../../api/menu/Menu';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
 Meteor.publish(Contacts.userPublicationName, function () {
@@ -26,13 +27,16 @@ Meteor.publish(Notes.userPublicationName, function () {
 });
 
 Meteor.publish(Reviews.userPublicationName, function () {
+  return Reviews.collection.find();
+});
+
+Meteor.publish(Menus.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Reviews.collection.find({ owner: username });
+    return Menus.collection.find({ owner: username });
   }
   return this.ready();
 });
-
 Meteor.publish(Restaurants.userPublicationName, function () {
   return Restaurants.collection.find();
 });
@@ -45,7 +49,7 @@ Meteor.publish('UserDiet', function publishEnrollmentData() {
   return UserDiet.find();
 });
 
-Meteor.publish('VendorProfile', function publishEnrollmentData() {
+Meteor.publish('VendorProfile', function publishVendorData() {
   return VendorProfile.find();
 });
 
@@ -67,10 +71,7 @@ Meteor.publish(Restaurants.adminPublicationName, function () {
 });
 
 Meteor.publish(Reviews.adminPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Reviews.collection.find();
-  }
-  return this.ready();
+  return Reviews.collection.find();
 });
 
 // alanning:roles publication

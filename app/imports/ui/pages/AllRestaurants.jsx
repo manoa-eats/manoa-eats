@@ -4,6 +4,7 @@ import { Container, Header, Loader, Card, Segment, Button } from 'semantic-ui-re
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import Restaurant from '../components/Restaurant';
 import contact from '../components/Contact';
 import { Reviews } from '../../api/review/Reviews';
@@ -68,7 +69,7 @@ class AllRestaurants extends React.Component {
     }
 
     return (
-      <Container>
+      <Container id='all-Restaurants-page'>
         <Header as="h2" textAlign="center" inverted>List Restaurants</Header>
         <Segment>
           <Button
@@ -101,7 +102,7 @@ AllRestaurants.propTypes = {
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Restaurants.userPublicationName);
+  const subscription = Meteor.subscribe('VendorProfile');
   const subscriptionAdmin = Meteor.subscribe(Restaurants.adminPublicationName);
   const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   const subscription2Admin = Meteor.subscribe(Reviews.adminPublicationName);
@@ -109,7 +110,7 @@ export default withTracker(() => {
   const ready = subscription.ready() && subscriptionAdmin.ready();
   const ready2 = subscription2.ready() && subscription2Admin.ready();
   // Get the Stuff documents
-  const restaurants = Restaurants.collection.find({}).fetch();
+  const restaurants = VendorProfile.find({}).fetch();
   const reviews = Reviews.collection.find({}).fetch();
   return {
     restaurants,
