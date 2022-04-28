@@ -18,6 +18,8 @@ import swal from 'sweetalert';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Reviews } from '../../api/review/Reviews';
 import Review from '../components/Review';
+import { Menus } from '../../api/menu/Menu';
+import VendorMenu from './VendorMenu';
 
 /** Renders the Page for adding a document. */
 class Vendor extends React.Component {
@@ -91,10 +93,7 @@ class Vendor extends React.Component {
             </Grid.Row>
             <Divider/>
             <Grid.Row centered>
-              <Header as="h2" align="center">Menu</Header>
-              {/* <List> */}
-              {/*  {this.props.map((item) => <List.Item>{item}</List.Item>)} */}
-              {/* </List> */}
+              <VendorMenu menus={this.props.menus}/>
             </Grid.Row>
             <Grid.Row centered>
               <Comment.Group>
@@ -119,25 +118,29 @@ Vendor.propTypes = {
   // restaurants: PropTypes.array.isRequired,
   reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
+  menus: PropTypes.array.isRequired,
   doc: PropTypes.object,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(({ match }) => {
-  const docId = match.params._id;
+  const docId = match.params.owner;
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('VendorProfile');
+  const subscription3 = Meteor.subscribe(Menus.userPublicationName);
   const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready() && subscription2.ready();
+  const ready = subscription.ready() && subscription2.ready() && subscription3.ready();
   // Get the Stuff documents
   // const restaurants = Restaurants.collection.find({}).fetch();
-  const reviewer = Reviews.collection.find({ contactId: docId }).fetch();
-  console.log(reviewer);
+  const reviewer = Reviews.collection.find({ owner: docId }).fetch();
+  const menu = Menus.collection.find({ owner: docId }).fetch();
+  console.log(menu);
   return {
     // restaurants,
     reviews: reviewer,
+    menus: menu,
     ready,
-    doc: VendorProfile.findOne(docId),
+    doc: VendorProfile.findOne({ owner: docId }),
   };
 })(Vendor);

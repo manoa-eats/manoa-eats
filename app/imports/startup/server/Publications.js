@@ -31,11 +31,7 @@ Meteor.publish(Reviews.userPublicationName, function () {
 });
 
 Meteor.publish(Menus.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Menus.collection.find({ owner: username });
-  }
-  return this.ready();
+  return Menus.collection.find();
 });
 Meteor.publish(Restaurants.userPublicationName, function () {
   return Restaurants.collection.find();

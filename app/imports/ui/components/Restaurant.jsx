@@ -5,22 +5,6 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import AddReview from './AddReview';
 
-// eslint-disable-next-line no-unused-vars
-class ModalContainer extends React.Component {
-  componentDidMount() {
-    // eslint-disable-next-line react/prop-types
-    const { startOpen } = this.props;
-
-    if (startOpen) {
-      this.handleOpen();
-    }
-  }
-
-  handleOpen = () => this.setState({ modalOpen: true });
-
-  handleClose = () => this.setState({ modalOpen: false });
-}
-
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Restaurant extends React.Component {
 
@@ -34,7 +18,7 @@ class Restaurant extends React.Component {
             src={this.props.restaurant.image}
           />
 
-          <Card.Header><Link id='restName' to={`/vendor-page/${this.props.restaurant._id}`}>{this.props.restaurant.name} (click for more info)</Link></Card.Header>
+          <Card.Header><Link id='restName' to={`/vendor-page/${this.props.restaurant.owner}`}>{this.props.restaurant.name} (click for more info)</Link></Card.Header>
 
           <Card.Meta>{this.props.restaurant.location}</Card.Meta>
           <Card.Meta>Open: {this.props.restaurant.openHour.toLocaleTimeString()}</Card.Meta>
