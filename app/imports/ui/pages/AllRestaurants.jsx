@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Segment, Button } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Button } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
@@ -71,16 +71,18 @@ class AllRestaurants extends React.Component {
     return (
       <Container id='all-Restaurants-page'>
         <Header as="h2" textAlign="center" inverted>List Restaurants</Header>
-        <Segment>
-          <Button
-            color={'red'}
-            onClick={() => this.setState({
-              sortName: !this.state.sortName,
-              sortRating: false,
-            })}>
+        <div align="center">
+          <Container>
+            <Button
+              color={'red'}
+              onClick={() => this.setState({
+                sortName: !this.state.sortName,
+                sortRating: false,
+              })}>
             Sort Alphabetically
-          </Button>
-        </Segment>
+            </Button>
+          </Container>
+        </div>
         <Card.Group centered>
           {restaurants.map((restaurant, index) => <Restaurant
             key={index}

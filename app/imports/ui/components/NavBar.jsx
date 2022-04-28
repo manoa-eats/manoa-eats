@@ -12,7 +12,7 @@ import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 class NavBar extends React.Component {
 
   render() {
-    const menuStyle = { marginBottom: '10px', backgroundColor: '#C1E1B0' };
+    const menuStyle = { marginBottom: '10px', backgroundColor: '#2F4C39' };
     const username = () => {
       if (Meteor.user() == null) {
         return false;
@@ -27,7 +27,7 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Image src='/images/manoa-eats-logo.png' size="tiny"/>
+          <Image src='/images/manoa-eats-logo2.png' size="small"/>
         </Menu.Item>
         <Menu.Item id='navbar-all-restaurants' as={NavLink} activeClassName="active" exact to="/all-restaurants" key="all-restaurants">All
                     Restaurants</Menu.Item>
