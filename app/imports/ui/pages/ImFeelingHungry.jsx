@@ -74,7 +74,7 @@ class ImFeelingHungry extends React.Component {
   renderPage() {
     return (
       <Container id="im-Feeling-Hungry-page">
-        <Header as="h2" textAlign="center" inverted>I am Feeling Hungry</Header>
+        <Header as="h1" textAlign="center" inverted>I am Feeling Hungry</Header>
         <Card centered>
           {this.pickRandomRestaurant(this.vibeCheckUser())}
         </Card>

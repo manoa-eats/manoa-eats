@@ -53,7 +53,7 @@ class CreateUserProfile extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">User Profile</Header>
+          <Header as="h1" textAlign="center" inverted>User Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
             <Segment>
               <Image centered rounded src={this.state.image} size='medium' />

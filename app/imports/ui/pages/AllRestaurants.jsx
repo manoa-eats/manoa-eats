@@ -70,7 +70,7 @@ class AllRestaurants extends React.Component {
     const margin = { marginBottom: '15px' };
     return (
       <Container id='all-Restaurants-page'>
-        <Header as="h2" textAlign="center" inverted>List Restaurants</Header>
+        <Header as="h1" textAlign="center" inverted>List Restaurants</Header>
         <div align="center">
           <Container>
             <Button
