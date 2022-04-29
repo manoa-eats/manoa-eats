@@ -62,7 +62,6 @@ class ImFeelingHungry extends React.Component {
                         validIndexes.push(i);
                     }
                 }
-                console.log(validIndexes);
                 let randomIndex = _.sample(validIndexes);
                 return <Restaurant restaurant={this.props.restaurants[randomIndex]}/>;
             }
