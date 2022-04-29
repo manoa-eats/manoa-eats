@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Menus } from '../../api/menu/Menu';
+import { UserProfile } from "../../api/userprofile/UserProfile";
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -18,6 +19,11 @@ function addRestaurant(data) {
 function addMenu(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Menus.collection.insert(data);
+}
+
+function addUsers(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  UserProfile.insert(data);
 }
 
 // Initialize the StuffsCollection if empty.
@@ -39,5 +45,12 @@ if (Menus.collection.find().count() === 0) {
   if (Meteor.settings.defaultMenus) {
     console.log('Creating default Menus.');
     Meteor.settings.defaultMenus.map(data => addMenu(data));
+  }
+}
+
+if (UserProfile.find().count() === 0) {
+  if (Meteor.settings.defaultUserProfiles) {
+    console.log('Creating default users.');
+    Meteor.settings.defaultUserProfiles.map(data => addUsers(data));
   }
 }

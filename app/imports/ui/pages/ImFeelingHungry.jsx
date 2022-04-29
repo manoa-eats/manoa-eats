@@ -42,8 +42,20 @@ class ImFeelingHungry extends React.Component {
     pickRandomRestaurant(userDiets) {
         let restaurantList = [];
         let validIndexes = [];
+        let getValidRestaurantDiets;
         const chosenRestaurant = _.sample(this.props.restaurants);
-        if (userDiets !== undefined) {
+        for (let i = 0; i < this.props.restaurants.length; i++) {
+            getValidRestaurantDiets = _.flatten(this.props.restaurants[i].diets);
+            
+        }
+        let allValidDiets = _.uniq(getValidRestaurantDiets);
+        if (this.arrayContains(allValidDiets, userDiets) === false) { 
+            return (<Card>
+                <Card.Content header={`We couldn't find a restaurant that matches your diet: ${userDiets}`}/>
+            </Card>
+            );
+        }
+        if (userDiets !== undefined && this.arrayContains(allValidDiets, userDiets)) {
             for (let i = 0; i < this.props.restaurants.length; i++) {
                 restaurantList.push(this.props.restaurants[i].diets);
                 if (this.arrayContains(restaurantList[i], userDiets)) {
