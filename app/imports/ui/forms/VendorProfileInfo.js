@@ -11,7 +11,7 @@ const VendorProfileInfoSchema = new SimpleSchema({
   'weekdayOpen.$': { type: String, allowedValues: DataValues.weekday },
   openHour: { label: 'Hours open', type: Date },
   closeHour: { label: 'Hours closed', type: Date },
-  diets: { label: 'Diets', type: Array, optional: true },
+  diets: { label: 'Diets', type: Array },
   'diets.$': { type: String, allowedValues: DataValues.diet },
 });
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Image } from 'semantic-ui-react';
+import { Menu, Dropdown, Image, Icon } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 import { UserProfile } from '../../api/userprofile/UserProfile';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
@@ -24,48 +24,62 @@ class NavBar extends React.Component {
     };
     // Used to check that an owner has a database.
     const checkDatabase = (Database) => (Database.find({ owner: `${this.props.currentUser}` }).fetch()[0]);
+    const spacing = { marginLeft: '5px' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Image src='/images/manoa-eats-logo2.png' size="small"/>
         </Menu.Item>
         <Menu.Item id='navbar-all-restaurants' as={NavLink} activeClassName="active" exact to="/all-restaurants" key="all-restaurants">All
-                    Restaurants</Menu.Item>
+                    Restaurants <Icon name='food' size="large"/></Menu.Item>
         <Menu.Item id='navbar-feeling-lucky' as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
-                    Hungry</Menu.Item>
+                    Hungry <Icon name='random' size="large"/></Menu.Item>
 
         {this.props.currentUser && !checkDatabase(UserProfile) && !username() ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to="/user-profile"
-              key="profile">Create Profile</Menu.Item>,
+              key="profile">Create Profile <Icon style={spacing} name="add user" size="large"/></Menu.Item>,
           ]
         ) : ''}
         {this.props.currentUser && checkDatabase(UserProfile) && !username() ? (
           [
             <Menu.Item id='navbar-edit-profile' as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.currentUser}`}
-              key="edit">Edit Profile</Menu.Item>,
+              key="edit">Edit Profile<Icon style={spacing} name="edit" size="large"/></Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item id='navbar-vendor-verification' as={NavLink} activeClassName="active" exact to="/vendor-review" key="admin">Vendor
-                        Verification</Menu.Item>
+                        Verification <Icon style={spacing} name='check square outline' size="large"/></Menu.Item>
         ) : ''}
 
         {(username() && !checkDatabase(VendorProfile)) ? (
           <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor-profile" key="vendor">Vendor
-            Profile</Menu.Item>
+            Profile
+          <Icon.Group style={spacing} size='large'>
+            <Icon name='home' />
+            <Icon corner color="black" name='add' />
+          </Icon.Group></Menu.Item>
         ) : ''}
         {username() && checkDatabase(VendorProfile) ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-vendor-profile/${this.props.currentUser}`}
-              key="edit-vendor">Edit Vendor Profile</Menu.Item>,
+              key="edit-vendor">Edit Vendor Profile
+              <Icon style={spacing} name="edit" size="large"/>
+            </Menu.Item>,
           ]
         ) : ''}
         {(username()) ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/create-menu-item" key="menu">Create Menu</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/create-menu-item" key="menu">Create Menu
+            <Icon.Group style={spacing} size='large'>
+              <Icon name='food' />
+              <Icon corner color="black" name='add' />
+            </Icon.Group>
+          </Menu.Item>
         ) : ''}
         {(username()) ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to={`/view-menu/${this.props.currentUser}`} key="view-menu">View Menu</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to={`/view-menu/${this.props.currentUser}`} key="view-menu">View Menu
+            <Icon style={spacing} name="eye" size="large"/>
+          </Menu.Item>
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
