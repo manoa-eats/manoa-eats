@@ -80,7 +80,7 @@ class Signup extends React.Component {
                     onChange={this.handleChange}
                   />
                   <Form.Radio
-                    id='adminRadio'
+                    id='vendorRadio'
                     label='vendor'
                     usertype='vendor'
                     checked={usertype === 'vendor'}

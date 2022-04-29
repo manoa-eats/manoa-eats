@@ -51,7 +51,7 @@ class CreateUserProfile extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     return (
-      <Grid id='userProfile-page' container centered>
+      <Grid container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">User Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>

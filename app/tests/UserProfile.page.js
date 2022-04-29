@@ -13,14 +13,16 @@ class UserProfilePage {
 
   /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
   async userProfile(testController, name, image) {
-    const createUserProfileName = Selector('#uniforms-0000-0000');
+    const createUserProfileName = Selector('#userFormName');
     await testController.hover(createUserProfileName);
     await testController.click(createUserProfileName);
+    await testController.pressKey('ctrl+a delete');
     await testController.typeText(createUserProfileName, name);
 
-    const createUserProfileImage = Selector('#uniforms-0000-0001');
+    const createUserProfileImage = Selector('#userFormImage');
     await testController.hover(createUserProfileImage);
     await testController.click(createUserProfileImage);
+    await testController.pressKey('ctrl+a delete');
     await testController.typeText(createUserProfileImage, image);
     await testController.click('#profile-submit');
   }

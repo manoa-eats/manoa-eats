@@ -24,8 +24,8 @@ class SignupPage {
   }
 
   /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
-  async signupAdmin(testController, username, password) {
-    const adminRadioButton = Selector('#adminRadio');
+  async signupVendor(testController, username, password) {
+    const adminRadioButton = Selector('#vendorRadio');
     await this.isDisplayed(testController);
     await testController.typeText('#signup-form-email', username);
     await testController.typeText('#signup-form-password', password);

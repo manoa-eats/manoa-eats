@@ -49,7 +49,12 @@ class NavBar {
 
   /** Pull down login menu, go to Vendor Verification page. */
   async gotoCreateProfilePage(testController) {
-    await testController.click('#navbar-create-profile');
+    await testController.click('#navbar-edit-profile');
+  }
+
+  /** Pull down login menu, go to Vendor Verification page. */
+  async gotoFeelingLuckyPage(testController) {
+    await testController.click('#navbar-feeling-lucky');
   }
 }
 

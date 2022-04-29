@@ -31,18 +31,18 @@ class NavBar extends React.Component {
         </Menu.Item>
         <Menu.Item id='navbar-all-restaurants' as={NavLink} activeClassName="active" exact to="/all-restaurants" key="all-restaurants">All
                     Restaurants</Menu.Item>
-        <Menu.Item as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
+        <Menu.Item id='navbar-feeling-lucky' as={NavLink} activeClassName="active" exact to="/im-feeling-hungry" key="hungry">I`m Feeling
                     Hungry</Menu.Item>
 
         {this.props.currentUser && !checkDatabase(UserProfile) && !username() ? (
           [
-            <Menu.Item id = 'navbar-create-profile' as={NavLink} activeClassName="active" exact to="/user-profile"
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/user-profile"
               key="profile">Create Profile</Menu.Item>,
           ]
         ) : ''}
         {this.props.currentUser && checkDatabase(UserProfile) && !username() ? (
           [
-            <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.currentUser}`}
+            <Menu.Item id='navbar-edit-profile' as={NavLink} activeClassName="active" exact to={`/edit-profile/${this.props.currentUser}`}
               key="edit">Edit Profile</Menu.Item>,
           ]
         ) : ''}
