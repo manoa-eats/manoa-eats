@@ -20,9 +20,6 @@ class Landing extends React.Component {
       key={i}>
       <Header as={'h3'}>{restaurant.name}</Header>
     </List.Item>);
-    console.log(openRestaurants);
-    console.log(now, this.props.vendors[1].openHour.getHours(), this.props.vendors[1].closeHour.getHours());
-    console.log(this.props.vendors[1]);
     return (
       <div id='landing-page'>
         <Grid stackable columns={3} >
