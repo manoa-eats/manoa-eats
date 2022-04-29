@@ -68,7 +68,7 @@
       "closeHour": "2022-04-28T00:21:00Z",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/07/lasoon_big2.jpg",
-      "owner": " john@foo.com",
+      "owner": " unique@foo.com",
       "description": "Lasoon offers natural home-cooked Nepali and Indian food for everyone. From a $5 bowl options when you are in a hurry to larger plates to please your appetite.\nWe are focusing on vegan and gluten free meals and offer 4 – 5 options that are changed daily. Besides the vegan options we offer 3 meat options ranging from mild to spicy!"
     },
     {
@@ -80,7 +80,7 @@
       "reviews": "4",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/holoholo_big.jpg",
-      "owner": " john@foo.com",
+      "owner": " food@foo.com",
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen. Grab-and-go, breakfast items, or catering for any sized group are also available!"
     },
     {
@@ -92,7 +92,7 @@
       "reviews": "5",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/landl_big.jpg",
-      "owner": " john@foo.com",
+      "owner": " there@foo.com",
       "description": "Delicious local and Asian-American fusion cuisine served in big portions at reasonable prices! Try delicious L&L favorites like the Hawaiian Barbecue beef, chicken, or short ribs! Enjoy L&L’s famous fried chicken katsu, the best in town! Grab-and-go, breakfast items and party packs for groups also available."
     },
     {
@@ -104,7 +104,7 @@
       "reviews": "2",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/crepe_big.jpg",
-      "owner": " john@foo.com",
+      "owner": " le@foo.com",
       "description": "Le Crêpe Café makes traditional French crêpes, cooked to order in front of customers. They specialize in a flavorsome menu of sweet and savory crêpes and use fresh ingredients, organic when possible. Their utensils are even bio-compostable. Enjoy a crêpe any time of day, as a breakfast, snack, main course, or dessert — close your eyes and you’re in Paris!\nWhether you’re needing a break from the law books or a pick-me-up as you’re headed to or off campus, you’ll also appreciate Le Crêpe Café’s French Roast and espresso drinks."
     },
     {
@@ -116,16 +116,22 @@
       "reviews": "3",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/panda_big2.jpg",
-      "owner": " john@foo.com",
+      "owner": " panda@foo.com",
       "description": "Panda Express serves gourmet Chinese food made with only the freshest ingredients. Famous for its Orange Chicken, they also offer a number of Wok Smart entrées that contain less than 250 calories per serving, such as Shanghai Angus Steak, Kung Pao Chicken, and Broccoli Beef. Other favorites include Beijing Beef, Sweetfire Chicken Breast, and Honey Walnut Shrimp.\nPanda Express’ offerings can be enjoyed in Panda Bowls, or two and three item plates. Perfect for lunch, dinner or as a pick-me-up snack between classes."
     }
   ],
 
   "defaultMenus": [{
-    "foodName": "Dunkin’", 
+    "foodName": "donut",
     "price": "10.15", 
     "owner": "john@foo.com",
     "available": "2022-04-26T12:03:00Z"
+    },
+    {
+      "foodName": "fried rice",
+      "price": "10.15",
+      "owner": "panda@foo.com",
+      "available": "2022-04-26T12:03:00Z"
     }
   ]
 }

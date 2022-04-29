@@ -45,13 +45,14 @@ MenuTable.propTypes = {
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-export default withTracker(() => {
+export default withTracker(({ match }) => {
+  const owner = match.params.owner;
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Menus.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the Stuff documents
-  const menus = Menus.collection.find({}).fetch();
+  const menus = Menus.collection.find({ owner: owner }).fetch();
   return {
     menus,
     ready,

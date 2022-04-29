@@ -4,6 +4,7 @@ import { AutoForm, ErrorsField, NumField, DateField, SubmitField, TextField } fr
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { Redirect } from 'react-router-dom';
 import { MenuProfileInfoSchema as formSchema } from '../forms/MenuProfileInfo';
 // eslint-disable-next-line import/named
 import { Menus } from '../../api/menu/Menu';
@@ -12,6 +13,11 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 /** Renders the Page for adding a document. */
 class CreateMenuItem extends React.Component {
+
+  constructor() {
+    super();
+    this.state = { owner: '' };
+  }
 
   // On submit, insert the data.
   submit(data, formRef) {
@@ -23,6 +29,7 @@ class CreateMenuItem extends React.Component {
           swal('Error', error.message, 'error');
         } else {
           swal('Success', 'Item added successfully', 'success');
+          this.setState({ owner });
           formRef.reset();
         }
       });
