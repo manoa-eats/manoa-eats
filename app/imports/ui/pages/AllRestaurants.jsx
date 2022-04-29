@@ -43,43 +43,53 @@ class AllRestaurants extends React.Component {
     };
 
     // Compare function to sort by review
-    // const compRating = function (a, b) {
-    //   const A = parseInt(a.reviews, 10);
-    //   const B = parseInt(b.reviews, 10);
-    //   if (A < B) {
-    //     return -1;
-    //   }
-    //   if (A > B) {
-    //     return 1;
-    //   }
-    //   return 0;
-    // };
+    const compRating = function (a, b) {
+      const A = parseInt(a.reviews, 10);
+      const B = parseInt(b.reviews, 10);
+      if (A < B) {
+        return -1;
+      }
+      if (A > B) {
+        return 1;
+      }
+      return 0;
+    };
 
     // Sort by name
     if (this.state.sortName) {
       restaurants.sort(compName);
     } else if (this.state.sortRating) {
       // sort by value
-      // TODO: This doesn't work
-      // restaurants.sort(compRating);
+      restaurants.sort(compRating);
     }
 
     if (!this.state.sortName && !this.state.sortRating) {
       restaurants.reverse();
     }
 
+    const margin = { marginBottom: '15px' };
     return (
       <Container id='all-Restaurants-page'>
         <Header as="h2" textAlign="center" inverted>List Restaurants</Header>
         <div align="center">
           <Container>
             <Button
+              style={ margin }
               color={'red'}
               onClick={() => this.setState({
                 sortName: !this.state.sortName,
                 sortRating: false,
               })}>
             Sort Alphabetically
+            </Button>
+            <Button
+              style={ margin }
+              color={'red'}
+              onClick={() => this.setState({
+                sortName: false,
+                sortRating: !this.state.sortRating,
+              })}>
+              Sort by Rating
             </Button>
           </Container>
         </div>
