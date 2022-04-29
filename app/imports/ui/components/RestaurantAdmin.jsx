@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image, Button, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import { VendorProfile } from '../../api/vendorprofile/VendorProfile'
+import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class RestaurantAdmin extends React.Component {

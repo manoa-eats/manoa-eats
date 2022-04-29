@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Contacts } from '../../api/contact/Contacts';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Menus } from '../../api/menu/Menu';
-import { UserProfile } from "../../api/userprofile/UserProfile";
+import { UserProfile } from '../../api/userprofile/UserProfile';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
