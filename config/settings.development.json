@@ -48,6 +48,7 @@
   ],
   "defaultRestaurants": [
     {
+      "id": "1",
       "name": "Dunkin’",
       "reviews": "1",
       "diets": ["Gluten-Free", "Carnivore", "Vegan"],
@@ -60,6 +61,7 @@
       "description": "Dunkin’ Donuts in Paradise Palms Cafe will keep Hawaii running with high-quality beverage offerings–including freshly-brewed Hot and Iced Coffees–paired perfectly with delicious donuts, bakery good, sandwiches and more."
     },
     {
+      "id":"2",
       "name": "Lasoon",
       "reviews": "5",
       "diets": ["Gluten-Free", "Carnivore", "Vegan"],
@@ -72,6 +74,7 @@
       "description": "Lasoon offers natural home-cooked Nepali and Indian food for everyone. From a $5 bowl options when you are in a hurry to larger plates to please your appetite.\nWe are focusing on vegan and gluten free meals and offer 4 – 5 options that are changed daily. Besides the vegan options we offer 3 meat options ranging from mild to spicy!"
     },
     {
+      "id": "3",
       "name": "Holoholo Grill",
       "diets": ["Gluten-Free", "Carnivore", "Vegan"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
@@ -84,6 +87,7 @@
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen. Grab-and-go, breakfast items, or catering for any sized group are also available!"
     },
     {
+      "id": "4",
       "name": "L&L Hawaiian Barbecue",
       "diets": ["Gluten-Free", "Carnivore", "Vegan"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
@@ -96,6 +100,7 @@
       "description": "Delicious local and Asian-American fusion cuisine served in big portions at reasonable prices! Try delicious L&L favorites like the Hawaiian Barbecue beef, chicken, or short ribs! Enjoy L&L’s famous fried chicken katsu, the best in town! Grab-and-go, breakfast items and party packs for groups also available."
     },
     {
+      "id": "5",
       "name": "Le Crêpe Café",
       "diets": ["Gluten-Free", "Carnivore", "Vegan"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
@@ -108,6 +113,7 @@
       "description": "Le Crêpe Café makes traditional French crêpes, cooked to order in front of customers. They specialize in a flavorsome menu of sweet and savory crêpes and use fresh ingredients, organic when possible. Their utensils are even bio-compostable. Enjoy a crêpe any time of day, as a breakfast, snack, main course, or dessert — close your eyes and you’re in Paris!\nWhether you’re needing a break from the law books or a pick-me-up as you’re headed to or off campus, you’ll also appreciate Le Crêpe Café’s French Roast and espresso drinks."
     },
     {
+      "id": "6",
       "name": "Panda Express",
       "diets": ["Gluten-Free", "Carnivore", "Vegan"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
