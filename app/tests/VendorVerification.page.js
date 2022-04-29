@@ -41,19 +41,6 @@ class VendorVerification {
     await testController.pressKey('ctrl+a delete');
     await testController.typeText(adminEditRestaurantDescription, changeDescription);
     await testController.click('#submitNewRestaurantInformation');
-
-    // const adminEditRestaurantHour = Selector('#uniforms-0000-0001');
-    // await testController.hover(adminEditRestaurantHour);
-    // await testController.click(adminEditRestaurantHour);
-    // await testController.pressKey('ctrl+a delete');
-    // await testController.typeText(adminEditRestaurantHour, changeHour);
-    //
-    // const adminEditRestaurantReview = Selector('#uniforms-0000-0002');
-    // await testController.hover(adminEditRestaurantReview);
-    // await testController.click(adminEditRestaurantReview);
-    // await testController.pressKey('ctrl+a delete');
-    // await testController.typeText(adminEditRestaurantReview, changeReview);
-
   }
 }
 

@@ -6,6 +6,7 @@ import { allRestaurantsPage } from './allRestaurants.page';
 import { vendorVerificationPage } from './VendorVerification.page';
 import { signupPage } from './signup.page';
 import { userProfilePage } from './UserProfile.page';
+import { feelingluckyPage } from './im-feeling-lucky.page';
 
 /* global fixture:false, test:false */
 
@@ -54,7 +55,7 @@ test('Test that user signup work', async (testController) => {
 
 test('Test that vendor signup work', async (testController) => {
   await navBar.gotoSignupPage(testController);
-  await signupPage.signupAdmin(testController, tempCredentials.adminName, tempCredentials.adminPassword);
+  await signupPage.signupVendor(testController, tempCredentials.adminName, tempCredentials.adminPassword);
   await navBar.isLoggedIn(testController, tempCredentials.adminName);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
@@ -76,9 +77,9 @@ test('Testing the vendor verification page', async (testController) => {
   await vendorVerificationPage.editRestaurant(testController, testingData.name, testingData.changeHour, testingData.changeReview, testingData.changeAddress, testingData.changeImage, testingData.changeDescription);
 });
 
-test('Testing the User Profile page', async (testController) => {
+test('Testing the user Profile page', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.userSignIn(testController, adminCredentials.username, adminCredentials.password);
+  await signinPage.userSignIn(testController, userCredentials.username, userCredentials.password);
   await navBar.gotoCreateProfilePage(testController);
   await userProfilePage.isDisplayed(testController);
   await userProfilePage.userProfile(testController, testingProfileData.name, testingProfileData.changeProfileImage);
@@ -90,4 +91,11 @@ test('Testing the vendor review page', async (testController) => {
   await navBar.gotoAllRestaurantsPage(testController);
   await allRestaurantsPage.isDisplayed(testController);
   await allRestaurantsPage.VendorIsDisplayed(testController);
+});
+
+test('Test that feeling lucky page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.userSignIn(testController, userCredentials.username, userCredentials.password);
+  await navBar.gotoFeelingLuckyPage(testController);
+  await feelingluckyPage.isDisplayed(testController);
 });

@@ -53,19 +53,19 @@ class EditUser extends React.Component {
     // Build the model object that Uniforms will use to fill in the form.
     const model = _.extend({}, this.props.userProfileDoc, this.props.userDietDoc);
     return (
-      <Grid container centered>
+      <Grid id='userProfile-page' container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit User Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={model}>
             <Segment>
               <Image centered rounded src={model.image} size='medium' />
-              <TextField name="name" showInlineError={true} placeholder={'Your name'}/>
-              <TextField name="image" showInlineError={true} placeholder={'image link'}/>
+              <TextField id = 'userFormName' name="name" showInlineError={true} placeholder={'Your name'}/>
+              <TextField id = 'userFormImage' name="image" showInlineError={true} placeholder={'image link'}/>
               <MultiSelectField name="userPreferredFoods" showInlineError={true}
                 placeholder={'Select Food Preferences (optional)'}/>
               <MultiSelectField name="diets" showInlineError={true}
                 placeholder={'Select Diet Preferences (optional)'}/>
-              <SubmitField value="Submit"/>
+              <SubmitField id='profile-submit' value="Submit"/>
             </Segment>
           </AutoForm>
         </Grid.Column>
