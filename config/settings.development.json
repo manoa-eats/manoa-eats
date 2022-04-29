@@ -7,17 +7,40 @@
     {
       "email": "admin@foo.com",
       "password": "changeme",
-      "role": "admin"
+      "role": "admin",
+      "profile": {
+        "role": ""
+      }
     },
     {
       "email": "john@foo.com",
       "password": "changeme",
-      "role": "customer"
+      "profile": {
+        "role": "user"
+      }
     },
     {
       "email": "vendor@foo.com",
       "password": "changeme",
-      "role": "vendor"
+      "profile": {
+        "role": "vendor"
+      }
+    }
+  ],
+  "defaultUserProfiles": [
+    {
+      "name": "John Foo",
+      "image": "https://i.ytimg.com/vi/veKsxin7iRg/sddefault.jpg",
+      "owner": "john@foo.com",
+      "userPreferredFoods": ["burger"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Admin Foo",
+      "image": "data:image/jpeg;base64,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",
+      "owner": "admin@foo.com",
+      "userPreferredFoods": ["burger", "fries"],
+      "diets": ["Paleo", "Vegan", "Carnivore"]
     }
   ],
   "defaultContacts": [
