@@ -1,78 +1,102 @@
-import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Segment, Button } from 'semantic-ui-react';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
-import { Restaurants } from '../../api/Restaurant/Restaurants';
-import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
-import Restaurant from '../components/Restaurant';
-import contact from '../components/Contact';
-import { Reviews } from '../../api/review/Reviews';
+import React from "react";
+import { Meteor } from "meteor/meteor";
+import { Container, Header, Loader, Card } from "semantic-ui-react";
+import { withTracker } from "meteor/react-meteor-data";
+import PropTypes from "prop-types";
+import { VendorProfile } from "../../api/vendorprofile/VendorProfile";
+import { UserProfile } from "../../api/userprofile/UserProfile";
+import Restaurant from "../components/Restaurant";
+import { _ } from "meteor/underscore";
+import { Reviews } from "../../api/review/Reviews";
 
 /** Renders a table containing all of the Stuff documents. */
 class ImFeelingHungry extends React.Component {
 
-  // sets sort / filter method
-  constructor(props) {
-    super(props);
-    this.state = { sortName: true, sortRating: true };
-  }
+    // sets sort / filter method
+    constructor(props) {
+        super(props);
+        this.state = { restaurants: this.props.restaurants };
+    }
 
-  // If the subscription(s) have been received, render the page, otherwise show a loading icon.
-  render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
-  }
+    // If the subscription(s) have been received, render the page, otherwise show a loading icon.
+    render() {
+        return (this.props.ready) ? this.renderPage() : <Loader active>Finding you a delicious restaurant</Loader>;
+    }
 
-  // Render the page once subscriptions have been received.
-  renderPage() {
-    const restaurants = this.props.restaurants;
-    return (
-      <Container id='im-Feeling-Hungry-page'>
-        <Header as="h2" textAlign="center" inverted>I am Feeling Hungry</Header>
-        <Segment>
-          <Button className="fluid ui button"
-            onClick={() => this.setState({
-              sortName: false,
-              sortRating: !this.state.sortRating,
-            })}>
-            Pick Another Restaurant
-          </Button>
-        </Segment>
-        <Card centered>
-          {restaurants.map((restaurant, index) => <Restaurant
-            key={index}
-            restaurant={restaurant}
-            reviews={this.props.reviews.filter(review => (review.contactId === contact._id))}/>)}
-        </Card>
-      </Container>
-    );
-  }
+    arrayContains(diets, userDiets) {
+        for (const userDiet of userDiets) {
+            if (diets.includes(userDiet)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    vibeCheckUser() {
+        if (this.props.users[0] === undefined) {
+            return [];
+        }
+        return this.props.users[0];
+    }
+
+    pickRandomRestaurant(userDiets) {
+        let restaurantList = [];
+        let validIndexes = [];
+        const chosenRestaurant = _.sample(this.props.restaurants);
+        if (userDiets !== undefined) {
+            for (let i = 0; i < this.props.restaurants.length; i++) {
+                restaurantList.push(this.props.restaurants[i].diets);
+                if (this.arrayContains(restaurantList[i], userDiets)) {
+                    validIndexes.push(i);
+                }
+            }
+            let randomIndex = _.sample(validIndexes);
+            return <Restaurant restaurant={this.props.restaurants[randomIndex]}/>;
+        }
+        return <Restaurant restaurant={chosenRestaurant}/>;
+    }
+
+    // Render the page once subscriptions have been received.
+    renderPage() {
+        return (
+            <Container id="im-Feeling-Hungry-page">
+                <Header as="h2" textAlign="center" inverted>I am Feeling Hungry</Header>
+                <Card centered>
+                    {this.pickRandomRestaurant(this.vibeCheckUser().diets)}
+                </Card>
+            </Container>
+        );
+    }
 }
 
 // Require an array of Stuff documents in the props.
 ImFeelingHungry.propTypes = {
-  restaurants: PropTypes.array.isRequired,
-  reviews: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired,
+    restaurants: PropTypes.array.isRequired,
+    reviews: PropTypes.array.isRequired,
+    users: PropTypes.array.isRequired,
+    ready: PropTypes.bool.isRequired
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
-  // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('VendorProfile');
-  const subscriptionAdmin = Meteor.subscribe(Restaurants.adminPublicationName);
-  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
-  const subscription2Admin = Meteor.subscribe(Reviews.adminPublicationName);
-  // Determine if the subscription is ready
-  const ready = subscription.ready() && subscriptionAdmin.ready();
-  const ready2 = subscription2.ready() && subscription2Admin.ready();
-  // Get the Stuff documents
-  const restaurants = VendorProfile.find({}).fetch();
-  const reviews = Reviews.collection.find({}).fetch();
-  return {
-    restaurants,
-    reviews,
-    ready,
-    ready2,
-  };
+    // Get access to Stuff documents.
+    const subscription = Meteor.subscribe("VendorProfile");
+    const userProfileSubscription = Meteor.subscribe("UserProfile");
+    const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
+    const subscription2Admin = Meteor.subscribe(Reviews.adminPublicationName);
+    // Determine if the subscription is ready
+    const ready = subscription.ready() && userProfileSubscription.ready();
+    const ready2 = subscription2.ready() && subscription2Admin.ready();
+    // Get the Stuff documents
+    const restaurants = VendorProfile.find({}).fetch();
+    const reviews = Reviews.collection.find({}).fetch();
+    const checkUser = () => (Meteor.user() ? Meteor.user().username : "");
+    const users = UserProfile.find({ owner: checkUser() }).fetch();
+    return {
+        restaurants,
+        reviews,
+        users,
+        ready,
+        ready2
+    };
 })(ImFeelingHungry);
