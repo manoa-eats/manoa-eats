@@ -88,6 +88,8 @@ class Vendor extends React.Component {
                 <div>
                   <Header as="h3" align="center">Location</Header>
                   <p align="center">{this.props.doc.location}</p>
+                  <iframe width="530" height="400" style={{ border: '0' }} loading="lazy" allowFullScreen
+                    src="https://www.google.com/maps/embed/v1/streetview?location=21.3009%2C-157.8156&key=AIzaSyCPlaH86LNtisYSdT-Dgs6vp7llJhLVlJo"/>
                 </div>
               </Grid.Column>
             </Grid.Row>
