@@ -36,7 +36,7 @@ class ImFeelingHungry extends React.Component {
         if (this.props.users[0] === undefined) {
             return [];
         }
-        return this.props.users[0];
+        return this.props.users[0].diets;
     }
 
     pickRandomRestaurant(userDiets) {
@@ -49,21 +49,23 @@ class ImFeelingHungry extends React.Component {
             
         }
         let allValidDiets = _.uniq(getValidRestaurantDiets);
-        if (this.arrayContains(allValidDiets, userDiets) === false) { 
-            return (<Card>
-                <Card.Content header={`We couldn't find a restaurant that matches your diet: ${userDiets}`}/>
-            </Card>
-            );
-        }
-        if (userDiets !== undefined && this.arrayContains(allValidDiets, userDiets)) {
-            for (let i = 0; i < this.props.restaurants.length; i++) {
-                restaurantList.push(this.props.restaurants[i].diets);
-                if (this.arrayContains(restaurantList[i], userDiets)) {
-                    validIndexes.push(i);
+        if (userDiets.length !== 0) {
+            if ((this.arrayContains(allValidDiets, userDiets) === false)) {
+                return (<Card>
+                        <Card.Content header={`We couldn't find a restaurant that matches your diet: ${userDiets}`}/>
+                    </Card>
+                );
+            } else {
+                for (let i = 0; i < this.props.restaurants.length; i++) {
+                    restaurantList.push(this.props.restaurants[i].diets);
+                    if (this.arrayContains(restaurantList[i], userDiets)) {
+                        validIndexes.push(i);
+                    }
                 }
+                console.log(validIndexes);
+                let randomIndex = _.sample(validIndexes);
+                return <Restaurant restaurant={this.props.restaurants[randomIndex]}/>;
             }
-            let randomIndex = _.sample(validIndexes);
-            return <Restaurant restaurant={this.props.restaurants[randomIndex]}/>;
         }
         return <Restaurant restaurant={chosenRestaurant}/>;
     }
@@ -74,7 +76,7 @@ class ImFeelingHungry extends React.Component {
             <Container id="im-Feeling-Hungry-page">
                 <Header as="h2" textAlign="center" inverted>I am Feeling Hungry</Header>
                 <Card centered>
-                    {this.pickRandomRestaurant(this.vibeCheckUser().diets)}
+                    {this.pickRandomRestaurant(this.vibeCheckUser())}
                 </Card>
             </Container>
         );
