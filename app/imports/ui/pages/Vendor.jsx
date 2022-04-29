@@ -135,7 +135,6 @@ export default withTracker(({ match }) => {
   // const restaurants = Restaurants.collection.find({}).fetch();
   const reviewer = Reviews.collection.find({ owner: docId }).fetch();
   const menu = Menus.collection.find({ owner: docId }).fetch();
-  console.log(menu);
   return {
     // restaurants,
     reviews: reviewer,

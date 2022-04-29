@@ -22,7 +22,7 @@ class MenuItem extends React.Component {
         </Table.Cell>
         <Table.Cell>
           <Button icon onClick={() => this.removeItem(this.props.menu._id)}>
-            <Icon name='trash' />
+            <Icon name='trash'/>
           </Button>
         </Table.Cell>
       </Table.Row>

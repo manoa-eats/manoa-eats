@@ -51,7 +51,7 @@ class App extends React.Component {
             <ProtectedRoute path="/editRestaurant/:_id" component={EditRestaurant}/>
             <ProtectedRoute path="/create-menu-item" component={CreateMenuItem}/>
             <ProtectedRoute path="/editMenuItem/:_id" component={EditMenuItem}/>
-            <ProtectedRoute path="/view-menu" component={ViewMenu}/>
+            <ProtectedRoute path="/view-menu/:owner" component={ViewMenu}/>
             <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>
