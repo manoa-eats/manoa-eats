@@ -32,7 +32,7 @@ class EditMenuItem extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit Menu Item</Header>
+          <Header as="h1" textAlign="center" inverted>Edit Menu Item</Header>
           <AutoForm schema={bridge} model={this.props.doc} onSubmit={data => this.submit(data)} >
             <Segment>
               <TextField name='foodName'/>

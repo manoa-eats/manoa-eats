@@ -55,7 +55,7 @@ class EditUser extends React.Component {
     return (
       <Grid id='userProfile-page' container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit User Profile</Header>
+          <Header as="h1" textAlign="center" inverted>Edit User Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={model}>
             <Segment>
               <Image centered rounded src={model.image} size='medium' />
