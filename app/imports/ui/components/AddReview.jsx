@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import { Rating, Segment, Header } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -15,7 +15,8 @@ class AddReview extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { note, owner, contactId, createdAt } = data;
-    Reviews.collection.insert({ note, owner, contactId, createdAt },
+    const rating = this.rating;
+    Reviews.collection.insert({ note, rating, owner, contactId, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -26,12 +27,23 @@ class AddReview extends React.Component {
       });
   }
 
+  handleRate = (e, { rating }) => {
+    this.rating = rating;
+  }
+
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
     let fRef = null;
     return (
       <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Segment>
+          <Header> Add Rating :
+            <Rating style={{ paddingTop: '10px' }}
+              onRate={this.handleRate}
+              maxRating={5}
+              icon='star'
+              size='huge'/>
+          </Header>
           <TextField
             id='addAReview'
             placeholder="Write review here..."
