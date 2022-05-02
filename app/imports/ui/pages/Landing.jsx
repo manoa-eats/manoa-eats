@@ -23,20 +23,30 @@ class Landing extends React.Component {
     }));
 
     // Open Now implementation
-    const now = new Date().getHours();
-    const openRestaurants = this.props.vendors.filter(x => x.openHour.getHours() <= now && now <= x.closeHour.getHours()).map((restaurant, i) => <Card centered
-      key={i}>
+    const date = new Date();
+    const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const todaysDate = weekday[date.getDay()];
+    const checkJSON = (currentDay) => this.props.vendors.map((restaurant) => restaurant.weekdayOpen.includes(currentDay));
+    const filteredRestaurants = this.props.vendors
+      .filter(x => x.openHour.toLocaleTimeString() >= date.toLocaleTimeString() && date.toLocaleTimeString() < x.closeHour.toLocaleTimeString() && checkJSON(todaysDate).includes(true));
+    const openRestaurants = filteredRestaurants ? <Card centered>
       <Card.Content>
-        <Card.Header>{restaurant.name}</Card.Header>
-        <Card.Description>
-          {`OPEN: ${restaurant.openHour.toLocaleTimeString()}`}
-        </Card.Description>
-        <Card.Description>
-          {`CLOSED: ${restaurant.closeHour.toLocaleTimeString()}`}
-        </Card.Description>
-        <Card.Description>{'DIETS: '}<br/>{restaurant.diets.map((diets, key) => <Label key={key} color="green">{diets}</Label>)}</Card.Description>
+        <Card.Header>Currently no open restaurants</Card.Header>
       </Card.Content>
-    </Card>);
+    </Card> :
+      filteredRestaurants.map((restaurant, i) => <Card centered
+        key={i}>
+        <Card.Content>
+          <Card.Header>{restaurant.name}</Card.Header>
+          <Card.Description>
+            {`OPEN: ${restaurant.openHour.toLocaleTimeString()}`}
+          </Card.Description>
+          <Card.Description>
+            {`CLOSED: ${restaurant.closeHour.toLocaleTimeString()}`}
+          </Card.Description>
+          <Card.Description>{'DIETS: '}<br/>{restaurant.diets.map((diets, key) => <Label key={key} color="green">{diets}</Label>)}</Card.Description>
+        </Card.Content>
+      </Card>);
     return (
       <div id='landing-page'>
         <Grid stackable columns={3}>
@@ -44,7 +54,6 @@ class Landing extends React.Component {
             <Header as="h1" inverted >Open Now</Header>
             <List inverted>
               { openRestaurants }
-              <List.Item><Header as={'h3'}>If any Restaurants are open, they will appear above.</Header></List.Item>
             </List>
           </Grid.Column>
           <Grid.Column textAlign='center' width={8} className={'margin'}>
