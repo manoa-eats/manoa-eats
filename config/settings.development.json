@@ -235,6 +235,139 @@
       "profile": {
         "role": "vendor"
       }
+      },
+    {
+      "email": "kylie@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+      },
+    {
+      "email": "mimmi@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+      },
+    {
+      "email": "emma@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+      },
+    {
+      "email": "jake@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+      },
+    {
+      "email": "kawika@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+      },
+    {
+      "email": "ron@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+      },
+    {
+      "email": "kate@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "conor@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "taylor@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "kelsie@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "bella@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "justin@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "winnie@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "kasen@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "kyler@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "ryan@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "chris@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "krystal@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
+    },
+    {
+      "email": "iris@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "user"
+      }
     }
   ],
   "defaultUserProfiles": [
@@ -251,32 +384,139 @@
       "owner": "admin@foo.com",
       "userPreferredFoods": ["burger", "fries"],
       "diets": ["Paleo", "Vegan", "Carnivore"]
-    }
-  ],
-  "defaultContacts": [
-    {
-      "firstName": "Philip",
-      "lastName": "Johnson",
-      "address": "POST 307, University of Hawaii",
-      "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
-      "owner": " john@foo.com",
-      "description": "I am a Professor of Information and Computer Sciences at the University of Hawaii, Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com."
     },
     {
-      "firstName": "Henri",
-      "lastName": "Casanova",
-      "address": "POST 307, University of Hawaii",
-      "image": "https://avatars0.githubusercontent.com/u/7494478?s=460&v=4",
-      "owner": " john@foo.com",
-      "description": "I am originally from France. I maintain a list of reports from my surf sessions. I have proof that I ran the Hana relay with an actual Team."
+      "name": "Kylie Foo",
+      "image": "![](../app/public/images/kylie.jpg)",
+      "owner": "kylie@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
     },
     {
-      "firstName": "Kim",
-      "lastName": "Binsted",
-      "address": "POST 307, University of Hawaii",
-      "image": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/kim_binsted-square-300x300.jpg",
-      "owner": " admin@foo.com",
-      "description": "Kim Binsted received her BSc in Physics at McGill (1991), and her PhD in Artificial Intelligence from the University of Edinburgh (1996). Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as What do you call a Martian who drinks beer? An ale-ien!"
+      "name": "Mimmi Foo",
+      "image": "![](../app/public/images/mimmi.jpg)",
+      "owner": "mimmi@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore","Gluten-Free"]
+    },
+    {
+      "name": "Emma Foo",
+      "image": "![](../app/public/images/emma.jpg)",
+      "owner": "emma@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Jake Foo",
+      "image": "![](../app/public/images/jake.jpeg)",
+      "owner": "jake@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": ["Vegan","Gluten-Free"]
+    },
+    {
+      "name": "Kawika Foo",
+      "image": "![](../app/public/images/kawika.jpeg)",
+      "owner": "kawika@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Ron Foo",
+      "image": "![](../app/public/images/ron.jpeg)",
+      "owner": "ron@foo.com",
+      "userPreferredFoods": ["burger","pizza","fries"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Kate Foo",
+      "image": "![](../app/public/images/kate.jpeg)",
+      "owner": "kate@foo.com",
+      "userPreferredFoods": [],
+      "diets": ["Paleo", "Carnivore","Gluten-Free"]
+    },
+    {
+      "name": "Conor Foo",
+      "image": "![](../app/public/images/conor.jpeg)",
+      "owner": "conor@foo.com",
+      "userPreferredFoods": [],
+      "diets": ["Vegan"]
+    },
+    {
+      "name": "Taylor Foo",
+      "image": "![](../app/public/images/Taylor.jpeg)",
+      "owner": "taylor@foo.com",
+      "userPreferredFoods": [],
+      "diets": []
+    },
+    {
+      "name": "Kelsie Foo",
+      "image": "![](../app/public/images/Kelsie.jpeg)",
+      "owner": "kelsie@foo.com",
+      "userPreferredFoods": [],
+      "diets": []
+    },
+    {
+      "name": "Bella Foo",
+      "image": "![](../app/public/images/bella.jpeg)",
+      "owner": "bella@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Justin Foo",
+      "image": "![](../app/public/images/justin.jpeg)",
+      "owner": "justin@foo.com",
+      "userPreferredFoods": ["burger"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Winnie Foo",
+      "image": "![](../app/public/images/winnie.jpeg)",
+      "owner": "winnie@foo.com",
+      "userPreferredFoods": ["burger","pizza","fries"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Kasen Foo",
+      "image": "![](../app/public/images/kasen.jpeg)",
+      "owner": "kasen@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Kyler Foo",
+      "image": "![](../app/public/images/kyler.jpeg)",
+      "owner": "kyler@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": ["Vegetarian"]
+    },
+    {
+      "name": "Ryan Foo",
+      "image": "![](../app/public/images/ryan.jpeg)",
+      "owner": "ryan@foo.com",
+      "userPreferredFoods": ["burger","pizza","fries"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Chris Foo",
+      "image": "![](../app/public/images/chris.jpeg)",
+      "owner": "chris@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": []
+    },
+    {
+      "name": "Krystal Foo",
+      "image": "![](../app/public/images/krystal.png)",
+      "owner": "krystal@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Iris Foo",
+      "image": "![](../app/public/images/iris.jpeg)",
+      "owner": "iris@foo.com",
+      "userPreferredFoods": [],
+      "diets": []
     }
   ],
   "defaultRestaurants": [
