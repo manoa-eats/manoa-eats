@@ -45,7 +45,7 @@ class CreateVendorProfile extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" style={{ color: 'white' }} textAlign="center">Vendor Profile</Header>
+          <Header as="h1" style={{ color: 'white' }} textAlign="center">Vendor Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
             <Segment>
               <Image centered rounded src={this.state.image} size='medium' />

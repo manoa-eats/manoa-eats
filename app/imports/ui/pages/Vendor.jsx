@@ -51,7 +51,7 @@ class Vendor extends React.Component {
               <Grid verticalAlign='middle' textAlign='center' columns='2' centered>
                 <Grid.Row divided>
                   <Segment raised inverted>
-                    <Header as="h1" textAlign="center">{this.props.doc.name}</Header>
+                    <Header as="h1" textAlign="center" inverted>{this.props.doc.name}</Header>
                   </Segment>
                 </Grid.Row>
               </Grid>
