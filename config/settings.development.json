@@ -25,6 +25,216 @@
       "profile": {
         "role": "vendor"
       }
+    },
+    {
+      "email": "dunkin@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "lasoon@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "holoholo@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "landl@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "le@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "panda@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "burger@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "bowlful@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "subway@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "starbucks@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "jamba@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "bale@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "serg@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "waipuna@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "asia@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "nishi@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "red@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "andys@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "mcdonalds@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "jandb@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "obok@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "phoviet@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "manapua@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "islandsub@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "bangkok@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "teddys@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "tsukuneya@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "aplacetoeat@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "bettys@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
+    },
+    {
+      "email": "blazin@foo.com",
+      "password": "changeme",
+      "profile": {
+        "role": "vendor"
+      }
     }
   ],
   "defaultUserProfiles": [
@@ -72,28 +282,28 @@
   "defaultRestaurants": [
     {
       "id": "1",
-      "name": "Dunkin’",
+      "name": "Dunkin’ Donuts",
       "reviews": "1",
-      "diets": ["Gluten-Free", "Carnivore", "Vegan"],
-      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
+      "diets": ["Vegetarian", "Carnivore", "Vegan"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
       "location": "Paradise Palms Café",
-      "openHour": "2022-04-28T07:00:00",
+      "openHour": "2022-04-28T08:00:00",
       "closeHour": "2022-04-28T14:00:00",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/dunkin_big.jpg",
-      "owner": "john@foo.com",
-      "description": "Dunkin’ Donuts in Paradise Palms Cafe will keep Hawaii running with high-quality beverage offerings–including freshly-brewed Hot and Iced Coffees–paired perfectly with delicious donuts, bakery good, sandwiches and more."
+      "owner": "dunkin@foo.com",
+      "description": "Dunkin’ Donuts in Paradise Palms Cafe will keep Hawaii running with high-quality beverage offerings–including freshly-brewed Hot and Iced Coffees–paired perfectly with delicious donuts, bakery goods, sandwiches and more."
     },
     {
       "id":"2",
       "name": "Lasoon",
       "reviews": "5",
-      "diets": ["Gluten-Free", "Carnivore", "Vegan"],
+      "diets": ["Gluten-Free", "Carnivore", "Vegan", "Vegetarian"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
       "openHour": "2022-04-28T10:30:00",
       "closeHour": "2022-04-28T16:30:00",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/07/lasoon_big2.jpg",
-      "owner": " unique@foo.com",
+      "owner": "lasoon@foo.com",
       "description": "Lasoon offers natural home-cooked Nepali and Indian food for everyone. From a $5 bowl options when you are in a hurry to larger plates to please your appetite.\nWe are focusing on vegan and gluten free meals and offer 4 – 5 options that are changed daily. Besides the vegan options we offer 3 meat options ranging from mild to spicy!"
     },
     {
@@ -106,26 +316,26 @@
       "reviews": "4",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/holoholo_big.jpg",
-      "owner": " food@foo.com",
+      "owner": "holoholo@foo.com",
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen. Grab-and-go, breakfast items, or catering for any sized group are also available!"
     },
     {
       "id": "4",
       "name": "L&L Hawaiian Barbecue",
-      "diets": ["Gluten-Free", "Carnivore", "Vegan"],
+      "diets": ["Vegetarian", "Carnivore", "Vegan"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
       "openHour": "2022-04-28T07:00:00",
       "closeHour": "2022-04-28T17:00:00",
       "reviews": "5",
       "location": "Paradise Palms Café",
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/landl_big.jpg",
-      "owner": " there@foo.com",
+      "owner": "landl@foo.com",
       "description": "Delicious local and Asian-American fusion cuisine served in big portions at reasonable prices! Try delicious L&L favorites like the Hawaiian Barbecue beef, chicken, or short ribs! Enjoy L&L’s famous fried chicken katsu, the best in town! Grab-and-go, breakfast items and party packs for groups also available."
     },
     {
       "id": "5",
       "name": "Le Crêpe Café",
-      "diets": ["Gluten-Free", "Carnivore", "Vegan"],
+      "diets": ["Gluten-Free", "Carnivore", "Vegan", "Vegetarian"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
       "openHour": "2022-04-28T08:00:00",
       "closeHour": "2022-04-28T15:00:00",
@@ -138,7 +348,7 @@
     {
       "id": "6",
       "name": "Panda Express",
-      "diets": ["Gluten-Free", "Carnivore", "Vegan"],
+      "diets": ["Carnivore"],
       "weekdayOpen": [ "Monday", "Tuesday", "Wednesday" ],
       "openHour": "2022-04-28T10:30:00",
       "closeHour": "2022-04-28T16:30:00",
@@ -147,18 +357,1459 @@
       "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/panda_big2.jpg",
       "owner": " panda@foo.com",
       "description": "Panda Express serves gourmet Chinese food made with only the freshest ingredients. Famous for its Orange Chicken, they also offer a number of Wok Smart entrées that contain less than 250 calories per serving, such as Shanghai Angus Steak, Kung Pao Chicken, and Broccoli Beef. Other favorites include Beijing Beef, Sweetfire Chicken Breast, and Honey Walnut Shrimp.\nPanda Express’ offerings can be enjoyed in Panda Bowls, or two and three item plates. Perfect for lunch, dinner or as a pick-me-up snack between classes."
+    },
+    {
+      "id": "7",
+      "name": "The Burger Shop",
+      "diets": ["Carnivore", "Vegan", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+      "openHour": "2022-04-28T10:30:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "2",
+      "location": "Campus Center Food Court",
+      "image": "https://img4.restameta.com/138/971/4486881081389712.jpg",
+      "owner": "burger@foo.com",
+      "description": "The Campus Center Food Court offers a variety of food including plate lunches, bentos, grab-and-go salads and wraps, burgers, and more!"
+    },
+
+    {
+      "id": "8",
+      "name": "Bowlful",
+      "diets": ["Gluten-Free", "Carnivore", "Vegan", "Paleo", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+      "openHour": "2022-04-28T10:30:00",
+      "closeHour": "2022-04-28T14:00:00",
+      "reviews": "3",
+      "location": "Campus Center Food Court",
+      "image": "https://content-service.sodexomyway.com/media/Sodexo-20_tcm247-32585_w1920_h976.jpg?url=https://uhm.sodexomyway.com/",
+      "owner": "bowlful@foo.com",
+      "description": "The Campus Center Food Court offers a variety of food including plate lunches, bentos, grab-and-go salads and wraps, burgers, and more!"
+    },
+    {
+      "id": "9",
+      "name": "Subway",
+      "diets": ["Vegan", "Carnivore", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+      "openHour": "2022-04-28T09:00:00",
+      "closeHour": "2022-04-28T15:00:00",
+      "reviews": "1",
+      "location": "Campus Center",
+      "image": "https://www.masslive.com/resizer/RvHRJGMqOB38a1d0nTs9LWsNk14=/arc-anglerfish-arc2-prod-advancelocal/public/CU3B3FELHNCVDLUUGLQL2KBTC4.jpg",
+      "owner": "subway@foo.com",
+      "description": "Feeling hungry? Stop by Subway for some delicious sandwiches and salads made fresh. Subway also offers dessert and breakfast items such as pastries and cookies."
+    },
+    {
+      "id": "10",
+      "name": "Starbucks",
+      "diets": ["Vegan", "Vegetarian", "Carnivore", "Paleo", "Gluten-Free" ],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+      "openHour": "2022-04-28T07:00:00",
+      "closeHour": "2022-04-28T16:00:00",
+      "reviews": "3",
+      "location": "Campus Center",
+      "image": "https://content-service.sodexomyway.com/media/Starbucks-Cold_1920x976_tcm247-8167_w1920_h976.jpg?url=https://uhm.sodexomyway.com/",
+      "owner": "starbucks@foo.com",
+      "description": "With a full menu, as well as seasonal and specialty items, coffee fanatics are sure to be pleased. Also available are pastries, fruit cups, and bottled beverages for your purchase.\n Our location strives to give you the very same experience found at any other Starbucks across the nation."
+    },
+
+
+    {
+      "id": "11",
+      "name": "Jamba Juice",
+      "diets": ["Vegetarian", "Vegan", "Paleo"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+      "openHour": "2022-04-28T09:00:00",
+      "closeHour": "2022-04-28T15:00:00",
+      "reviews": "2",
+      "location": "Campus Center",
+      "image": "https://content-service.sodexomyway.com/media/Sodexo-56_tcm247-32584_w1920_h976.jpg?url=https://uhm.sodexomyway.com/",
+      "owner": "jamba@foo.com",
+      "description": "Visit Jamba for refreshing fruit smoothie blends, delicious and nutritious energy bowls, fresh juices, healthy baked goods and savory grab-and-go food items.\n Jamba blends real fruit and whole ingredients into each delicious fresh juice, smoothie, or energy bowl you order and contains no artificial colors, preservatives, or flavors."
+    },
+    {
+      "id": "12",
+      "name": "Ba-Le",
+      "diets": ["Vegetarian", "Vegan", "Carnivore"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+      "openHour": "2022-04-28T10:00:00",
+      "closeHour": "2022-04-28T15:00:00",
+      "reviews": "",
+      "location": "2445 Campus Rd, Honolulu, HI 96822",
+      "image": "https://content-service.sodexomyway.com/media/website8_tcm247-25205_w1920_h976.jpg?url=https://uhm.sodexomyway.com/",
+      "owner": "bale@foo.com",
+      "description": "Located at Hemenway Hall, Ba-Le is the perfect stop if you're craving something a little different.\n Pastries, sandwiches, and pre-made salads are some of their quick lunch options. Popular items at Ba-Le include pho, pad thai, and banh mi sandwiches.\n Also offered at Ba-Le are a selection of La Tour Cafe macarons and entrees.\n Spend your meal time at Ba-Le for a variety of foods and flavors! "
+    },
+    {
+      "id": "13",
+      "name": "Serg’s Mexican Kitchen",
+      "diets": ["Carnivore", "Vegan", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T11:00:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "4",
+      "location": "2740 E Manoa Rd, Honolulu, HI 96822",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipPJpU_f0YnYMM_dwAr-m01Hb5eLli_m6lsaRJuv=w408-h306-k-no",
+      "owner": "serg@foo.com",
+      "description": "Brings to Hawaii the essential spices and unique flavors of traditional Mexican cooking. With original roots from Mexico City, and educated in the culinary arts, Serg has worked at fine dining restaurants and major hotels in Las Vegas, Nevada. He is bringing back to life a slow style of cooking taught to him by his parents. Many of these dishes are made from scratch and using only fresh ingredients in a relaxed atmosphere."
+    },
+    {
+      "id": "14",
+      "name": "Waipuna Sushi",
+      "diets": ["Carnivore", "Vegan", "Vegetarian", "Paleo"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:30:00",
+      "closeHour": "2022-04-28T20:00:00",
+      "reviews": "1",
+      "location": "2801-B East Manoa RoadHonolulu, HI96822",
+      "image": "https://cdn.usarestaurants.info/assets/uploads/e59ffd1e88ce42c12efa0a7a3f7d3fd6_-united-states-hawaii-honolulu-county-honolulu-waipuna-sushi-808-988-1200htm.jpg",
+      "owner": "waipuna@foo.com",
+      "description": "Waipuna Sushi specializes in ahi poke, salmon poke, tako poke, and custom platters. For more information and photos, please visit: www.waipunasushi.com"
+    },
+    {
+      "id": "15",
+      "name": "Asia Manoa",
+      "diets": ["Vegetarian", "Carnivore", "Vegan"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:30:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "1",
+      "location": "2801 E Manoa Rd # C Honolulu, HI 96822",
+      "image": "https://d1ralsognjng37.cloudfront.net/d577b22f-ad44-4b05-a428-33f51716aca2.jpeg",
+      "owner": "asia@foo.com",
+      "description": "Simple storefront restaurant serves familiar Chinese dishes plus combo platters & daily specials."
+    },
+    {
+      "id": "16",
+      "name": "Nishi Moncho Ramen",
+      "diets": ["Carnivore", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:30:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "2",
+      "location": "2851 E Manoa Rd # 103, Honolulu, HI 96822",
+      "image": "https://imagedelivery.net/9lr8zq_Jvl7h6OFWqEi9IA/e2a68f1c-1cf2-414b-f57e-6ec371c20b00/public",
+      "owner": "nishi@foo.com",
+      "description": "Are you in the mood for delicious food using fresh ingredients at an affordable price? If so, then we are the destination for you. Nishi Moncho Ramen Restaurant offers authentic Ramen and delicious tasting Japanese cuisine in Honolulu, HI. Our convenient location and affordable prices make our restaurant a natural choice for eat-in or take-out meals in the Honolulu community. Our restaurant is known for its variety in taste and high quality fresh ingredients. Come and experience our friendly atmosphere and excellent service."
+    },
+    {
+      "id": "17",
+      "name": "Red Pepper Korean BBQ",
+      "diets": ["Carnivore", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:30:00",
+      "closeHour": "2022-04-28T20:00:00",
+      "reviews": "1",
+      "location": "2855 E Manoa Rd Honolulu, HI 96822",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/GKmN6v1WodkdZuoYzYUj4Q/l.jpg",
+      "owner": "red@foo.com",
+      "description": "Korean BBQ"
+    },
+    {
+      "id": "18",
+      "name": "Andy’s Sandwiches & Smoothies",
+      "diets": ["Carnivore", "Vegetarian", "Vegan", "Paleo"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+      "openHour": "2022-04-28T07:00:00",
+      "closeHour": "2022-04-28T16:00:00",
+      "reviews": "2",
+      "location": "2904 East Manoa Road Honolulu, HI 96822",
+      "image": "https://onolicioushawaii.com/wp-content/uploads/2020/07/Andys-Sandwiches-5-papaya-seed-dressing.jpg",
+      "owner": "andys@foo.com",
+      "description": "LOOKING FOR A HEALTHY AND GREAT TASTING MEAL? \n Come on in and select from our variety of freshly made sandwiches, salads, soups, smoothies, and baked goods. \n The Special of the Day is always a good pick! We offer take-out and delivery via BiteSquad and DoorDash. Checks and most major credit cards accepted."
+    },
+    {
+      "id": "19",
+      "name": "Mcdonald’s",
+      "diets": ["Carnivore", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T05:30:00",
+      "closeHour": "2022-04-28T23:00:00",
+      "reviews": "1",
+      "location": "2915 E Manoa Rd Honolulu, HI 96822",
+      "image": "https://static.onecms.io/wp-content/uploads/sites/9/2022/01/26/McDonalds-Hacks-Menu-FT-1-BLOG0122.jpg",
+      "owner": "mcdonalds@foo.com",
+      "description": "From adding more balanced options to our Happy Meal®, to serving up fresh beef Quarter Pounder® burgers that are cooked when you order, we’re always finding ways to show our commitment to our customers and our food. "
+    },
+    {
+      "id": "20",
+      "name": "J&B",
+      "diets": ["Carnivore", "Vegetarian", "Gluten-Free"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T11:00:00",
+      "closeHour": "2022-04-28T20:00:00",
+      "reviews": "1",
+      "location": "2851 East Manoa Road, Honolulu, Hawaii 96822",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/O7CvTSY8FZ_fhnlCJjgJUw/o.jpg",
+      "owner": "jandb@foo.com",
+      "description": "Formerly known as Serino's Pizza, we specialize in making pizza the way you love it!"
+    },
+    {
+      "id": "21",
+      "name": "O-Bok Korean Restaurant",
+      "diets": ["Carnivore"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:00:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "1",
+      "location": "2756 Woodlawn Drive # 6-104 Honolulu, HI 96822",
+      "image": "https://lh3.googleusercontent.com/p/AF1QipOry4G8UgR3D0ATMiYTH_SFSmcz5HnxgfyyCRyr=w1080-h608-p-k-no-v0",
+      "owner": "obok@foo.com",
+      "description": "Korean BBQ Restaurant"
+    },
+    {
+      "id": "22",
+      "name": "Pho Viet Thien Hong Restaurant",
+      "diets": ["Vegetarian", "Carnivore", "Vegan"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:00:00",
+      "closeHour": "2022-04-28T20:00:00",
+      "reviews": "1",
+      "location": "2756 Woodlawn Dr # 6-203, Honolulu, HI 96822",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/Y4Fx70CWUtSeZeG8H4lSfw/o.jpg",
+      "owner": "phoviet@foo.com",
+      "description": "A Famous Traditional Vietnamese Noodle Soup Restaurant"
+    },
+    {
+      "id": "23",
+      "name": "Island Manapua Factory Manoa",
+      "diets": ["Vegetarian", "Carnivore"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T08:00:00",
+      "closeHour": "2022-04-28T18:00:00",
+      "reviews": "1",
+      "location": "2752 Woodlawn Dr, Honolulu, HI 96822",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/loM3RUrSElMBRiX5nsDF7g/o.jpg",
+      "owner": "manapua@foo.com",
+      "description": "Located at Manoa Marketplace"
+    },
+    {
+      "id": "24",
+      "name": "Island Subs & Burgers",
+      "diets": ["Carnivore", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:00:00",
+      "closeHour": "2022-04-28T19:30:00",
+      "reviews": "1",
+      "location": "2752 Woodlawn Dr, Honolulu, HI 96822",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipMxjVubEfWhFH70jqnTULIpi7MNee5DUi--anj3=w426-h240-k-no",
+      "owner": "islandsub@foo.com",
+      "description": "Part of a small chain of casual Chinese kitchens specializing in Cantonese-style meat-stuffed buns."
+    },
+    {
+      "id": "25",
+      "name": "Bangkok Chef",
+      "diets": ["Carnivore", "Vegetarian", "Vegan"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:30:00",
+      "closeHour": "2022-04-28T20:00:00",
+      "reviews": "1",
+      "location": "2955 E Manoa Rd, Honolulu, HI 96822",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/XVBlaBtsJWPEyi76FM64tQ/o.jpg",
+      "owner": "bangkok@foo.com",
+      "description": "Serving Thai and Asian Fusion"
+    },
+    {
+      "id": "26",
+      "name": "Teddy's Bigger Burgers ",
+      "diets": ["Carnivore", "Vegetarian", "Vegan"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:00:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "1",
+      "location": "2424 S Beretania St #101, Honolulu, HI 96826",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipMszOiCoUa_oriOpE9MUOd6Xgzh4l46sFkMQ05L=w426-h240-k-no",
+      "owner": "teddys@foo.com",
+      "description": "Teddy's is not fast food, it is Fresh Food prepared to order."
+    },
+    {
+      "id": "27",
+      "name": "Tsukuneya Robata Grill",
+      "diets": ["Carnivore", "Vegetarian", "Vegan", "Paleo"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T17:00:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "3",
+      "location": "1442 University Avenue, Honolulu Hawaii",
+      "image": "http://tsukuneyarobatagrill.com/wp-content/uploads/2014/08/swirlies-tsukune-1400x1400.jpg",
+      "owner": "tsukuneya@foo.com",
+      "description": "Fine and Family Dining from Nagoya Japan"
+    },
+    {
+      "id": "28",
+      "name": "A Place to Eat",
+      "diets": ["Carnivore", "Vegetarian", "Vegan"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T17:30:00",
+      "closeHour": "2022-04-28T23:30:00",
+      "reviews": "1",
+      "location": "1035 University Ave Ste 104, Honolulu, HI 96826",
+      "image": "https://cdn.websites.hibu.com/bf0718f9bd374659bb4d38d14c4f1831/DESKTOP/jpg/5-a93f-ce2208f2c42a.jpg",
+      "owner": "aplacetoeat@foo.com",
+      "description": "Island cuisine with a sense of comfort"
+    },
+    {
+      "id": "29",
+      "name": "Betty's Burgers",
+      "diets": ["Carnivore", "Vegan", "Vegetarian"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T11:00:00",
+      "closeHour": "2022-04-28T21:00:00",
+      "reviews": "3",
+      "location": "1025 University Ave, Honolulu, HI 96826",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipOx1xm81J51lNp7baWWjtmb3Uy0txfbiVw6L_zi=w408-h380-k-no",
+      "owner": "bettys@foo.com",
+      "description": "JUICY BURGERS TASTY FRIES THICK SHAKES"
+    },
+    {
+      "id": "30",
+      "name": "Blazin Steaks",
+      "diets": ["Carnivore"],
+      "weekdayOpen": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+      "openHour": "2022-04-28T10:00:00",
+      "closeHour": "2022-04-28T22:00:00",
+      "reviews": "1",
+      "location": "1010 University Ave, Honolulu, HI 96826",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipMa0OlYj5PRH0GphFDjiWnfx9BGXLeGlCkfVUOZ=w408-h306-k-no",
+      "owner": "blazin@foo.com",
+      "description": "Our goal is to provide quality local style plate lunches and sandwich entrees with a comfortable and friendly atmosphere!"
     }
   ],
 
   "defaultMenus": [{
     "foodName": "donut",
-    "price": "10.15", 
-    "owner": "john@foo.com"
+    "price": "10.15",
+    "owner": "vendor@foo.com"
     },
     {
       "foodName": "fried rice",
       "price": "10.15",
+      "owner": "vendor@foo.com"
+    },
+    {
+      "foodName": "Latte",
+      "price": "4.99",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Iced Latte",
+      "price": "4.99",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Cappuccino",
+      "price": "4.59",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Iced Cappuccino",
+      "price": "4.59",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Macchiato",
+      "price": "4.89",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Iced Macchiato",
+      "price": "5.29",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Americano",
+      "price": "3.69",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Iced Americano",
+      "price": "4.09",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Espresso Shot",
+      "price": "1.79",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Donuts",
+      "price": "1.79",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Assorted Donuts 6pcs",
+      "price": "9.39",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Assorted Donuts 12pcs",
+      "price": "15.69",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Munchkins Donut Hole Treats",
+      "price": "4.19",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Bagel",
+      "price": "3.09",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Bacon & Cheddar Omelet Bites",
+      "price": "4.69",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Egg White & Veggie Omelet Bites",
+      "price": "4.69",
+      "owner": "dunkin@foo.com"
+    },
+    {
+      "foodName": "Hash Browns",
+      "price": "1.59",
+      "owner": "dunkin@foo.com"
+    },
+
+    {
+      "foodName": "Wake-up Wrap",
+      "price": "2.79",
+      "owner": "dunkin@foo.com"
+    },
+
+    {
+      "foodName": "Plate",
+      "price": "7.00",
+      "owner": "lasoon@foo.com"
+    },
+
+    {
+      "foodName": "Samosa",
+      "price": "4.99",
+      "owner": "lasoon@foo.com"
+    },
+    {
+      "foodName": "Roti",
+      "price": "4.99",
+      "owner": "lasoon@foo.com"
+    },
+    {
+      "foodName": "Jasmine Rice",
+      "price": "4.99",
+      "owner": "lasoon@foo.com"
+    },
+    {
+      "foodName": "Mango Lassi",
+      "price": "4.99",
+      "owner": "lasoon@foo.com"
+    },
+    {
+      "foodName": "Masala Chai",
+      "price": "4.99",
+      "owner": "lasoon@foo.com"
+    },
+
+    {
+      "foodName": "Assorted Wraps",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Tuna Melt Panini",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Turkey Avocado Bomb Panini",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Hot Taco Bar",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Salad Bar",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Assorted Chips",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Assorted Soups",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Assorted Fresh Baked Goods & Muffins",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Assorted Fresh Fruits",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+    {
+      "foodName": "Smoothies and Milk Teas",
+      "price": "4.99",
+      "owner": "holoholo@foo.com"
+    },
+
+    {
+      "foodName": "Bento",
+      "price": "12.50",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "Mixed Plate",
+      "price": "12.50",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "BBQ Mix",
+      "price": "12.95",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "Seafood Mix",
+      "price": "12.95",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "Lau Lau & Kalua Pork",
+      "price": "12.95",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "Garlic Shrimp",
+      "price": "11.25",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "New York Steak",
+      "price": "11.25",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "Hawaiian Bowl (BBQ Chicken, Teriyaki Beef, Chicken Katsu, Beef Curry or Stew)",
+      "price": "7.50",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "French Fries",
+      "price": "3.25",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "Musubi",
+      "price": "2.75",
+      "owner": "landl@foo.com"
+    },
+    {
+      "foodName": "Omelettes",
+      "price": "9.99",
+      "owner": "le@foo.com"
+    },
+    {
+      "foodName": "Acai Bowl",
+      "price": "9.50",
+      "owner": "le@foo.com"
+    },
+    {
+      "foodName": "Homemade waffles",
+      "price": "11.99",
+      "owner": "le@foo.com"
+    },
+
+    {
+      "foodName": "Savory Crepes",
+      "price": "10.99",
+      "owner": "le@foo.com"
+    },
+
+    {
+      "foodName": "Toasted Sandwiches",
+      "price": "9.99",
+      "owner": "le@foo.com"
+    },
+
+    {
+      "foodName": "Fresh Salad",
+      "price": "9.50",
+      "owner": "le@foo.com"
+    },
+    {
+      "foodName": "Sweet Crepes",
+      "price": "7.99",
+      "owner": "le@foo.com"
+    },
+    {
+      "foodName": "Smoothies",
+      "price": "6.99",
+      "owner": "le@foo.com"
+    },
+    {
+      "foodName": "Iced or Hot Coffee",
+      "price": "3.50",
+      "owner": "le@foo.com"
+    },
+
+    {
+      "foodName": "Plate",
+      "price": "12.90",
       "owner": "panda@foo.com"
+    },
+    {
+      "foodName": "Bigger Plate",
+      "price": "14.80",
+      "owner": "panda@foo.com"
+    },
+    {
+      "foodName": "Bowl",
+      "price": "11.05",
+      "owner": "panda@foo.com"
+    },
+    {
+      "foodName": "Veggie Spring Rolls (2)",
+      "price": "2.50",
+      "owner": "panda@foo.com"
+    },
+    {
+      "foodName": "Cream Cheese Rangoons (3)",
+      "price": "2.50",
+      "owner": "panda@foo.com"
+    },
+    {
+      "foodName": "Warrior Cheeseburger",
+      "price": "8.95",
+      "owner": "burger@foo.com"
+    },
+    {
+      "foodName": "Hamburger",
+      "price": "8.25",
+      "owner": "burger@foo.com"
+    },
+    {
+      "foodName": "Bacon",
+      "price": "2.75",
+      "owner": "burger@foo.com"
+    },
+    {
+      "foodName": "Avocado",
+      "price": "1.95",
+      "owner": "burger@foo.com"
+    },
+    {
+      "foodName": "Grilled Onions",
+      "price": "1.50",
+      "owner": "burger@foo.com"
+    },
+    {
+      "foodName": "Smashed Fried Potato w/ Sea Salt & Garlic Butter",
+      "price": "2.99",
+      "owner": "burger@foo.com"
+    },
+    {
+      "foodName": "Manoa Bowl (Yakitori Chicken Skewer (2))",
+      "price": "10.59",
+      "owner": "bowlful@foo.com"
+    },
+    {
+      "foodName": "Pali Bowl (Kalbi style Beef Skewers(2))",
+      "price": "10.59",
+      "owner": "bowlful@foo.com"
+    },
+    {
+      "foodName": "Kunia Bowl (Chile seared Tofu Skewers (2))",
+      "price": "10.59",
+      "owner": "bowlful@foo.com"
+    },
+    {
+      "foodName": "Sandwiches (6 in)",
+      "price": "8.49",
+      "owner": "subway@foo.com"
+    },
+    {
+      "foodName": "Sandwiches (footlong)",
+      "price": "5.29",
+      "owner": "subway@foo.com"
+    },
+    {
+      "foodName": "Signature Wraps",
+      "price": "6.99",
+      "owner": "subway@foo.com"
+    },
+    {
+      "foodName": "Caffe Latte (Grande +.50, Venti +1)",
+      "price": "2.95",
+      "owner": "starbucks@foo.com"
+    },
+    {
+      "foodName": "Caramel Macchiato (Grande +.70, Venti +1)",
+      "price": "3.75",
+      "owner": "starbucks@foo.com"
+    },
+    {
+      "foodName": "Bakery",
+      "price": "3.45",
+      "owner": "starbucks@foo.com"
+    },
+    {
+      "foodName": "Specialty Smoothies (Medium +.70, Large +1.20)",
+      "price": "5.49",
+      "owner": "jamba@foo.com"
+    },
+    {
+      "foodName": "Fruit & Veggie Smoothies (Medium +.70, Large +1.60)",
+      "price": "4.99",
+      "owner": "jamba@foo.com"
+    },
+    {
+      "foodName": "Classic Smoothies (Medium +.70, Large +1.40)",
+      "price": "4.69",
+      "owner": "jamba@foo.com"
+    },
+    {
+      "foodName": "Soup",
+      "price": "5.99",
+      "owner": "bale@foo.com"
+    },
+    {
+      "foodName": "Sandwiches",
+      "price": "5.99",
+      "owner": "bale@foo.com"
+    },
+    {
+      "foodName": "Chicken Plate",
+      "price": "9.49",
+      "owner": "bale@foo.com"
+    },
+    {
+      "foodName": "Beef & Pork Plate",
+      "price": "9.75",
+      "owner": "bale@foo.com"
+    },
+    {
+      "foodName": "Seafood Plate",
+      "price": "10.25",
+      "owner": "bale@foo.com"
+    },
+
+    {
+      "foodName": "Burrito",
+      "price": "14.00",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Chimichanga",
+      "price": "16.95",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Mexican City Style Tacos",
+      "price": "5.00",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Quesadilla",
+      "price": "10.95",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Serg’s Nachos",
+      "price": "13.95",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Elote",
+      "price": "6.00",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Carne Asada Fries",
+      "price": "16.95",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Tortas",
+      "price": "15.95",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Flautas",
+      "price": "19.50",
+      "owner": "serg@foo.com"
+    },
+    {
+      "foodName": "Ceviche",
+      "price": "16.95",
+      "owner": "serg@foo.com"
+    },
+
+    {
+      "foodName": "Nigiri Bento",
+      "price": "9.99",
+      "owner": "waipuna@foo.com"
+    },
+    {
+      "foodName": "Hoso maki",
+      "price": "2.99",
+      "owner": "waipuna@foo.com"
+    },
+    {
+      "foodName": "Maki Mono",
+      "price": "11.99",
+      "owner": "waipuna@foo.com"
+    },
+    {
+      "foodName": "Nigiri",
+      "price": "4.99",
+      "owner": "waipuna@foo.com"
+    },
+    {
+      "foodName": "Temaki",
+      "price": "2.49",
+      "owner": "waipuna@foo.com"
+    },
+    {
+      "foodName": "Combination Platter",
+      "price": "17.00",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Spring Roll",
+      "price": "8.25",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Crispy Gau Gee (8)",
+      "price": "8.50",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Crispy Won Ton (12)",
+      "price": "7.00",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Spicy Pork Eggplant",
+      "price": "13.95",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Spicy Pork with Broccoli",
+      "price": "11.25",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Oyster & Pork Roast Casserole",
+      "price": "11.00",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Pork Hash with Salted Duck Egg",
+      "price": "13.00",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Lobster with Cashew Nuts",
+      "price": "14.00",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Lobster with Vegetables",
+      "price": "14.00",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Shrimp with Mixed Vegetables",
+      "price": "12.95",
+      "owner": "asia@foo.com"
+    },
+    {
+      "foodName": "Shoyu/Shlo Soup Noodle (Udon or Ramen)",
+      "price": "10.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Miso Soup Noodle (Udon or Ramen)",
+      "price": "11.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Curry Soup Noodle (Udon or Ramen)",
+      "price": "12.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Char Sui Soup Noodle (Udon or Ramen)",
+      "price": "11.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Gyoza Ramen Soup Noodle",
+      "price": "11.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Vegetable Ramen",
+      "price": "10.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Seafood Ramen Soup Noodle",
+      "price": "13.50",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Yakisoba",
+      "price": "11.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Fried Rice",
+      "price": "11.99",
+      "owner": "nishi@foo.com"
+    },
+    {
+      "foodName": "Kalbi & BBQ Chicken Combo",
+      "price": "17.79",
+      "owner": "red@foo.com"
+    },
+    {
+      "foodName": "BBQ Meat & BBQ Chicken Combo",
+      "price": "17.79",
+      "owner": "red@foo.com"
+    },
+    {
+      "foodName": "Mixed Plate",
+      "price": "18.79",
+      "owner": "red@foo.com"
+    },
+    {
+      "foodName": "Meat Jun Plate",
+      "price": "14.39",
+      "owner": "red@foo.com"
+    },
+    {
+      "foodName": "Bibimbap",
+      "price": "12.29",
+      "owner": "red@foo.com"
+    },
+    {
+      "foodName": "Mandoo Soup",
+      "price": "10.99",
+      "owner": "red@foo.com"
+    },
+    {
+      "foodName": "Special Combo",
+      "price": "16.09",
+      "owner": "red@foo.com"
+    },
+    {
+      "foodName": "Pancake",
+      "price": "6.25",
+      "owner": "andys@foo.com"
+    },
+    {
+      "foodName": "Omelette (extra item +.50)",
+      "price": "8.25",
+      "owner": "andys@foo.com"
+    },
+    {
+      "foodName": "Pastries",
+      "price": "2.75",
+      "owner": "andys@foo.com"
+    },
+    {
+      "foodName": "Sandwiches",
+      "price": "7.50",
+      "owner": "andys@foo.com"
+    },
+    {
+      "foodName": "Soups (large +1.00)",
+      "price": "4.45",
+      "owner": "andys@foo.com"
+    },
+    {
+      "foodName": "Salad (larger +1.00)",
+      "price": "5.45",
+      "owner": "andys@foo.com"
+    },
+    {
+      "foodName": "Big Mac",
+      "price": "3.99",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "Quarter Pounder with Cheese",
+      "price": "3.79",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "Buttermilk Crispy Chicken",
+      "price": "4.39",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "Artisan Grilled Chicken",
+      "price": "4.39",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "Chicken McNuggets (Reg. or Spicy) 10pcs",
+      "price": "4.49",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "French Fries (Medium +.40, Large +.50",
+      "price": "1.39",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "Shake (Medium +.40, Large +.80)",
+      "price": "2.19",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "McFlurry (Regular +.60",
+      "price": "1.79",
+      "owner": "mcdonalds@foo.com"
+    },
+    {
+      "foodName": "Specialty Pizza (12 in)",
+      "price": "22.00",
+      "owner": "jandb@foo.com"
+    },
+    {
+      "foodName": "Specialty Pizza (16 in)",
+      "price": "27.00",
+      "owner": "jandb@foo.com"
+    },
+    {
+      "foodName": "Build Your Own Pizza (12 in)",
+      "price": "15.00",
+      "owner": "jandb@foo.com"
+    },
+    {
+      "foodName": "Build Your Own Pizza (16 in)",
+      "price": "19.00",
+      "owner": "jandb@foo.com"
+    },
+    {
+      "foodName": "Build Your Own Pizza (12 in Gluten Free)",
+      "price": "19.00",
+      "owner": "jandb@foo.com"
+    },
+    {
+      "foodName": "BBQ Kalbi",
+      "price": "18.50",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "BBQ Bulgogi",
+      "price": "12.50",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "BBQ Chicken",
+      "price": "11.50",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "Squid",
+      "price": "18.50",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "Ribeye Steak",
+      "price": "20.00",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "Pork",
+      "price": "11.50",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "Mandoo Plate",
+      "price": "11.50",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "Soup",
+      "price": "11.50",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "O-Bok Special",
+      "price": "15.00",
+      "owner": "obok@foo.com"
+    },
+    {
+      "foodName": "Spring Roll",
+      "price": "6.50",
+      "owner": "phoviet@foo.com"
+    },
+    {
+      "foodName": "Shrimp Roll",
+      "price": "7.75",
+      "owner": "phoviet@foo.com"
+    },
+    {
+      "foodName": "Summer Roll",
+      "price": "3.95",
+      "owner": "phoviet@foo.com"
+    },
+    {
+      "foodName": "Summer Roll (Vegetarian)",
+      "price": "4.50",
+      "owner": "phoviet@foo.com"
+    },
+    {
+      "foodName": "Vermicelli Mix Vegetables",
+      "price": "9.75",
+      "owner": "phoviet@foo.com"
+    },
+    {
+      "foodName": "Rice Plates",
+      "price": "7.95",
+      "owner": "phoviet@foo.com"
+    },
+    {
+      "foodName": "Manapua",
+      "price": "3.13",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Soup",
+      "price": "14.43",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Salad",
+      "price": "14.43",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Pork Hash",
+      "price": "1.60",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Peking Duck in Bao Bun (4pcs)",
+      "price": "14.75",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Roast Pork in Bao Bun (4pcs)",
+      "price": "14.75",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Rice Plates",
+      "price": "18.69",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Vegetarian Meal",
+      "price": "18.69",
+      "owner": "manapua@foo.com"
+    },
+    {
+      "foodName": "Subs (6 in)",
+      "price": "6.59",
+      "owner": "islandsub@foo.com"
+    },
+    {
+      "foodName": "Subs (12 in)",
+      "price": "11.39",
+      "owner": "islandsub@foo.com"
+    },
+    {
+      "foodName": "Burger (1/2 lb)",
+      "price": "6.25",
+      "owner": "islandsub@foo.com"
+    },
+    {
+      "foodName": "Burger (1 lb)",
+      "price": "8.75",
+      "owner": "islandsub@foo.com"
+    },
+    {
+      "foodName": "New York Dog",
+      "price": "3.50",
+      "owner": "islandsub@foo.com"
+    },
+    {
+      "foodName": "Grilled Chicken Salad",
+      "price": "7.25",
+      "owner": "islandsub@foo.com"
+    },
+    {
+      "foodName": "Special Rice Plates",
+      "price": "6.50",
+      "owner": "islandsub@foo.com"
+    },
+    {
+      "foodName": "Pad Thai",
+      "price": "10.95",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Spring Rolls",
+      "price": "9.95",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Green Curry",
+      "price": "10.95",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Red Curry",
+      "price": "10.95",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Yellow Curry",
+      "price": "10.95",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Pad Ki Mao",
+      "price": "11.75",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Eggplant Chicken",
+      "price": "10.95",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Papaya Salad",
+      "price": "10.45",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Basil Chicken",
+      "price": "9.95",
+      "owner": "bangkok@foo.com"
+    },
+    {
+      "foodName": "Kailua Burger",
+      "price": "10.78",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Grilled Chicken Sandwich",
+      "price": "8.99",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Hawaii Kai Burger",
+      "price": "10.78",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Crispy Chicken Sandwich",
+      "price": "8.99",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Teri Burger Combo",
+      "price": "12.69",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Beyond Burger Combo",
+      "price": "14.69",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Crispy Fried (Large +$1.40)",
+      "price": "3.59",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Tater Tots (large +$1.20)",
+      "price": "3.79",
+      "owner": "teddys@foo.com"
+    },
+    {
+      "foodName": "Chicken and Vegetable Rice",
+      "price": "11.75",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "California Roll",
+      "price": "14.00",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "Sea Eel Roll",
+      "price": "8.50",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "Ahi Roll",
+      "price": "7.50",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "Barbequed Eel Rice",
+      "price": "19.75",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "Tsukuneya Spicy Curry Rice",
+      "price": "8.50",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "Salt and Butter Ramen",
+      "price": "8.25",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "Spicy Miso Beef and Pork Ramen",
+      "price": "8.75",
+      "owner": "tsukuneya@foo.com"
+    },
+    {
+      "foodName": "Sweet Bun Sliders",
+      "price": "11.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Thai Spice Wings",
+      "price": "12.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Tangy Sweet Sour",
+      "price": "13.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Tofu White Curry",
+      "price": "11.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Wok Fried Soba",
+      "price": "11.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Mac Nut Mahi Mahi",
+      "price": "12.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Blue Newyorker",
+      "price": "13.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Basil Orange Scampi",
+      "price": "13.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Adobo Sea Scallops",
+      "price": "13.50",
+      "owner": "aplacetoeat@foo.com"
+    },
+    {
+      "foodName": "Fish Burger",
+      "price": "7.25",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "Spicy Burger",
+      "price": "6.99",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "’Shroom and Guac",
+      "price": "7.25",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "BBQ Chicken Salad",
+      "price": "8.99",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "Onion Rings",
+      "price": "3.89",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "French Fried (large +0.44)",
+      "price": "2.81",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "Tossed Cobb Salad",
+      "price": "8.49",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "Teriyaki Burger",
+      "price": "6.99",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "Bacon Deluxe with Cheese Burger",
+      "price": "7.75",
+      "owner": "bettys@foo.com"
+    },
+    {
+      "foodName": "Garlic Steak Plate (Large +$2.00)",
+      "price": "14.95",
+      "owner": "blazin@foo.com"
+    },
+    {
+      "foodName": "Steak and Garlic Shrimp Place",
+      "price": "16.95",
+      "owner": "blazin@foo.com"
+    },
+    {
+      "foodName": "Steak and Eggs Plate (Large +$2.00)",
+      "price": "14.95",
+      "owner": "blazin@foo.com"
+    },
+    {
+      "foodName": "Grilled Steak Plate (Large +$2.05)",
+      "price": "13.95",
+      "owner": "blazin@foo.com"
+    },
+    {
+      "foodName": "Steak and Chicken Combo Plate",
+      "price": "15.95",
+      "owner": "blazin@foo.com"
+    },
+    {
+      "foodName": "Acai Bowl",
+      "price": "8.55",
+      "owner": "blazin@foo.com"
+    },
+    {
+      "foodName": "Korean Chicken Plate",
+      "price": "9.55",
+      "owner": "blazin@foo.com"
+    },
+    {
+      "foodName": "Spicy Peanut Chicken Plate",
+      "price": "9.55",
+      "owner": "blazin@foo.com"
     }
   ]
 }
