@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Card, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -14,6 +14,9 @@ class Review extends React.Component {
               {this.props.reviews.note}
             </Card.Header>
             <br/>
+            <Card.Meta textAlign='center'>Review:
+              <Rating defaultRating={this.props.reviews.rating} maxRating={5} disabled icon='star' size='large'/>
+            </Card.Meta>
             <Card.Meta textAlign='center'>Date created: {this.props.reviews.createdAt.toLocaleDateString('en-US')}</Card.Meta>
           </Card.Content>
         </Card>

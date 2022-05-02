@@ -37,7 +37,6 @@ class Restaurant extends React.Component {
             content={ <AddReview owner={this.props.restaurant.owner} contactId={this.props.restaurant._id}/> }
           />
 
-          <Rating style={{ paddingTop: '10px' }} defaultRating={this.props.restaurant.reviews} maxRating={5} disabled icon='star' size='huge'/>
         </Card.Content>
       </Card>
     );
