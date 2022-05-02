@@ -68,17 +68,17 @@ class Vendor extends React.Component {
             <Grid.Row columns={2} divided style={{ paddingTop: 25 }}>
               <Grid.Column>
                 <div>
-                  <Header as="h3" align="center">Open Hours</Header>
+                  <Header as="h2" align="center">Open Hours</Header>
                   <p align="center">{this.props.doc.openHour.toLocaleTimeString()}</p>
                 </div>
                 <br/>
                 <div>
-                  <Header as="h3" align="center">Closed Hours</Header>
+                  <Header as="h2" align="center">Closed Hours</Header>
                   <p align="center">{this.props.doc.closeHour.toLocaleTimeString()}</p>
                 </div>
                 <br/>
                 <div>
-                  <Header as="h3" align="center">Weekdays Open</Header>
+                  <Header as="h2" align="center">Weekdays Open</Header>
                   <div align='center'>
                     {this.props.doc.weekdayOpen.map((day, key) => <Label key={key}>{day}</Label>)}
                   </div>
@@ -87,10 +87,8 @@ class Vendor extends React.Component {
               </Grid.Column>
               <Grid.Column>
                 <div>
-                  <Header as="h3" align="center">Location</Header>
-                  <p align="center">{this.props.doc.location}</p>
-                  <iframe width="530" height="400" style={{ border: '0' }} loading="lazy" allowFullScreen
-                    src="https://www.google.com/maps/embed/v1/streetview?location=21.3009%2C-157.8156&key=AIzaSyCPlaH86LNtisYSdT-Dgs6vp7llJhLVlJo"/>
+                  <Header as="h2" align="center">Location</Header>
+                  <Header as="h3" align="center">{this.props.doc.location}</Header>
                 </div>
               </Grid.Column>
             </Grid.Row>
