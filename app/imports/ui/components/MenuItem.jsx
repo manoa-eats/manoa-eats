@@ -14,13 +14,12 @@ class MenuItem extends React.Component {
   render() {
     return (
       <Table.Row>
-        <Table.Cell>{this.props.menu.foodName}</Table.Cell>
-        <Table.Cell>${this.props.menu.price}</Table.Cell>
-        <Table.Cell>{this.props.menu.available.toLocaleString('en-US')}</Table.Cell>
-        <Table.Cell>
+        <Table.Cell textAlign="center">{this.props.menu.foodName}</Table.Cell>
+        <Table.Cell textAlign="center">${this.props.menu.price}</Table.Cell>
+        <Table.Cell textAlign="center">
           <Link to={`/editMenuItem/${this.props.menu._id}`}>Edit</Link>
         </Table.Cell>
-        <Table.Cell>
+        <Table.Cell textAlign="center">
           <Button icon onClick={() => this.removeItem(this.props.menu._id)}>
             <Icon name='trash'/>
           </Button>

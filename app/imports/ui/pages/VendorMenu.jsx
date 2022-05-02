@@ -22,9 +22,8 @@ class VendorMenuTable extends React.Component {
         <Table celled>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Price</Table.HeaderCell>
-              <Table.HeaderCell>Availability</Table.HeaderCell>
+              <Table.HeaderCell textAlign="center">Name</Table.HeaderCell>
+              <Table.HeaderCell textAlign="center">Price</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>

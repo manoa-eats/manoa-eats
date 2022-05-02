@@ -16,8 +16,8 @@ class EditMenuItem extends React.Component {
 
   // On submit, insert the data.
   submit(data) {
-    const { foodName, available, price, _id } = data;
-    Menus.collection.update(_id, { $set: { foodName, available, price } },
+    const { foodName, price, _id } = data;
+    Menus.collection.update(_id, { $set: { foodName, price } },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -37,7 +37,6 @@ class EditMenuItem extends React.Component {
             <Segment>
               <TextField name='foodName'/>
               <NumField name='price' decimal/>
-              <DateField name='available'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
             </Segment>

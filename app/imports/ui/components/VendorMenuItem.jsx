@@ -9,9 +9,8 @@ class VendorMenuItem extends React.Component {
   render() {
     return (
       <Table.Row>
-        <Table.Cell>{this.props.menu.foodName}</Table.Cell>
-        <Table.Cell>${this.props.menu.price}</Table.Cell>
-        <Table.Cell>{this.props.menu.available.toLocaleString('en-US')}</Table.Cell>
+        <Table.Cell textAlign="center">{this.props.menu.foodName}</Table.Cell>
+        <Table.Cell textAlign="center">${this.props.menu.price}</Table.Cell>
       </Table.Row>
     );
   }
@@ -22,7 +21,6 @@ VendorMenuItem.propTypes = {
   menu: PropTypes.shape({
     foodName: PropTypes.string,
     price: PropTypes.number,
-    available: PropTypes.instanceOf(Date),
     _id: PropTypes.string,
   }).isRequired,
   Menus: PropTypes.object.isRequired,
