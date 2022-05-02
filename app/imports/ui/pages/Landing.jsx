@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, List, Loader, Dropdown } from 'semantic-ui-react';
+import { Grid, Header, List, Loader, Dropdown, Card, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -24,10 +24,19 @@ class Landing extends React.Component {
 
     // Open Now implementation
     const now = new Date().getHours();
-    const openRestaurants = this.props.vendors.filter(x => x.openHour.getHours() <= now && now <= x.closeHour.getHours()).map((restaurant, i) => <List.Item
+    const openRestaurants = this.props.vendors.filter(x => x.openHour.getHours() <= now && now <= x.closeHour.getHours()).map((restaurant, i) => <Card centered
       key={i}>
-      <Header as={'h3'}>{restaurant.name}</Header>
-    </List.Item>);
+      <Card.Content>
+        <Card.Header>{restaurant.name}</Card.Header>
+        <Card.Description>
+          {`OPEN: ${restaurant.openHour.toLocaleTimeString()}`}
+        </Card.Description>
+        <Card.Description>
+          {`CLOSED: ${restaurant.closeHour.toLocaleTimeString()}`}
+        </Card.Description>
+        <Card.Description>{'DIETS: '}<br/>{restaurant.diets.map((diets, key) => <Label key={key} color="green">{diets}</Label>)}</Card.Description>
+      </Card.Content>
+    </Card>);
     return (
       <div id='landing-page'>
         <Grid stackable columns={3}>
