@@ -58,12 +58,13 @@ class Vendor extends React.Component {
               </Grid>
             </div>
           </div>
-          <Grid style={{ paddingTop: 25 }} >
-            <div align='center' style={{ paddingTop: 35, paddingRight: 50, paddingLeft: 50 }}>
-              <Rating style={{ paddingTop: '10px' }} defaultRating={this.props.doc.reviews} maxRating={5} disabled icon='star' size='huge'/>
-              <br/><br/>
-              <span>{this.props.doc.description}</span>
-            </div>
+          <br/>
+          <Grid style={{ paddingTop: 25 }}>
+            <Container textAlign='center'>
+              <div style={{ paddingTop: 35, paddingRight: 50, paddingLeft: 50 }}>
+                <span>{this.props.doc.description}</span>
+              </div>
+            </Container>
             <Grid.Row columns={2} divided style={{ paddingTop: 25 }}>
               <Grid.Column>
                 <div>
