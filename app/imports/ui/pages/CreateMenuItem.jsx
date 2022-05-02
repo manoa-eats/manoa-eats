@@ -20,9 +20,9 @@ class CreateMenuItem extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { foodName, available, price } = data;
+    const { foodName, price } = data;
     const owner = Meteor.user().username;
-    Menus.collection.insert({ owner, foodName, available, price },
+    Menus.collection.insert({ owner, foodName, price },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -45,7 +45,6 @@ class CreateMenuItem extends React.Component {
             <Segment>
               <TextField name='foodName'/>
               <NumField name='price' decimal/>
-              <DateField name='available'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
             </Segment>

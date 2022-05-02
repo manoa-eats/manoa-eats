@@ -7,7 +7,6 @@ import {
   Container,
   Segment,
   Divider,
-  Rating,
   Comment,
   Label,
 } from 'semantic-ui-react';

@@ -15,7 +15,6 @@ class MenusCollection {
     this.schema = new SimpleSchema({
       foodName: String,
       owner: String,
-      available: Date,
       price: Number,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
