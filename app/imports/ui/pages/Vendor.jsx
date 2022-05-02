@@ -69,12 +69,12 @@ class Vendor extends React.Component {
               <Grid.Column>
                 <div>
                   <Header as="h3" align="center">Open Hours</Header>
-                  <p align="center">{this.props.doc.openHour.toLocaleTimeString().match(/\d{2}:\d{2}|[AMP]+/g).join(' ')}</p>
+                  <p align="center">{this.props.doc.openHour.toLocaleTimeString()}</p>
                 </div>
                 <br/>
                 <div>
                   <Header as="h3" align="center">Closed Hours</Header>
-                  <p align="center">{this.props.doc.closeHour.toLocaleTimeString().match(/\d{2}:\d{2}|[AMP]+/g).join(' ')}</p>
+                  <p align="center">{this.props.doc.closeHour.toLocaleTimeString()}</p>
                 </div>
                 <br/>
                 <div>

@@ -154,13 +154,13 @@
     "foodName": "donut",
     "price": "10.15", 
     "owner": "john@foo.com",
-    "available": "2022-04-26T12:03:00Z"
+    "available": "2022-04-26T12:03:00"
     },
     {
       "foodName": "fried rice",
       "price": "10.15",
       "owner": "panda@foo.com",
-      "available": "2022-04-26T12:03:00Z"
+      "available": "2022-04-26T12:03:00"
     }
   ]
 }

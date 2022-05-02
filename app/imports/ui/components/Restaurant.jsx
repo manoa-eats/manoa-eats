@@ -20,8 +20,8 @@ class Restaurant extends React.Component {
 
           <Card.Header><Link id='restName' to={`/vendor-page/${this.props.restaurant.owner}`}>{this.props.restaurant.name} (click for more info)</Link></Card.Header>
           <Card.Meta><Icon name='location arrow'/> {this.props.restaurant.location}</Card.Meta>
-          <Card.Meta><Icon name='time'/>Open: {this.props.restaurant.openHour.toLocaleTimeString().match(/\d{2}:\d{2}|[AMP]+/g).join(' ')}</Card.Meta>
-          <Card.Meta><Icon name='times circle'/>Closed: {this.props.restaurant.closeHour.toLocaleTimeString().match(/\d{2}:\d{2}|[AMP]+/g).join(' ')}</Card.Meta>
+          <Card.Meta><Icon name='time'/>Open: {this.props.restaurant.openHour.toLocaleTimeString()}</Card.Meta>
+          <Card.Meta><Icon name='times circle'/>Closed: {this.props.restaurant.closeHour.toLocaleTimeString()}</Card.Meta>
           <Card.Meta><Icon name='calendar alternate'/>Weekdays open: {this.props.restaurant.weekdayOpen.map((day, key) => <Label color="blue" key={key}>{day}</Label>)}</Card.Meta>
           <Card.Meta><Icon name='food'/>Diets: {this.props.restaurant.diets.map((day, key) => <Label color="orange" key={key}>{day}</Label>)}</Card.Meta>
           <Card.Description>
