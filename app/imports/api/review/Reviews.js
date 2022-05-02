@@ -14,6 +14,11 @@ class ReviewsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       note: String,
+      rating: {
+        type: String,
+        allowedValues: ['1', '2', '3', '4', '5'],
+        defaultValue: '1',
+      },
       contactId: String,
       owner: String,
       createdAt: Date,
