@@ -1,8 +1,9 @@
 import React from 'react';
-import { Grid, Header, List, Loader, Dropdown, Card, Label } from 'semantic-ui-react';
+import { Grid, Header, List, Loader, Dropdown, Card, Label, Button, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
+import { Link } from 'react-router-dom';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 
@@ -24,17 +25,43 @@ class Landing extends React.Component {
 
     // Open Now implementation
     const date = new Date();
+    const compareDate = new Date('2022-04-28T03:00:00');
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const todaysDate = weekday[date.getDay()];
-    const checkJSON = (currentDay) => this.props.vendors.map((restaurant) => restaurant.weekdayOpen.includes(currentDay));
-    const filteredRestaurants = this.props.vendors
-      .filter(x => x.openHour.toLocaleTimeString() >= date.toLocaleTimeString() && date.toLocaleTimeString() < x.closeHour.toLocaleTimeString() && checkJSON(todaysDate).includes(true));
-    const openRestaurants = filteredRestaurants ? <Card centered>
+    const checkJSON = () => this.props.vendors.map((restaurant) => restaurant.weekdayOpen);
+    const restaurantDates = (doubleDateArray) => {
+      const returnArr = [];
+      for (let i = 0; i < doubleDateArray.length; i++) {
+        if (doubleDateArray[i].includes(todaysDate)) {
+          returnArr.push(i);
+        }
+      }
+      return returnArr;
+    };
+    const validateOpen = (restaurantOpenHour, restaurantClosedHours) => {
+      const todaysHours = date.getHours();
+      return todaysHours < restaurantClosedHours.getHours() && todaysHours >= restaurantOpenHour.getHours();
+    };
+    const res = () => {
+      const restaurants = [];
+      let validRestaurant;
+      let opened;
+      const checkedDateRestaurants = restaurantDates(checkJSON());
+      for (let i = 0; i < checkedDateRestaurants.length; i++) {
+        validRestaurant = this.props.vendors[checkedDateRestaurants[i]];
+        opened = validRestaurant.weekdayOpen.includes(todaysDate) && validateOpen(validRestaurant.openHour, validRestaurant.closeHour);
+        if (opened) {
+          restaurants.push(validRestaurant);
+        }
+      }
+      return restaurants;
+    };
+    const openRestaurants = (res().length === 0) ? <Card centered>
       <Card.Content>
         <Card.Header>Currently no open restaurants</Card.Header>
       </Card.Content>
     </Card> :
-      filteredRestaurants.map((restaurant, i) => <Card centered
+      res().map((restaurant, i) => <Card centered
         key={i}>
         <Card.Content>
           <Card.Header>{restaurant.name}</Card.Header>
@@ -46,15 +73,18 @@ class Landing extends React.Component {
           </Card.Description>
           <Card.Description>{'DIETS: '}<br/>{restaurant.diets.map((diets, key) => <Label key={key} color="green">{diets}</Label>)}</Card.Description>
         </Card.Content>
+        <Card.Content extra>
+          <Link to={`/vendor-page/${restaurant.owner}`}><Button>View Restaurant</Button></Link>
+        </Card.Content>
       </Card>);
     return (
       <div id='landing-page'>
         <Grid stackable columns={3}>
           <Grid.Column textAlign='center' className={'gridbkg'}>
             <Header as="h1" inverted >Open Now</Header>
-            <List inverted>
+            <Card.Group itemsPerRow={2}>
               { openRestaurants }
-            </List>
+            </Card.Group>
           </Grid.Column>
           <Grid.Column textAlign='center' width={8} className={'margin'}>
             <Grid.Row verticalAlign={'middle'}>
