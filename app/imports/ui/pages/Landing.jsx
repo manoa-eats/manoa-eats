@@ -40,7 +40,10 @@ class Landing extends React.Component {
     };
     const validateOpen = (restaurantOpenHour, restaurantClosedHours) => {
       const todaysHours = date.getHours();
-      return todaysHours < restaurantClosedHours.getHours() && todaysHours >= restaurantOpenHour.getHours();
+      const todaysMinutes = date.getMinutes();
+      return todaysHours <= restaurantClosedHours.getHours()
+        && todaysHours >= restaurantOpenHour.getHours()
+        && todaysMinutes < restaurantClosedHours.getMinutes();
     };
     const res = () => {
       const restaurants = [];
