@@ -82,7 +82,7 @@ class Landing extends React.Component {
         <Grid stackable columns={3}>
           <Grid.Column textAlign='center' className={'gridbkg'}>
             <Header as="h1" inverted >Open Now</Header>
-            <Card.Group itemsPerRow={2}>
+            <Card.Group centered itemsPerRow={2}>
               { openRestaurants }
             </Card.Group>
           </Grid.Column>
