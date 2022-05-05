@@ -58,7 +58,7 @@ class Landing extends React.Component {
       const timeToday = timeToString(date.getHours(), date.getMinutes());
       const timeClosed = timeToString(timeToLocal(restaurantClosedHours).getHours(), timeToLocal(restaurantClosedHours).getMinutes());
       const timeOpen = timeToString(timeToLocal(restaurantOpenHour).getHours(), timeToLocal(restaurantOpenHour).getMinutes());
-      return timeToday <= timeClosed
+      return timeToday < timeClosed
         && timeToday >= timeOpen;
     };
     const res = () => {
