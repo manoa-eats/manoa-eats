@@ -8,7 +8,6 @@ import AddReview from './AddReview';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Restaurant extends React.Component {
-  onlyRatings = _.pluck(this.props.reviews, 'rating')
 
   total = () => {
     const onlyRatings = _.pluck(this.props.reviews, 'rating');
