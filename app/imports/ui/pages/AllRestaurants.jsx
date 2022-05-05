@@ -97,7 +97,7 @@ class AllRestaurants extends React.Component {
           {restaurants.map((restaurant, index) => <Restaurant
             key={index}
             restaurant={restaurant}
-            reviews={this.props.reviews.filter(review => (review.contactId === contact._id))}/>)}
+            reviews={this.props.reviews.filter((review) => review.owner === restaurant.owner)}/>)}
         </Card.Group>
       </Container>
     );

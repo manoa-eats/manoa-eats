@@ -3,10 +3,25 @@ import React from 'react';
 import { Card, Image, Button, Rating, Modal, Label, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import { _ } from 'meteor/underscore';
 import AddReview from './AddReview';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Restaurant extends React.Component {
+
+  total = () => {
+    const onlyRatings = _.pluck(this.props.reviews, 'rating');
+    if (onlyRatings.length !== 0) {
+      const sum = _.reduce(onlyRatings, function (memo, num) { return parseInt(memo, 10) + parseInt(num, 10); }, 0);
+      const average = sum / onlyRatings.length;
+      const decimalValue = average - Math.trunc(average);
+      if (decimalValue < 0.75) {
+        return Math.floor(average);
+      }
+      return Math.ceil(average);
+    }
+    return 0;
+  }
 
   render() {
     return (
@@ -36,7 +51,7 @@ class Restaurant extends React.Component {
             size='large'
             content={ <AddReview owner={this.props.restaurant.owner} contactId={this.props.restaurant._id}/> }
           />
-
+          <Rating style={{ paddingTop: '10px' }} defaultRating={this.total()} maxRating={5} disabled icon='star' size='huge'/>
         </Card.Content>
       </Card>
     );
@@ -46,6 +61,7 @@ class Restaurant extends React.Component {
 // Require a document to be passed to this component.
 Restaurant.propTypes = {
   restaurant: PropTypes.object.isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
