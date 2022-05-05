@@ -11,6 +11,10 @@ const bridge = new SimpleSchema2Bridge(Reviews.schema);
 
 /** Renders the Page for adding a document. */
 class AddReview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { note: '' };
+  }
 
   // On submit, insert the data.
   submit(data, formRef) {
@@ -23,6 +27,7 @@ class AddReview extends React.Component {
         } else {
           swal('Success', 'Item added successfully', 'success');
           formRef.reset();
+          this.setState({ note });
         }
       });
   }
@@ -35,28 +40,33 @@ class AddReview extends React.Component {
   render() {
     let fRef = null;
     return (
-      <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-        <Segment>
-          <Header> Add Rating :
-            <Rating style={{ paddingTop: '10px' }}
-              onRate={this.handleRate}
-              maxRating={5}
-              icon='star'
-              size='huge'/>
-          </Header>
-          <TextField
-            id='addAReview'
-            placeholder="Write review here..."
-            label="Add a Restaurant review"
-            name='note'
-            autoComplete="off" />
-          <SubmitField id='submitReview' style={{ background: '#4CAF50' }} value='Submit'/>
-          <ErrorsField/>
-          <HiddenField name='owner' value={this.props.owner}/>
-          <HiddenField name='contactId' value={this.props.contactId}/>
-          <HiddenField name='createdAt' value={new Date()}/>
-        </Segment>
-      </AutoForm>
+      <div>
+        <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+          <Segment>
+            <Header> Add Rating :
+              <Rating style={{ paddingTop: '10px' }}
+                onRate={this.handleRate}
+                maxRating={5}
+                icon='star'
+                size='huge'/>
+            </Header>
+            <TextField
+              id='addAReview'
+              placeholder="Write review here..."
+              label="Add a Restaurant review"
+              name='note'
+              autoComplete="off" />
+            <SubmitField id='submitReview' style={{ background: '#4CAF50' }} value='Submit'/>
+            <ErrorsField/>
+            <HiddenField name='owner' value={this.props.owner}/>
+            <HiddenField name='contactId' value={this.props.contactId}/>
+            <HiddenField name='createdAt' value={new Date()}/>
+          </Segment>
+        </AutoForm>
+        {/* eslint-disable-next-line no-undef */}
+        {this.state.note ? window.location.reload() : ''}
+      </div>
+
     );
   }
 }

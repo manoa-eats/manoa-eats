@@ -1,7 +1,7 @@
 import React from 'react';
-import { Grid, Segment, Header, Image, Loader } from 'semantic-ui-react';
+import { Grid, Header, Image, Loader, Segment } from 'semantic-ui-react';
 // Must use destructuring import to avoid https://github.com/vazco/uniforms/issues/433
-import { AutoForm, TextField, SubmitField, LongTextField, DateField } from 'uniforms-semantic';
+import { AutoForm, DateField, LongTextField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { withTracker } from 'meteor/react-meteor-data';
