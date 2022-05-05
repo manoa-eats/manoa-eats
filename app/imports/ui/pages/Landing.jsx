@@ -25,7 +25,6 @@ class Landing extends React.Component {
 
     // Open Now implementation
     const date = new Date();
-    const compareDate = new Date('2022-04-28T03:00:00');
     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const todaysDate = weekday[date.getDay()];
     const checkJSON = () => this.props.vendors.map((restaurant) => restaurant.weekdayOpen);
@@ -38,12 +37,29 @@ class Landing extends React.Component {
       }
       return returnArr;
     };
+    const timeToLocal = (time) => {
+      const iso = time.toISOString();
+      return new Date(iso.slice(0, -1));
+    };
+
+    const timeToString = (hours, minutes) => {
+      let formattedHours = hours;
+      let formattedMinutes = minutes;
+      if (hours < 10) {
+        formattedHours = `0${hours}`;
+      }
+      if (minutes < 10) {
+        formattedMinutes = `0${minutes}`;
+      }
+      return `${formattedHours}:${formattedMinutes}`;
+    };
+
     const validateOpen = (restaurantOpenHour, restaurantClosedHours) => {
-      const todaysHours = date.getHours();
-      const todaysMinutes = date.getMinutes();
-      return todaysHours <= restaurantClosedHours.getHours()
-        && todaysHours >= restaurantOpenHour.getHours()
-        && todaysMinutes < restaurantClosedHours.getMinutes();
+      const timeToday = timeToString(date.getHours(), date.getMinutes());
+      const timeClosed = timeToString(timeToLocal(restaurantClosedHours).getHours(), timeToLocal(restaurantClosedHours).getMinutes());
+      const timeOpen = timeToString(timeToLocal(restaurantOpenHour).getHours(), timeToLocal(restaurantOpenHour).getMinutes());
+      return timeToday <= timeClosed
+        && timeToday >= timeOpen;
     };
     const res = () => {
       const restaurants = [];
@@ -69,10 +85,10 @@ class Landing extends React.Component {
         <Card.Content>
           <Card.Header>{restaurant.name}</Card.Header>
           <Card.Description>
-            {`OPEN: ${restaurant.openHour.toLocaleTimeString()}`}
+            {`OPEN: ${timeToLocal(restaurant.openHour).toLocaleTimeString()}`}
           </Card.Description>
           <Card.Description>
-            {`CLOSED: ${restaurant.closeHour.toLocaleTimeString()}`}
+            {`CLOSED: ${timeToLocal(restaurant.closeHour).toLocaleTimeString()}`}
           </Card.Description>
           <Card.Description>{'DIETS: '}<br/>{restaurant.diets.map((diets, key) => <Label key={key} color="green">{diets}</Label>)}</Card.Description>
         </Card.Content>

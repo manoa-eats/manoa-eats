@@ -1,6 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
 import React from 'react';
-import { Card, Image, Button, Rating, Modal, Label, Icon } from 'semantic-ui-react';
+import { Button, Card, Icon, Image, Label, Modal, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
@@ -23,6 +23,11 @@ class Restaurant extends React.Component {
     return 0;
   }
 
+  timeToLocal = (time) => {
+    const iso = time.toISOString();
+    return new Date(iso.slice(0, -1));
+  }
+
   render() {
     return (
       <Card>
@@ -35,8 +40,8 @@ class Restaurant extends React.Component {
 
           <Card.Header><Link id='restName' to={`/vendor-page/${this.props.restaurant.owner}`}>{this.props.restaurant.name} (click for more info)</Link></Card.Header>
           <Card.Meta><Icon name='location arrow'/> {this.props.restaurant.location}</Card.Meta>
-          <Card.Meta><Icon name='time'/>Open: {this.props.restaurant.openHour.toLocaleTimeString()}</Card.Meta>
-          <Card.Meta><Icon name='times circle'/>Closed: {this.props.restaurant.closeHour.toLocaleTimeString()}</Card.Meta>
+          <Card.Meta><Icon name='time'/>Open: {this.timeToLocal(this.props.restaurant.openHour).toLocaleTimeString()}</Card.Meta>
+          <Card.Meta><Icon name='times circle'/>Closed: {this.timeToLocal(this.props.restaurant.closeHour).toLocaleTimeString()}</Card.Meta>
           <Card.Meta><Icon name='calendar alternate'/>Weekdays open: {this.props.restaurant.weekdayOpen.map((day, key) => <Label color="blue" key={key}>{day}</Label>)}</Card.Meta>
           <Card.Meta><Icon name='food'/>Diets: {this.props.restaurant.diets.map((day, key) => <Label color="orange" key={key}>{day}</Label>)}</Card.Meta>
           <Card.Description>
