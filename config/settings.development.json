@@ -277,6 +277,139 @@
       "image": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/kim_binsted-square-300x300.jpg",
       "owner": " admin@foo.com",
       "description": "Kim Binsted received her BSc in Physics at McGill (1991), and her PhD in Artificial Intelligence from the University of Edinburgh (1996). Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as What do you call a Martian who drinks beer? An ale-ien!"
+    },
+    {
+      "name": "Kylie Foo",
+      "image": "https://cdn.dribbble.com/users/1044993/screenshots/14430492/media/778141084fd91f11c7949ac54de0b635.png?compress=1&resize=400x300",
+      "owner": "kylie@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Mimmi Foo",
+      "image": "![](../app/public/images/mimmi.jpg)",
+      "owner": "mimmi@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore","Gluten-Free"]
+    },
+    {
+      "name": "Emma Foo",
+      "image": "![](../app/public/images/emma.jpg)",
+      "owner": "emma@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Jake Foo",
+      "image": "![](../app/public/images/jake.jpeg)",
+      "owner": "jake@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": ["Vegan","Gluten-Free"]
+    },
+    {
+      "name": "Kawika Foo",
+      "image": "![](../app/public/images/kawika.jpeg)",
+      "owner": "kawika@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Ron Foo",
+      "image": "![](../app/public/images/ron.jpeg)",
+      "owner": "ron@foo.com",
+      "userPreferredFoods": ["burger","pizza","fries"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Kate Foo",
+      "image": "![](../app/public/images/kate.jpeg)",
+      "owner": "kate@foo.com",
+      "userPreferredFoods": [],
+      "diets": ["Paleo", "Carnivore","Gluten-Free"]
+    },
+    {
+      "name": "Conor Foo",
+      "image": "![](../app/public/images/conor.jpeg)",
+      "owner": "conor@foo.com",
+      "userPreferredFoods": [],
+      "diets": ["Vegan"]
+    },
+    {
+      "name": "Taylor Foo",
+      "image": "![](../app/public/images/Taylor.jpeg)",
+      "owner": "taylor@foo.com",
+      "userPreferredFoods": [],
+      "diets": []
+    },
+    {
+      "name": "Kelsie Foo",
+      "image": "![](../app/public/images/Kelsie.jpeg)",
+      "owner": "kelsie@foo.com",
+      "userPreferredFoods": [],
+      "diets": []
+    },
+    {
+      "name": "Bella Foo",
+      "image": "![](../app/public/images/bella.jpeg)",
+      "owner": "bella@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Justin Foo",
+      "image": "![](../app/public/images/justin.jpeg)",
+      "owner": "justin@foo.com",
+      "userPreferredFoods": ["burger"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Winnie Foo",
+      "image": "![](../app/public/images/winnie.jpeg)",
+      "owner": "winnie@foo.com",
+      "userPreferredFoods": ["burger","pizza","fries"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Kasen Foo",
+      "image": "![](../app/public/images/kasen.jpeg)",
+      "owner": "kasen@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Kyler Foo",
+      "image": "![](../app/public/images/kyler.jpeg)",
+      "owner": "kyler@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": ["Vegetarian"]
+    },
+    {
+      "name": "Ryan Foo",
+      "image": "![](../app/public/images/ryan.jpeg)",
+      "owner": "ryan@foo.com",
+      "userPreferredFoods": ["burger","pizza","fries"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Chris Foo",
+      "image": "![](../app/public/images/chris.jpeg)",
+      "owner": "chris@foo.com",
+      "userPreferredFoods": ["bento"],
+      "diets": []
+    },
+    {
+      "name": "Krystal Foo",
+      "image": "![](../app/public/images/krystal.png)",
+      "owner": "krystal@foo.com",
+      "userPreferredFoods": ["burger","pizza"],
+      "diets": ["Paleo", "Carnivore"]
+    },
+    {
+      "name": "Iris Foo",
+      "image": "![](../app/public/images/iris.jpeg)",
+      "owner": "iris@foo.com",
+      "userPreferredFoods": [],
+      "diets": []
     }
   ],
   "defaultRestaurants": [
@@ -1811,5 +1944,12 @@
       "price": "9.55",
       "owner": "blazin@foo.com"
     }
-  ]
+  ],
+  "defaultReviews": [{
+    "note": "Dinner plates are great and satisfying",
+    "rating": "3",
+    "contactID": "taylor@foo.com",
+    "owner": "asia@foo.com",
+    "createdAt": "2022-0428T15:00:00z"
+  }]
 }
