@@ -36,7 +36,7 @@ class RestaurantAdmin extends React.Component {
           <Link id='editRestaurantButton' to={`/editRestaurant/${this.props.restaurant._id}`}>Edit</Link>
         </Card.Content>
         <Card.Content >
-          <Button onClick={() => this.removeItem(this.props.restaurant._id)} color='red'>Remove</Button>
+          <Button onClick={() => this.removeItem(this.props.restaurant._id)} id='adminRemoveButton' color='red'>Remove</Button>
         </Card.Content>
       </Card>
     );

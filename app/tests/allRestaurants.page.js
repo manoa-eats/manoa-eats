@@ -4,6 +4,9 @@ class AllRestaurantsPage {
   constructor() {
     this.pageId = '#all-Restaurants-page';
     this.pageSelector = Selector(this.pageId);
+
+    this.pageId2 = '#vendor-View-page';
+    this.pageSelector2 = Selector(this.pageId2);
   }
 
   /** Asserts that this page is currently displayed. */
@@ -27,6 +30,19 @@ class AllRestaurantsPage {
   /** Asserts that this page is currently displayed. */
   async VendorIsDisplayed(testController) {
     const RestNameLink = Selector('#restName');
+    await testController.hover(RestNameLink);
+    await testController.click(RestNameLink);
+    await testController.expect(this.pageSelector2.exists).ok();
+  }
+
+  async sortAlpha(testController) {
+    const RestNameLink = Selector('#sort-alpha');
+    await testController.hover(RestNameLink);
+    await testController.click(RestNameLink);
+  }
+
+  async sortRating(testController) {
+    const RestNameLink = Selector('#sort-rating');
     await testController.hover(RestNameLink);
     await testController.click(RestNameLink);
   }
