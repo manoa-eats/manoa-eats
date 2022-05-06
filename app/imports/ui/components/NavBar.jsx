@@ -62,14 +62,14 @@ class NavBar extends React.Component {
         ) : ''}
         {username() && checkDatabase(VendorProfile) ? (
           [
-            <Menu.Item as={NavLink} activeClassName="active" exact to={`/edit-vendor-profile/${this.props.currentUser}`}
+            <Menu.Item id='navbar-edit-vendor-profile' as={NavLink} activeClassName="active" exact to={`/edit-vendor-profile/${this.props.currentUser}`}
               key="edit-vendor">Edit Vendor Profile
               <Icon style={spacing} name="edit" size="large"/>
             </Menu.Item>,
           ]
         ) : ''}
         {(username()) ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/create-menu-item" key="menu">Create Menu
+          <Menu.Item id='Navbar-Add-Menu-Item' as={NavLink} activeClassName="active" exact to="/create-menu-item" key="menu">Create Menu
             <Icon.Group style={spacing} size='large'>
               <Icon name='food' />
               <Icon corner color="black" name='add' />
@@ -77,7 +77,7 @@ class NavBar extends React.Component {
           </Menu.Item>
         ) : ''}
         {(username()) ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to={`/view-menu/${this.props.currentUser}`} key="view-menu">View Menu
+          <Menu.Item id='Navbar-View-Menu-Item' as={NavLink} activeClassName="active" exact to={`/view-menu/${this.props.currentUser}`} key="view-menu">View Menu
             <Icon style={spacing} name="eye" size="large"/>
           </Menu.Item>
         ) : ''}

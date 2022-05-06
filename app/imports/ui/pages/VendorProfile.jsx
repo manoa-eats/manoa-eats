@@ -43,7 +43,7 @@ class CreateVendorProfile extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     return (
-      <Grid container centered>
+      <Grid id='vendorProfile-page' container centered>
         <Grid.Column>
           <Header as="h1" style={{ color: 'white' }} textAlign="center">Vendor Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
@@ -65,7 +65,7 @@ class CreateVendorProfile extends React.Component {
                 max={new Date()}
                 min={new Date()}
               />
-              <MultiSelectField name="diets" showInlineError={true}
+              <MultiSelectField id='vendorFormDiets' name="diets" showInlineError={true}
                 placeholder={'Accommodating Diets'}/>
               <SubmitField value="Submit"/>
             </Segment>

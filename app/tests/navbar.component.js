@@ -56,6 +56,21 @@ class NavBar {
   async gotoFeelingLuckyPage(testController) {
     await testController.click('#navbar-feeling-lucky');
   }
+
+  /** Pull down login menu, go to Vendor Verification page. */
+  async gotoEditVendorProfilePage(testController) {
+    await testController.click('#navbar-edit-vendor-profile');
+  }
+
+  /** Pull down login menu, go to Vendor Verification page. */
+  async gotoCreateMenuPage(testController) {
+    await testController.click('#Navbar-Add-Menu-Item');
+  }
+
+  /** Pull down login menu, go to Vendor Verification page. */
+  async gotoViewMenuPage(testController) {
+    await testController.click('#Navbar-View-Menu-Item');
+  }
 }
 
 export const navBar = new NavBar();

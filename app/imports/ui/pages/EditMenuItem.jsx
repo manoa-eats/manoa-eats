@@ -35,9 +35,9 @@ class EditMenuItem extends React.Component {
           <Header as="h1" textAlign="center" inverted>Edit Menu Item</Header>
           <AutoForm schema={bridge} model={this.props.doc} onSubmit={data => this.submit(data)} >
             <Segment>
-              <TextField name='foodName'/>
-              <NumField name='price' decimal/>
-              <SubmitField value='Submit'/>
+              <TextField id='editMenuFoodName' name='foodName'/>
+              <NumField id='editMenuFoodPrice' name='price' decimal/>
+              <SubmitField id='submitNewMenuVendor' value='Submit'/>
               <ErrorsField/>
             </Segment>
           </AutoForm>

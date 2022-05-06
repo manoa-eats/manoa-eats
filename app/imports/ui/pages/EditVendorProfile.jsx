@@ -51,14 +51,14 @@ class EditVendor extends React.Component {
   renderPage() {
     const model = _.extend({}, this.props.vendorProfileDoc);
     return (
-      <Grid container centered>
+      <Grid id='editVendorProfile-page' container centered>
         <Grid.Column>
           <Header as="h1" style={{ color: 'white' }} textAlign="center" inverted>Vendor Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={model}>
             <Segment>
               <Image centered rounded src={this.props.vendorProfileDoc.image} size='medium' />
-              <TextField name="name" showInlineError={true} placeholder={'Your organization name'}/>
-              <TextField name="image" showInlineError={true} placeholder={'image link'}/>
+              <TextField id = 'vendorFormName' name="name" showInlineError={true} placeholder={'Your organization name'}/>
+              <TextField id = 'vendorFormImage' name="image" showInlineError={true} placeholder={'image link'}/>
               <TextField name="location" showInlineError={true} placeholder={'Address'}/>
               <LongTextField name="description" showInlineError={true} placeholder={'Tell the world a little bit about your venue'}/>
               <MultiSelectField name="weekdayOpen" showInlineError={true}
@@ -75,7 +75,7 @@ class EditVendor extends React.Component {
               />
               <MultiSelectField name="diets" showInlineError={true}
                 placeholder={'Accommodating Diets'}/>
-              <SubmitField value="Submit"/>
+              <SubmitField id='submitEditVendor' value="Submit"/>
             </Segment>
           </AutoForm>
         </Grid.Column>
