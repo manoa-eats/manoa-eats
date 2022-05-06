@@ -15,6 +15,7 @@ class FeelingLuckyPage {
     await testController.wait(10000).expect(this.pageSelector.exists).ok();
   }
 
+  /** Asserts that the view vendor restaurants page is working. */
   async VendorIsDisplayed(testController) {
     const RestNameLink = Selector('#restName');
     await testController.hover(RestNameLink);
@@ -22,6 +23,7 @@ class FeelingLuckyPage {
     await testController.expect(this.pageSelector2.exists).ok();
   }
 
+  /** Asserts that the modal button works. */
   async reviewModal(testController, review) {
     const reviewButton = Selector('#reviewButton');
     await testController.hover(reviewButton);

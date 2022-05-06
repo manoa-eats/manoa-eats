@@ -43,6 +43,7 @@ class VendorVerification {
     await testController.click('#submitNewRestaurantInformation');
   }
 
+  /** Asserts that remove restaurants is working. */
   async adminRemoveVendor(testController) {
     const removeButton = Selector('#adminRemoveButton');
     await testController.hover(removeButton);

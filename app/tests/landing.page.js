@@ -15,6 +15,7 @@ class LandingPage {
     await testController.wait(10000).expect(this.pageSelector.exists).ok();
   }
 
+  /** Asserts that the view vendor restaurants page is working. */
   async displayRest(testController) {
     const reviewButton = Selector('#landing-view-Rest-button');
     await testController.hover(reviewButton);

@@ -35,9 +35,10 @@ const testingProfileData = {
   changeProfileImage: 'https://www.gannett-cdn.com/media/2021/06/03/USATODAY/usatsports/imageForEntry18-8on.jpg?width=2560',
 };
 
-fixture('meteor-application-template-react localhost test with default db')
+fixture('manoa-eats localhost test with default db')
   .page('http://localhost:3000');
 
+/** TestCafe Page Tests */
 test('Testing that the landing page displays', async (testController) => {
   await landingPage.isDisplayed(testController);
 });

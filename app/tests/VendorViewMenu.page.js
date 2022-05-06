@@ -11,7 +11,7 @@ class UserProfilePage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  /** Asserts that edit restaurants is working. */
+  /** Asserts that edit menu items is working. */
   async editMenuItem(testController) {
     const clickEdit = Selector('#editMenuItem');
     await testController.hover(clickEdit);
@@ -32,6 +32,7 @@ class UserProfilePage {
     await testController.click('#submitNewMenuVendor');
   }
 
+  /** Asserts that remove menu item is working. */
   async removeMenuItem(testController) {
     const clickEdit = Selector('#removeMenuItem');
     await testController.hover(clickEdit);

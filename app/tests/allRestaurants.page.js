@@ -35,12 +35,14 @@ class AllRestaurantsPage {
     await testController.expect(this.pageSelector2.exists).ok();
   }
 
+  /** Asserts that the sort button works. */
   async sortAlpha(testController) {
     const RestNameLink = Selector('#sort-alpha');
     await testController.hover(RestNameLink);
     await testController.click(RestNameLink);
   }
 
+  /** Asserts that the sort button works. */
   async sortRating(testController) {
     const RestNameLink = Selector('#sort-rating');
     await testController.hover(RestNameLink);

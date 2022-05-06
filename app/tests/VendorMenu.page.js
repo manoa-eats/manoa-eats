@@ -11,7 +11,7 @@ class UserProfilePage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
+  /** Creates a new menu item */
   async vendorCreateMenu(testController, name) {
     const addMenuItemName = Selector('#menuFoodName');
     await testController.hover(addMenuItemName);

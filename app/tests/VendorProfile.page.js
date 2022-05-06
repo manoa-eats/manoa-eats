@@ -11,7 +11,7 @@ class UserProfilePage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
+  /** Edits the name and price of a menu item */
   async editVendorProfile(testController, name, image) {
     const EditVendorProfileName = Selector('#vendorFormName');
     await testController.hover(EditVendorProfileName);

@@ -47,27 +47,27 @@ class NavBar {
     await testController.click('#navbar-vendor-verification');
   }
 
-  /** Pull down login menu, go to Vendor Verification page. */
+  /** Pull down login menu, go to user edit profile page. */
   async gotoCreateProfilePage(testController) {
     await testController.click('#navbar-edit-profile');
   }
 
-  /** Pull down login menu, go to Vendor Verification page. */
+  /** Pull down login menu, go to im feeling lucky page. */
   async gotoFeelingLuckyPage(testController) {
     await testController.click('#navbar-feeling-lucky');
   }
 
-  /** Pull down login menu, go to Vendor Verification page. */
+  /** Pull down login menu, go to the edit Vendor page. */
   async gotoEditVendorProfilePage(testController) {
     await testController.click('#navbar-edit-vendor-profile');
   }
 
-  /** Pull down login menu, go to Vendor Verification page. */
+  /** Pull down login menu, go to the edit menu page. */
   async gotoCreateMenuPage(testController) {
     await testController.click('#Navbar-Add-Menu-Item');
   }
 
-  /** Pull down login menu, go to Vendor Verification page. */
+  /** Pull down login menu, go to the view menu page. */
   async gotoViewMenuPage(testController) {
     await testController.click('#Navbar-View-Menu-Item');
   }
