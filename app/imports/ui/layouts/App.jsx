@@ -6,13 +6,10 @@ import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Landing from '../pages/Landing';
-import ListContacts from '../pages/ListContacts';
-import ListContactsAdmin from '../pages/ListContactsAdmin';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import EditContact from '../pages/EditContact';
 import AllRestaurants from '../pages/AllRestaurants';
 import ImFeelingHungry from '../pages/ImFeelingHungry';
 import VendorVerification from '../pages/VendorVerification';
@@ -38,7 +35,6 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
-            <ProtectedRoute path="/list" component={ListContacts}/>
             <Route path="/all-restaurants" component={AllRestaurants}/>
             <Route path="/vendor-page/:owner" component={Vendor}/>
             <Route path="/im-feeling-hungry" component={ImFeelingHungry}/>
@@ -47,12 +43,10 @@ class App extends React.Component {
             <ProtectedRoute path="/edit-profile/:owner" component={EditProfile}/>
             <ProtectedRoute path="/vendor-profile" component={VendorProfile}/>
             <ProtectedRoute path="/edit-vendor-profile/:owner" component={EditVendorProfile}/>
-            <ProtectedRoute path="/edit/:_id" component={EditContact}/>
             <ProtectedRoute path="/editRestaurant/:_id" component={EditRestaurant}/>
             <ProtectedRoute path="/create-menu-item" component={CreateMenuItem}/>
             <ProtectedRoute path="/editMenuItem/:_id" component={EditMenuItem}/>
             <ProtectedRoute path="/view-menu/:owner" component={ViewMenu}/>
-            <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>
         </div>
