@@ -18,7 +18,7 @@ class VendorMenuTable extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h1" textAlign="center" inverted>Menu</Header>
+        <Header as="h1" textAlign="center">Menu</Header>
         <Table celled>
           <Table.Header>
             <Table.Row>

@@ -18,7 +18,7 @@ class MenuTable extends React.Component {
   renderPage() {
     return (
       <Container id='ViewMenuItem-page'>
-        <Header as="h2" textAlign="center">Menu</Header>
+        <Header as="h1" inverted textAlign="center">Menu</Header>
         <Table celled>
           <Table.Header>
             <Table.Row>
