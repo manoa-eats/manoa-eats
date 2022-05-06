@@ -42,6 +42,13 @@ class VendorVerification {
     await testController.typeText(adminEditRestaurantDescription, changeDescription);
     await testController.click('#submitNewRestaurantInformation');
   }
+
+  /** Asserts that remove restaurants is working. */
+  async adminRemoveVendor(testController) {
+    const removeButton = Selector('#adminRemoveButton');
+    await testController.hover(removeButton);
+    await testController.click(removeButton);
+  }
 }
 
 export const vendorVerificationPage = new VendorVerification();

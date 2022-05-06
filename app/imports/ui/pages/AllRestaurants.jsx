@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { Restaurants } from '../../api/Restaurant/Restaurants';
 import { VendorProfile } from '../../api/vendorprofile/VendorProfile';
 import Restaurant from '../components/Restaurant';
-import contact from '../components/Contact';
 import { Reviews } from '../../api/review/Reviews';
 
 /** Renders a table containing all of the Stuff documents. */
@@ -74,6 +73,7 @@ class AllRestaurants extends React.Component {
         <div align="center">
           <Container>
             <Button
+              id='sort-alpha'
               style={ margin }
               color={'red'}
               onClick={() => this.setState({
@@ -83,6 +83,7 @@ class AllRestaurants extends React.Component {
             Sort Alphabetically
             </Button>
             <Button
+              id='sort-rating'
               style={ margin }
               color={'red'}
               onClick={() => this.setState({

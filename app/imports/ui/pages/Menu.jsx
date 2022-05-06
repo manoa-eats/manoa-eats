@@ -17,7 +17,7 @@ class MenuTable extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
+      <Container id='ViewMenuItem-page'>
         <Header as="h2" textAlign="center">Menu</Header>
         <Table celled>
           <Table.Header>

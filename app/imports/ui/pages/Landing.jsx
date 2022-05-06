@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, List, Loader, Dropdown, Card, Label, Button, Image } from 'semantic-ui-react';
+import { Grid, Header, Loader, Dropdown, Card, Label, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -93,7 +93,7 @@ class Landing extends React.Component {
           <Card.Description>{'DIETS: '}<br/>{restaurant.diets.map((diets, key) => <Label key={key} color="green">{diets}</Label>)}</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Link to={`/vendor-page/${restaurant.owner}`}><Button>View Restaurant</Button></Link>
+          <Link to={`/vendor-page/${restaurant.owner}`}><Button id='landing-view-Rest-button'>View Restaurant</Button></Link>
         </Card.Content>
       </Card>);
     return (
@@ -108,6 +108,7 @@ class Landing extends React.Component {
           <Grid.Column textAlign='center' width={8} className={'margin'}>
             <Grid.Row verticalAlign={'middle'}>
               <Dropdown
+                id='searchDropdown'
                 placeholder={'Search for restaurants'}
                 fluid
                 search

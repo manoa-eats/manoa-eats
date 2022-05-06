@@ -17,10 +17,10 @@ class MenuItem extends React.Component {
         <Table.Cell textAlign="center">{this.props.menu.foodName}</Table.Cell>
         <Table.Cell textAlign="center">${this.props.menu.price}</Table.Cell>
         <Table.Cell textAlign="center">
-          <Link to={`/editMenuItem/${this.props.menu._id}`}>Edit</Link>
+          <Link id='editMenuItem' to={`/editMenuItem/${this.props.menu._id}`}>Edit</Link>
         </Table.Cell>
         <Table.Cell textAlign="center">
-          <Button icon onClick={() => this.removeItem(this.props.menu._id)}>
+          <Button id='removeMenuItem' icon onClick={() => this.removeItem(this.props.menu._id)}>
             <Icon name='trash'/>
           </Button>
         </Table.Cell>

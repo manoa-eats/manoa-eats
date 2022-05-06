@@ -11,7 +11,7 @@ class UserProfilePage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
+  /** Edits a users profile. */
   async userProfile(testController, name, image) {
     const createUserProfileName = Selector('#userFormName');
     await testController.hover(createUserProfileName);
